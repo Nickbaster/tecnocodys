@@ -1,0 +1,149 @@
+[
+  {
+    "CODIGO": 3907,
+    "DESCRIPCION": "Parlante 8 pulgadas star vision SV-8803",
+    "PRECIO TARJETA": 52380,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 44530
+  },
+  {
+    "CODIGO": 3906,
+    "DESCRIPCION": "Aro led cuadrado YM-300 RGB ring light",
+    "PRECIO TARJETA": 31040,
+    "CATEGORIA": "Iluminacion/Electricidad",
+    "PRECIO EFECTIVO": 26390
+  },
+  {
+    "CODIGO": 3905,
+    "DESCRIPCION": "RELOJ DESPERTADOR C/LUZ MUSICAL Music and starry sky calendar",
+    "PRECIO TARJETA": 13580,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 11550
+  },
+  {
+    "CODIGO": 3904,
+    "DESCRIPCION": "Cepillo de limpieza recargable IPX8",
+    "PRECIO TARJETA": 48500,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 41230
+  },
+  {
+    "CODIGO": 3903,
+    "DESCRIPCION": "Cepillo corporal de ducha, masajeador, limpieza BR-881",
+    "PRECIO TARJETA": 33760,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 28700
+  },
+  {
+    "CODIGO": 3902,
+    "DESCRIPCION": "Masajeador de pies EMS FOOT MASSAGER ",
+    "PRECIO TARJETA": 10090,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 8580
+  },
+  {
+    "CODIGO": 3901,
+    "DESCRIPCION": "Soporte de tablet alumini metal JS-069",
+    "PRECIO TARJETA": 15520,
+    "CATEGORIA": "Soportes Celulares",
+    "PRECIO EFECTIVO": 13200
+  },
+  {
+    "CODIGO": 3900,
+    "DESCRIPCION": "Teclado Numerico Multimedia USB Netmak NM-KB250",
+    "PRECIO TARJETA": 9650,
+    "CATEGORIA": "Teclados",
+    "PRECIO EFECTIVO": 8210
+  },
+  {
+    "CODIGO": 3899,
+    "DESCRIPCION": "Coporte de tablet aluminio metal JD-069 Lambo tech",
+    "PRECIO TARJETA": 15180,
+    "CATEGORIA": "Soportes Celulares",
+    "PRECIO EFECTIVO": 12910
+  },
+  {
+    "CODIGO": 3898,
+    "DESCRIPCION": "Canilla negra Monocomando Lavatorio Tubo Mediana Negra",
+    "PRECIO TARJETA": 34120,
+    "CATEGORIA": "Griferia",
+    "PRECIO EFECTIVO": 29010
+  },
+  {
+    "CODIGO": 3897,
+    "DESCRIPCION": "Alargue zapatilla 1,5 mts 5 tomas",
+    "PRECIO TARJETA": 9000,
+    "CATEGORIA": "Iluminacion/Electricidad",
+    "PRECIO EFECTIVO": 7650
+  },
+  {
+    "CODIGO": 3896,
+    "DESCRIPCION": "Funda maletin notebook NM-ML3",
+    "PRECIO TARJETA": 23280,
+    "CATEGORIA": "Informatica/Tablet",
+    "PRECIO EFECTIVO": 19790
+  },
+  {
+    "CODIGO": 3895,
+    "DESCRIPCION": "Reloj Smartwatch TH-8 ULTRA 10 con 7 mallas",
+    "PRECIO TARJETA": 34120,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 29010
+  },
+  {
+    "CODIGO": 3894,
+    "DESCRIPCION": "Velador Astronauta luz blanca y calida! brazo arriba!",
+    "PRECIO TARJETA": 12030,
+    "CATEGORIA": "Hogar",
+    "PRECIO EFECTIVO": 10230
+  },
+  {
+    "CODIGO": 3893,
+    "DESCRIPCION": "Estereo Suono Desmontable ",
+    "PRECIO TARJETA": 45880,
+    "CATEGORIA": "Audio car/Art auto",
+    "PRECIO EFECTIVO": 39000
+  },
+  {
+    "CODIGO": 3892,
+    "DESCRIPCION": "Lapiz Touch Capacitivo con Lapicera Soporte",
+    "PRECIO TARJETA": 2350,
+    "CATEGORIA": "Libreria",
+    "PRECIO EFECTIVO": 2000
+  },
+  {
+    "CODIGO": 3891,
+    "DESCRIPCION": "Cargador Power Bank 20000MAH 4 en 1 LT-2565",
+    "PRECIO TARJETA": 25500,
+    "CATEGORIA": "Cargadores Tipo C",
+    "PRECIO EFECTIVO": 21680
+  },
+  {
+    "CODIGO": 3890,
+    "DESCRIPCION": "Parlante JBL Charge 6",
+    "PRECIO TARJETA": 32200,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 27370
+  },
+  {
+    "CODIGO": 3889,
+    "DESCRIPCION": "Humidificador Flama modelo DQ-701",
+    "PRECIO TARJETA": 24500,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 20830
+  },
+  {
+    "CODIGO": 3888,
+    "DESCRIPCION": "Par de Handy Seisa ST-888S",
+    "PRECIO TARJETA": 65880,
+    "CATEGORIA": "Conectividad",
+    "PRECIO EFECTIVO": 56000
+  },
+  {
+    "CODIGO": 3887,
+    "DESCRIPCION": "Camara de seguridad IPC-ZAS06",
+    "PRECIO TARJETA": 62350,
+    "CATEGORIA": "Camaras, Webcam, Seguridad",
+    "PRECIO EFECTIVO": 53000
+  }
+]

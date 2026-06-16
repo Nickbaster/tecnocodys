@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catálogo Tecnocodys</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background: #f8fafc; 
+    margin: 0;
+    color: #0f172a;
+}
+
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.logo-contenedor {
+    margin-bottom: 5px;
+}
+
+header p{
+    margin: 5px 0 15px 0;
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.buscador-contenedor {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#buscar {
+    width: 100%;
+    padding: 15px 50px 15px 20px; 
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#limpiar-buscar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+}
+
+#limpiar-buscar:hover {
+    color: #ef4444;
+}
+
+/* CONTENEDOR DE CATEGORÍAS CON SCROLL HORIZONTAL */
+.categorias-wrapper {
+    margin: 15px 15px 5px 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 4px;
+    overflow: hidden;
+}
+
+.categorias {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start; 
+    padding: 10px 40px !important; 
+    margin: 0;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Ocultar barra de scroll */
+.categorias::-webkit-scrollbar, .ordenamiento::-webkit-scrollbar {
+    display: none;
+}
+.categorias, .ordenamiento {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.categoria-btn {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    flex-shrink: 0; 
+    transition: all 0.2s ease;
+}
+
+.categoria-btn.activa {
+    background: #0f172a;
+    color: white;
+    border-color: #0f172a;
+    font-weight: bold;
+}
+
+.categoria-btn:hover {
+    background: #1e293b;
+    color: white;
+    border-color: #1e293b;
+}
+
+.flecha-btn {
+    background: #0f172a;
+    color: white;
+    border: none;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+}
+
+.flecha-btn:hover {
+    background: #334155;
+}
+
+.flecha-btn.izq { left: 8px; }
+.flecha-btn.der { right: 8px; }
+
+/* BARRA DE ORDENAMIENTO */
+.ordenamiento {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    padding: 5px 15px 15px 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.orden-btn {
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+    padding: 6px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    color: #64748b;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.orden-btn.activo {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #bae6fd;
+}
+
+#contadorProductos {
+    text-align: center;
+    color: #64748b;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* BARRA DEL CARRITO */
+.carrito-barra{
+    background: white;
+    margin: 10px 15px;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+/* GRILLA DE PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* TARJETA DE PRODUCTO */
+.card {
+    background: white;
+    border-radius: 16px; 
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    position: relative;
+    min-height: 470px; /* Cambiado a min-height para que se adapte sin dejar huecos */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+}
+
+.card-click {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover;
+}
+
+.categoria-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(15, 23, 42, 0.85); 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px); 
+    z-index: 2;
+}
+
+.info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.info h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    color: #1e293b;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 44px; 
+}
+
+.info .codigo-texto {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 2px 0; /* Reducido para juntar el contenido */
+}
+
+/* CONTENEDOR DE PRECIOS CORREGIDO */
+.contenedor-precios {
+    margin-top: 5px; /* Se quitó 'auto' para que suba directo y quede pegado al código */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 15px; /* Deja espacio con los botones de abajo */
+}
+
+.precio-efectivo {
+    color: #16a34a; 
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.precio-tarjeta {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* BOTONES DE LA TARJETA */
+.botones-tarjeta {
+    padding: 0 15px 15px 15px;
+}
+
+.btn-ver-mas {
+    display: block;
+    text-align: center;
+    background: #e2e8f0;
+    color: #334155;
+    text-decoration: none;
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-ver-mas:hover {
+    background: #cbd5e1;
+}
+
+.btn-carrito{
+    width: 100%;
+    border: none;
+    background: #0f172a;
+    color: white;
+    padding: 11px;
+    margin-top: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-carrito:hover{
+    background: #1e293b;
+}
+
+/* MODALES */
+.modal-carrito, .modal-ficha {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-contenido {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.cerrar-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #64748b;
+    z-index: 10;
+}
+
+.cerrar-modal:hover { color: #0f172a; }
+
+.btn-whatsapp-carrito, .btn-whatsapp-ficha {
+    width: 100%;
+    border: none;
+    background: #25D366;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* COMPONENTES DE LA VISTA DETALLE */
+.ficha-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    background: #f1f5f9;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.ficha-categoria {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.ficha-descripcion {
+    font-size: 18px;
+    color: #0f172a;
+    margin: 12px 0 6px 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.ficha-codigo {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0 0 15px 0;
+}
+
+.ficha-precios-box {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.ficha-precio-ef {
+    font-size: 26px;
+    color: #16a34a;
+    font-weight: 800;
+    margin: 0;
+}
+
+.ficha-precio-tarj {
+    font-size: 16px;
+    color: #64748b;
+    font-weight: 600;
+    margin: 4px 0 0 0;
+}
+
+/* PAGINACIÓN */
+.paginacion-contenedor {
+    text-align: center;
+    padding: 20px 20px 40px 20px;
+}
+
+.btn-cargar-mas {
+    background: #0f172a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-cargar-mas:hover { background: #1e293b; }
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 600px) {
+    header { padding: 15px 10px; }
+    #buscar { font-size: 16px; padding: 12px 40px 12px 15px; }
+    .productos { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; padding: 10px; }
+    
+    .card { min-height: 380px; border-radius: 12px; } 
+    .card img { height: 120px; }
+    .categoria-tag { top: 8px; left: 8px; font-size: 9px; padding: 4px 8px; }
+    .info { padding: 10px; }
+    .info h3 { font-size: 13px; height: 36px; -webkit-line-clamp: 2; margin-bottom: 4px; }
+    .info .codigo-texto { font-size: 11px; margin-bottom: 2px; }
+    .contenedor-precios { margin-top: 4px; margin-bottom: 8px; }
+    .precio-efectivo { font-size: 17px; }
+    .precio-tarjeta { font-size: 12px; }
+    .botones-tarjeta { padding: 0 10px 10px 10px; }
+    .btn-ver-mas { font-size: 12px; padding: 8px; }
+    .btn-carrito { font-size: 12px; padding: 8px; margin-top: 6px; }
+    
+    .flecha-btn { display: none; }
+    .categorias { padding: 10px 15px !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-contenedor">
+        <img src="logo.jpg" alt="Tecnocodys" style="max-width: 280px; height: auto; border-radius: 4px;">
+    </div>
+    <p>Catálogo de tecnología</p>
+    <div class="buscador-contenedor">
+        <input type="text" id="buscar" placeholder="🔍 Buscar productos...">
+        <button id="limpiar-buscar" style="display: none;">✕</button>
+    </div>
+</header>
+
+<div id="contadorProductos"></div>
+
+<!-- BARRA DEL CARRITO -->
+<div id="carritoBarra" class="carrito-barra" onclick="verCarrito()">
+    🛒 Carrito: <span id="cantidadCarrito">0</span>
+</div>
+
+<!-- CATEGORÍAS -->
+<div class="categorias-wrapper" style="position: relative; display: flex; align-items: center;">
+    <button class="flecha-btn izq" onclick="deslizarCategorias('izquierda')">❮</button>
+    <div id="categorias" class="categorias"></div>
+    <button class="flecha-btn der" onclick="deslizarCategorias('derecha')">❯</button>
+</div>
+
+<!-- FILTROS ORDEN -->
+<div class="ordenamiento">
+    <button class="orden-btn activo" id="btn-predeterminado" onclick="cambiarOrden('predeterminado')">Por defecto</button>
+    <button class="orden-btn" id="btn-baratos" onclick="cambiarOrden('baratos')">Más baratos</button>
+    <button class="orden-btn" id="btn-caros" onclick="cambiarOrden('caros')">Más caros</button>
+    <button class="orden-btn" id="btn-az" onclick="cambiarOrden('az')">A-Z</button>
+    <button class="orden-btn" id="btn-za" onclick="cambiarOrden('za')">Z-A</button>
+</div>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="productos" id="productos"></div>
+
+<!-- MODAL: CARRITO -->
+<div id="modalCarrito" class="modal-carrito">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" onclick="cerrarCarrito()">✖</span>
+        <h2>🛒 Mi Carrito</h2>
+        <div id="listaCarrito"></div>
+        <button class="btn-whatsapp-carrito" onclick="enviarCarritoWhatsapp()">
+            📲 Enviar pedido por WhatsApp
+        </button>
+    </div>
+</div>
+
+<!-- MODAL: FICHA -->
+<div id="modalFicha" class="modal-ficha">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" onclick="cerrarFicha()">✖</span>
+        <div id="contenidoFicha"></div>
+    </div>
+</div>
+
+<div class="paginacion-contenedor">
+    <button id="btnCargarMas" class="btn-cargar-mas" style="display: none;">Cargar más productos</button>
+</div>
+
+<script>
+const numeroWhatsApp = "5492954736933";
+
+let todosLosProductos = [];
+let productosFiltrados = []; 
+let categoriaActiva = "Todas";
+let textoBusqueda = "";
+let ordenActivo = "predeterminado"; 
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+window.addEventListener("load", () => {
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
+});
+
+const productosPorPagina = 24; 
+let paginaActual = 1;
+
+function deslizarCategorias(direccion) {
+    const contenedor = document.getElementById("categorias");
+    const distancia = 200; 
+    if (direccion === 'izquierda') {
+        contenedor.scrollLeft -= distancia;
+    } else {
+        contenedor.scrollLeft += distancia;
+    }
+}
+
+async function cargarProductos(){
+    const respuesta = await fetch("productos.json");
+    const productos = await respuesta.json();
+
+    todosLosProductos = productos;
+    productosFiltrados = todosLosProductos;
+
+    actualizarPantalla();
+    crearCategorias(todosLosProductos);
+
+    const inputBuscar = document.getElementById("buscar");
+    const botonLimpiar = document.getElementById("limpiar-buscar");
+
+    inputBuscar.addEventListener("input", function(){
+        textoBusqueda = this.value.toLowerCase();
+        botonLimpiar.style.display = textoBusqueda !== "" ? "block" : "none";
+        paginaActual = 1; 
+        filtrarProductos(); 
+    });
+
+    botonLimpiar.addEventListener("click", function(){
+        inputBuscar.value = ""; 
+        textoBusqueda = ""; 
+        botonLimpiar.style.display = "none"; 
+        paginaActual = 1;
+        filtrarProductos(); 
+        inputBuscar.focus();
+    });
+
+    document.getElementById("btnCargarMas").addEventListener("click", function(){
+        paginaActual++; 
+        actualizarPantalla(); 
+    });
+}
+
+function activarCategoria(botonSeleccionado){
+    document.querySelectorAll(".categoria-btn").forEach(btn => btn.classList.remove("activa"));
+    botonSeleccionado.classList.add("activa");
+}
+
+function crearCategorias(productos){
+    const contenedorCategorias = document.getElementById("categorias");
+    contenedorCategorias.innerHTML = "";
+
+    const categoriesList = [...new Set(productos.map(p => p.CATEGORIA))].sort();
+
+    const btnTodas = document.createElement("button");
+    btnTodas.className = "categoria-btn activa";
+    btnTodas.textContent = "Todas";
+    btnTodas.onclick = () => {
+        activarCategoria(btnTodas);
+        categoriaActiva = "Todas";
+        paginaActual = 1;
+        filtrarProductos();
+    };
+    contenedorCategorias.appendChild(btnTodas);
+
+    categoriesList.forEach(categoria => {
+        const boton = document.createElement("button");
+        boton.className = "categoria-btn";
+        boton.textContent = categoria;
+        boton.onclick = () => {
+            activarCategoria(boton);
+            categoriaActiva = categoria;
+            paginaActual = 1;
+            filtrarProductos();
+        };
+        contenedorCategorias.appendChild(boton);
+    });
+}
+
+function cambiarOrden(tipo) {
+    ordenActivo = tipo;
+    document.querySelectorAll(".orden-btn").forEach(btn => btn.classList.remove("activo"));
+    
+    if (tipo === 'predeterminado') document.getElementById("btn-predeterminado").classList.add("activo");
+    if (tipo === 'baratos') document.getElementById("btn-baratos").classList.add("activo");
+    if (tipo === 'caros') document.getElementById("btn-caros").classList.add("activo");
+    if (tipo === 'az') document.getElementById("btn-az").classList.add("activo");
+    if (tipo === 'za') document.getElementById("btn-za").classList.add("activo");
+
+    paginaActual = 1; 
+    filtrarProductos(); 
+}
+
+function filtrarProductos() {
+    productosFiltrados = todosLosProductos;
+
+    if (categoriaActiva !== "Todas") {
+        productosFiltrados = productosFiltrados.filter(p => p.CATEGORIA === categoriaActiva);
+    }
+
+    if (textoBusqueda !== "") {
+        productosFiltrados = productosFiltrados.filter(p =>
+            String(p.CODIGO).toLowerCase().includes(textoBusqueda) ||
+            String(p.DESCRIPCION).toLowerCase().includes(textoBusqueda)
+        );
+    }
+
+    if (ordenActivo === "baratos") {
+        productosFiltrados.sort((a, b) => Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO) - Number(b["PRECIO EFECTIVO"] || b.PRECIO_EFECTIVO));
+    } else if (ordenActivo === "caros") {
+        productosFiltrados.sort((a, b) => Number(b["PRECIO EFECTIVO"] || b.PRECIO_EFECTIVO) - Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO));
+    } else if (ordenActivo === "az") {
+        productosFiltrados.sort((a, b) => String(a.DESCRIPCION).localeCompare(String(b.DESCRIPCION)));
+    } else if (ordenActivo === "za") {
+        productosFiltrados.sort((a, b) => String(b.DESCRIPCION).localeCompare(String(a.DESCRIPCION)));
+    }
+
+    document.getElementById("productos").innerHTML = "";
+    actualizarPantalla();
+}
+
+function actualizarPantalla() {
+    const contenedor = document.getElementById("productos");
+    const btnCargarMas = document.getElementById("btnCargarMas");
+
+    document.getElementById("contadorProductos").innerHTML = 
+        `${productosFiltrados.length} productos encontrados`;
+
+    if (productosFiltrados.length === 0) {
+        contenedor.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #64748b;">
+                <span style="font-size: 48px;">🔍</span>
+                <h3 style="margin-top: 10px; color: #334155;">No se encontraron productos</h3>
+                <p style="font-size: 14px;">Intentá escribirlo de otra forma.</p>
+            </div>
+        `;
+        btnCargarMas.style.display = "none";
+        return;
+    }
+
+    const fin = paginaActual * productosPorPagina;
+    const inicio = fin - productosPorPagina;
+    const tandaActual = productosFiltrados.slice(inicio, fin);
+
+    tandaActual.forEach(producto => {
+        const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
+        const precioTarjetaFormateado = precioTarjetaRaw 
+            ? `$ ${Number(precioTarjetaRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}` 
+            : 'Consulte';
+
+        const precioEfectivoRaw = producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO;
+        const precioEfectivoFormateado = precioEfectivoRaw
+            ? `$ ${Number(precioEfectivoRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}`
+            : 'Consulte';
+
+        contenedor.innerHTML += `
+        <div class="card">
+            <div class="card-click" onclick="abrirFicha('${producto.CODIGO}')">
+                <div class="categoria-tag">${producto.CATEGORIA}</div>
+                <img
+                    src="fotos/${producto.CODIGO}.jpg"
+                    alt="${producto.DESCRIPCION}"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
+                >
+                <div class="info">
+                    <h3>${producto.DESCRIPCION}</h3>
+                    <p class="codigo-texto">Código: ${producto.CODIGO}</p>
+                    <div class="contenedor-precios">
+                        <p class="precio-efectivo">${precioEfectivoFormateado} <span style="font-size:12px; font-weight:600; color:#475569;">Efectivo</span></p>
+                        <p class="precio-tarjeta">Tarjeta: ${precioTarjetaFormateado}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="botones-tarjeta">
+                <button class="btn-ver-mas" onclick="abrirFicha('${producto.CODIGO}')">🔍 Ver Ficha</button>
+                <button class="btn-carrito" onclick="agregarAlCarrito('${producto.CODIGO}')">🛒 Agregar al carrito</button>
+            </div>
+        </div>
+        `;
+    });
+
+    if (fin < productosFiltrados.length) {
+        btnCargarMas.style.display = "inline-block";
+    } else {
+        btnCargarMas.style.display = "none";
+    }
+}
+
+function abrirFicha(codigo) {
+    const producto = todosLosProductos.find(p => String(p.CODIGO) === String(codigo));
+    if(!producto) return;
+
+    const contenedorFicha = document.getElementById("contenidoFicha");
+    
+    // Corregido aquí también para que use todas las variantes del Excel y NO diga consulte
+    const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
+    const precioTarjetaFormateado = precioTarjetaRaw 
+        ? `$ ${Number(precioTarjetaRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}` 
+        : 'Consulte';
+
+    const precioEfectivoRaw = producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO;
+    const precioEfectivoFormateado = precioEfectivoRaw
+        ? `$ ${Number(precioEfectivoRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}`
+        : 'Consulte';
+
+    const mensajeFicha = encodeURIComponent(`Hola, consulto por ${producto.DESCRIPCION} (${producto.CODIGO})`);
+
+    // Reducidos los márgenes de la ficha para que quede todo compacto y estético
+    contenedorFicha.innerHTML = `
+        <img class="ficha-img" 
+             src="fotos/${producto.CODIGO}.jpg" 
+             alt="${producto.DESCRIPCION}"
+             onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
+             style="margin-top: 10px; margin-bottom: 5px;"
+        >
+        <div>
+            <span class="ficha-categoria" style="margin-top: 5px; margin-bottom: 5px;">${producto.CATEGORIA}</span>
+            <h2 class="ficha-descripcion" style="margin: 5px 0; font-size: 18px; line-height: 1.3;">${producto.DESCRIPCION}</h2>
+            <p class="ficha-codigo" style="margin: 0 0 5px 0; font-size: 13px;"><strong>Código del producto:</strong> ${producto.CODIGO}</p>
+            
+            <div class="ficha-precios-box" style="margin: 5px 0; padding: 10px;">
+                <p class="ficha-precio-ef style="margin: 0; font-size: 24px;">💵 ${precioEfectivoFormateado} <span style="font-size:13px; color:#475569; font-weight:600;">en Efectivo / Transferencia</span></p>
+                <p class="ficha-precio-tarj" style="margin: 2px 0 0 0; font-size: 15px;">💳 Tarjeta: ${precioTarjetaFormateado}</p>
+            </div>
+            
+            <a class="btn-whatsapp-ficha" 
+               href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}" 
+               target="_blank"
+               style="margin-top: 10px; padding: 12px;">
+               📲 Consultar por WhatsApp
+            </a>
+        </div>
+    `;
+
+    document.getElementById("modalFicha").style.display = "flex";
+}
+
+function cerrarFicha() {
+    document.getElementById("modalFicha").style.display = "none";
+}
+
+function agregarAlCarrito(codigo){
+    const producto = todosLosProductos.find(p => String(p.CODIGO) === String(codigo));
+    if(!producto) return;
+
+    carrito.push(producto);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
+}
+
+function eliminarDelCarrito(indice){
+    carrito.splice(indice, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
+    verCarrito();
+}
+
+function verCarrito(){
+    if(carrito.length === 0){
+        alert("El carrito está vacío");
+        return;
+    }
+
+    const modal = document.getElementById("modalCarrito");
+    const lista = document.getElementById("listaCarrito");
+    lista.innerHTML = "";
+
+    let total = 0;
+
+    carrito.forEach((producto, indice) => {
+        const precioEf = Number(producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO || 0);
+        total += precioEf;
+        lista.innerHTML += `
+            <p style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding:8px 0; margin: 5px 0;">
+                <span>
+                    <strong>${indice + 1}.</strong> ${producto.DESCRIPCION}
+                    <br>
+                    <small>Ef: $ ${precioEf.toLocaleString('es-AR')}</small>
+                </span>
+                <button onclick="eliminarDelCarrito(${indice})" style="border:none; background:#ef4444; color:white; border-radius:6px; cursor:pointer; padding:4px 8px;">
+                    ❌
+                </button>
+            </p>
+        `;
+    });
+
+    lista.innerHTML += `
+        <hr>
+        <h3 style="text-align:right; color:#16a34a; margin-top:15px;">
+            Total Efectivo: $ ${total.toLocaleString('es-AR')}
+        </h3>
+    `;
+
+    modal.style.display = "flex";
+}
+
+function cerrarCarrito(){
+    document.getElementById("modalCarrito").style.display = "none";
+}
+
+function enviarCarritoWhatsapp(){
+    let mensaje = "Hola, quiero consultar por los siguientes productos:\n\n";
+    let total = 0;
+
+    carrito.forEach((producto, indice) => {
+        const precioEf = Number(producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO || 0);
+        total += precioEf;
+        mensaje += `${indice + 1}. ${producto.DESCRIPCION} (${producto.CODIGO}) - $ ${precioEf.toLocaleString('es-AR')} (Ef)\n`;
+    });
+
+    mensaje += `\nTotal productos: ${carrito.length}`;
+    mensaje += `\n💰 Total estimado en efectivo: $ ${total.toLocaleString('es-AR')}`;
+
+    window.open(
+        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`,
+        "_blank"
+    );
+}
+
+window.onclick = function(event) {
+    const modalFicha = document.getElementById("modalFicha");
+    const modalCarrito = document.getElementById("modalCarrito");
+    if (event.target == modalFicha) cerrarFicha();
+    if (event.target == modalCarrito) cerrarCarrito();
+}
+
+cargarProductos();
+</script>
+</body>
+</html>
