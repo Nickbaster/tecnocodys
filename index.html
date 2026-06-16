@@ -225,7 +225,7 @@ header p{
     flex-direction: column; 
     justify-content: space-between; 
     position: relative;
-    min-height: 470px; /* Cambiado a min-height para que se adapte sin dejar huecos */
+    min-height: 470px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -283,16 +283,16 @@ header p{
 .info .codigo-texto {
     font-size: 13px;
     color: #64748b;
-    margin: 0 0 2px 0; /* Reducido para juntar el contenido */
+    margin: 0 0 2px 0;
 }
 
 /* CONTENEDOR DE PRECIOS CORREGIDO */
 .contenedor-precios {
-    margin-top: 5px; /* Se quitó 'auto' para que suba directo y quede pegado al código */
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-bottom: 15px; /* Deja espacio con los botones de abajo */
+    margin-bottom: 15px;
 }
 
 .precio-efectivo {
@@ -603,10 +603,12 @@ async function cargarProductos(){
     const productos = await respuesta.json();
 
     todosLosProductos = productos;
-    productosFiltrados = todosLosProductos;
+    
+    // Filtramos de entrada para que las categorías y todo hereden solo los que SÍ tienen stock
+    productosFiltrados = todosLosProductos.filter(p => p.STOCK !== 0 && p.STOCK !== '0' && p.stock !== 0 && p.stock !== '0');
 
     actualizarPantalla();
-    crearCategorias(todosLosProductos);
+    crearCategorias(productosFiltrados);
 
     const inputBuscar = document.getElementById("buscar");
     const botonLimpiar = document.getElementById("limpiar-buscar");
@@ -684,7 +686,8 @@ function cambiarOrden(tipo) {
 }
 
 function filtrarProductos() {
-    productosFiltrados = todosLosProductos;
+    // Filtra la lista base ocultando los de stock cero de entrada
+    productosFiltrados = todosLosProductos.filter(p => p.STOCK !== 0 && p.STOCK !== '0' && p.stock !== 0 && p.stock !== '0');
 
     if (categoriaActiva !== "Todas") {
         productosFiltrados = productosFiltrados.filter(p => p.CATEGORIA === categoriaActiva);
@@ -704,7 +707,7 @@ function filtrarProductos() {
     } else if (ordenActivo === "az") {
         productosFiltrados.sort((a, b) => String(a.DESCRIPCION).localeCompare(String(b.DESCRIPCION)));
     } else if (ordenActivo === "za") {
-        productosFiltrados.sort((a, b) => String(b.DESCRIPCION).localeCompare(String(a.DESCRIPCION)));
+        productosFiltrados.sort((a, b) => String(b.DESCRIPCION).localeCompare(String(b.DESCRIPCION)));
     }
 
     document.getElementById("productos").innerHTML = "";
@@ -735,7 +738,12 @@ function actualizarPantalla() {
     const tandaActual = productosFiltrados.slice(inicio, fin);
 
     tandaActual.forEach(producto => {
-        const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
+        // Doble filtro de seguridad por si las moscas
+        if (producto.STOCK === 0 || producto.STOCK === '0' || producto.stock === 0 || producto.stock === '0') {
+            return; 
+        }
+
+        const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TAG || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
         const precioTarjetaFormateado = precioTarjetaRaw 
             ? `$ ${Number(precioTarjetaRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}` 
             : 'Consulte';
@@ -785,7 +793,6 @@ function abrirFicha(codigo) {
 
     const contenedorFicha = document.getElementById("contenidoFicha");
     
-    // Corregido aquí también para que use todas las variantes del Excel y NO diga consulte
     const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
     const precioTarjetaFormateado = precioTarjetaRaw 
         ? `$ ${Number(precioTarjetaRaw).toLocaleString('es-AR', { minimumFractionDigits: 0 })}` 
@@ -798,7 +805,6 @@ function abrirFicha(codigo) {
 
     const mensajeFicha = encodeURIComponent(`Hola, consulto por ${producto.DESCRIPCION} (${producto.CODIGO})`);
 
-    // Reducidos los márgenes de la ficha para que quede todo compacto y estético
     contenedorFicha.innerHTML = `
         <img class="ficha-img" 
              src="fotos/${producto.CODIGO}.jpg" 
@@ -812,7 +818,7 @@ function abrirFicha(codigo) {
             <p class="ficha-codigo" style="margin: 0 0 5px 0; font-size: 13px;"><strong>Código del producto:</strong> ${producto.CODIGO}</p>
             
             <div class="ficha-precios-box" style="margin: 5px 0; padding: 10px;">
-                <p class="ficha-precio-ef style="margin: 0; font-size: 24px;">💵 ${precioEfectivoFormateado} <span style="font-size:13px; color:#475569; font-weight:600;">en Efectivo / Transferencia</span></p>
+                <p class="ficha-precio-ef" style="margin: 0; font-size: 24px;">💵 ${precioEfectivoFormateado} <span style="font-size:13px; color:#475569; font-weight:600;">en Efectivo / Transferencia</span></p>
                 <p class="ficha-precio-tarj" style="margin: 2px 0 0 0; font-size: 15px;">💳 Tarjeta: ${precioTarjetaFormateado}</p>
             </div>
             
@@ -820,7 +826,7 @@ function abrirFicha(codigo) {
                href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}" 
                target="_blank"
                style="margin-top: 10px; padding: 12px;">
-               📲 Consultar por WhatsApp
+                📲 Consultar por WhatsApp
             </a>
         </div>
     `;
