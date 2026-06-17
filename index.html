@@ -195,24 +195,43 @@ header p{
     font-weight: 600;
 }
 
-/* BARRA DEL CARRITO FLOTANTE ARRIBA A LA DERECHA */
+/* BARRA DEL CARRITO COMPACTA Y REDONDA */
 .carrito-barra {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #16a34a; /* Lo cambié a verde llamativo, pero podés usar white si preferís */
-    color: white; /* Letras blancas para que resalten */
-    padding: 12px 20px;
-    border-radius: 30px; /* Más redondeado, tipo botón flotante */
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para que flote bien */
+    background: #16a34a; 
+    color: white;
+    width: 50px;  /* Lo hacemos cuadrado perfecto */
+    height: 50px; /* Lo hacemos cuadrado perfecto */
+    border-radius: 50%; /* ¡Con esto se vuelve un círculo! */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px; /* El emoji se va a ver bien grande adentro */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     cursor: pointer;
-    z-index: 999; /* Para que quede siempre por encima de las fotos y textos */
+    z-index: 999;
     transition: transform 0.2s;
 }
 
+/* El número chiquito arriba flotando en el borde del círculo */
+#cantidadCarrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444; /* Rojo para que llame la atención */
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
 .carrito-barra:hover {
-    transform: scale(1.05); /* Se agranda un poquito cuando pasás el mouse */
+    transform: scale(1.1);
 }
 
 /* GRILLA DE PRODUCTOS */
@@ -513,6 +532,20 @@ header p{
     .flecha-btn { display: none; }
     .categorias { padding: 10px 15px !important; }
 }
+/* Ajuste del carrito circular para celulares */
+    .carrito-barra {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    #cantidadCarrito {
+        top: -3px;
+        right: -3px;
+        font-size: 11px;
+        padding: 1px 6px;
+    }
 </style>
 </head>
 <body>
@@ -532,7 +565,7 @@ header p{
 
 <!-- BARRA DEL CARRITO -->
 <div id="carritoBarra" class="carrito-barra" onclick="verCarrito()">
-    🛒 Carrito: <span id="cantidadCarrito">0</span>
+    🛒<span id="cantidadCarrito">0</span>
 </div>
 
 <!-- CATEGORÍAS -->
