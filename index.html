@@ -311,6 +311,11 @@ header p{
     color: #64748b;
     margin: 0 0 2px 0;
 }
+/* Color especial para cuando hay que bajar el precio */
+.codigo-alerta {
+    color: #ef4444 !important; /* Rojo llamativo */
+    font-weight: bold; /* Lo hace un poquito más grueso para que se note mucho más */
+}
 
 /* CONTENEDOR DE PRECIOS CORREGIDO */
 .contenedor-precios {
@@ -797,31 +802,34 @@ function actualizarPantalla() {
             : 'Consulte';
 
         contenedor.innerHTML += `
-        <div class="card">
-            <div class="card-click" onclick="abrirFicha('${producto.CODIGO}')">
-                <div class="categoria-tag">${producto.CATEGORIA}</div>
-                <img
-                    src="fotos/${producto.CODIGO}.jpg"
-                    alt="${producto.DESCRIPCION}"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
-                >
-                <div class="info">
-                    <h3>${producto.DESCRIPCION}</h3>
-                    <p class="codigo-texto">Código: ${producto.CODIGO}</p>
-                    <div class="contenedor-precios">
-                        <p class="precio-efectivo">${precioEfectivoFormateado} <span style="font-size:12px; font-weight:600; color:#475569;">Efectivo</span></p>
-                        <p class="precio-tarjeta">Tarjeta: ${precioTarjetaFormateado}</p>
-                    </div>
-                </div>
-            </div>
+<div class="card">
+    <div class="card-click" onclick="abrirFicha('${producto.CODIGO}')">
+        <div class="categoria-tag">${producto.CATEGORIA}</div>
+        <img
+            src="fotos/${producto.CODIGO}.jpg"
+            alt="${producto.DESCRIPCION}"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
+        >
+        <div class="info">
+            <h3>${producto.DESCRIPCION}</h3>
             
-            <div class="botones-tarjeta">
-                <button class="btn-ver-mas" onclick="abrirFicha('${producto.CODIGO}')">🔍 Ver Ficha</button>
-                <button class="btn-carrito" onclick="agregarAlCarrito('${producto.CODIGO}')">🛒 Agregar al carrito</button>
+            <p class="codigo-texto ${producto.ESTADO === 'Bajar Precio' ? 'codigo-alerta' : ''}">
+                Código: ${producto.CODIGO}
+            </p>
+            
+            <div class="contenedor-precios">
+                <p class="precio-efectivo">${precioEfectivoFormateado} <span style="font-size:12px; font-weight:600; color:#475569;">Efectivo</span></p>
+                <p class="precio-tarjeta">Tarjeta: ${precioTarjetaFormateado}</p>
             </div>
         </div>
-        `;
-    });
+    </div>
+    
+    <div class="botones-tarjeta">
+        <button class="btn-ver-mas" onclick="abrirFicha('${producto.CODIGO}')">🔍 Ver Ficha</button>
+        <button class="btn-carrito" onclick="agregarAlCarrito('${producto.CODIGO}')">🛒 Agregar al carrito</button>
+    </div>
+</div>
+`;
 
     if (fin < productosFiltrados.length) {
         btnCargarMas.style.display = "inline-block";
