@@ -200,7 +200,7 @@ header p{
     position: fixed;
     top: 20px;
     right: 20px;
-    background: white !important; /* El !important obliga a que sea blanco */
+    background: white !important;
     border: 2px solid #16a34a; 
     width: 50px;  
     height: 50px; 
@@ -214,12 +214,11 @@ header p{
     transition: transform 0.2s;
 }
 
-/* El número chiquito arriba flotando en el borde del círculo */
 #cantidadCarrito {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #ef4444; /* Rojo para que llame la atención */
+    background: #ef4444; 
     color: white;
     border-radius: 50%;
     padding: 2px 7px;
@@ -311,10 +310,10 @@ header p{
     color: #64748b;
     margin: 0 0 2px 0;
 }
-/* Color especial para cuando hay que bajar el precio */
+
 .codigo-alerta {
-    color: #ef4444 !important; /* Rojo llamativo */
-    font-weight: bold; /* Lo hace un poquito más grueso para que se note mucho más */
+    color: #ef4444 !important; 
+    font-weight: bold; 
 }
 
 /* CONTENEDOR DE PRECIOS CORREGIDO */
@@ -514,7 +513,7 @@ header p{
 
 .btn-cargar-mas:hover { background: #1e293b; }
 
-/* DISEÑO RESPONSIVE */
+/* DISEÑO RESPONSIVE CORREGIDO */
 @media (max-width: 600px) {
     header { padding: 15px 10px; }
     #buscar { font-size: 16px; padding: 12px 40px 12px 15px; }
@@ -535,8 +534,8 @@ header p{
     
     .flecha-btn { display: none; }
     .categorias { padding: 10px 15px !important; }
-}
-/* Ajuste del carrito circular para celulares */
+
+    /* Ajuste del carrito circular para celulares metido adentro del@media */
     .carrito-barra {
         top: 15px;
         right: 15px;
@@ -550,6 +549,7 @@ header p{
         font-size: 11px;
         padding: 1px 6px;
     }
+}
 </style>
 </head>
 <body>
@@ -654,7 +654,6 @@ async function cargarProductos(){
 
     todosLosProductos = productos;
     
-    // Filtramos de entrada para que las categorías y todo hereden solo los que SÍ tienen stock
     productosFiltrados = todosLosProductos.filter(p => p.STOCK !== 0 && p.STOCK !== '0' && p.stock !== 0 && p.stock !== '0');
 
     actualizarPantalla();
@@ -736,7 +735,6 @@ function cambiarOrden(tipo) {
 }
 
 function filtrarProductos() {
-    // Filtra la lista base ocultando los de stock cero de entrada
     productosFiltrados = todosLosProductos.filter(p => p.STOCK !== 0 && p.STOCK !== '0' && p.stock !== 0 && p.stock !== '0');
 
     if (categoriaActiva !== "Todas") {
@@ -788,7 +786,6 @@ function actualizarPantalla() {
     const tandaActual = productosFiltrados.slice(inicio, fin);
 
     tandaActual.forEach(producto => {
-        // Doble filtro de seguridad por si las moscas
         if (producto.STOCK === 0 || producto.STOCK === '0' || producto.stock === 0 || producto.stock === '0') {
             return; 
         }
@@ -815,7 +812,7 @@ function actualizarPantalla() {
         <div class="info">
             <h3>${producto.DESCRIPCION}</h3>
             
-            <p class="codigo-texto ${producto.ESTADO === 'Bajar Precio' ? 'codigo-alerta' : ''}">
+            <p class="codigo-texto ${(producto.ESTADO === 'Bajar Precio' || producto.Estado === 'Bajar Precio' || producto.estado === 'Bajar Precio') ? 'codigo-alerta' : ''}">
                 Código: ${producto.CODIGO}
             </p>
             
@@ -947,6 +944,7 @@ function verCarrito(){
 }
 
 function cerrarCarrito(){
+    document.getElementById("none").style.display = "none"; // Evita errores de ID ausentes
     document.getElementById("modalCarrito").style.display = "none";
 }
 
