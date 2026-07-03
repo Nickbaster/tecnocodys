@@ -1,5 +1,32 @@
 [
   {
+    "CODIGO": 3930,
+    "DESCRIPCION": "Cargador powe bank 20000MAH Lambo Tech PL-07",
+    "PRECIO TARJETA": 22940,
+    "CATEGORIA": "Pilas y baterias",
+    "PRECIO EFECTIVO": 19500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3929,
+    "DESCRIPCION": "Estuda halogena de 2 velas O-204",
+    "PRECIO TARJETA": 35900,
+    "CATEGORIA": "Climatizacion",
+    "PRECIO EFECTIVO": 30500,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3928,
+    "DESCRIPCION": "TV BOX BROHUIN 2GB + 16GB ANDROID TV ",
+    "PRECIO TARJETA": 66240,
+    "CATEGORIA": "Conectividad",
+    "PRECIO EFECTIVO": 56300,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 3927,
     "DESCRIPCION": "PINZA CRIMPEADORA WJ-315",
     "PRECIO TARJETA": 13000,
@@ -14,7 +41,7 @@
     "PRECIO TARJETA": 21200,
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 18000,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -41,7 +68,7 @@
     "PRECIO TARJETA": 5120,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 4400,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -95,7 +122,7 @@
     "PRECIO TARJETA": 22350,
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 19000,
-    "STOCK": 3,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -438,7 +465,7 @@
     "CATEGORIA": "Combos",
     "PRECIO EFECTIVO": 26400,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3878,
@@ -456,7 +483,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 2400,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3876,
@@ -987,7 +1014,7 @@
     "CATEGORIA": "Iluminacion/Electricidad",
     "PRECIO EFECTIVO": 10200,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3817,
@@ -1203,7 +1230,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 29000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3793,
@@ -2728,11 +2755,11 @@
   {
     "CODIGO": 3622,
     "DESCRIPCION": "Alarma con sensor YL-353",
-    "PRECIO TARJETA": 16000,
+    "PRECIO TARJETA": 15060,
     "CATEGORIA": "Camaras, Webcam, Seguridad",
-    "PRECIO EFECTIVO": 13600,
+    "PRECIO EFECTIVO": 12800,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3621,
@@ -4901,7 +4928,7 @@
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 9000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3380,
@@ -10544,7 +10571,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 14500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2744,
@@ -11444,7 +11471,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 29800,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2643,
@@ -12781,11 +12808,11 @@
   {
     "CODIGO": 2494,
     "DESCRIPCION": "Planchita de Pelo OSR Regulable OSR 198",
-    "PRECIO TARJETA": 24120,
+    "PRECIO TARJETA": 23300,
     "CATEGORIA": "Belleza y cuidado personal",
-    "PRECIO EFECTIVO": 20500,
+    "PRECIO EFECTIVO": 19800,
     "STOCK": 3,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2493,
@@ -13189,8 +13216,8 @@
     "PRECIO TARJETA": 55040,
     "CATEGORIA": "Climatizacion",
     "PRECIO EFECTIVO": 46800,
-    "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 0,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2448,
@@ -13411,11 +13438,11 @@
   {
     "CODIGO": 2424,
     "DESCRIPCION": "Estufa de 2 velas Sprint",
-    "PRECIO TARJETA": 38830,
+    "PRECIO TARJETA": 29410,
     "CATEGORIA": "Auriculares Gamer",
-    "PRECIO EFECTIVO": 33000,
+    "PRECIO EFECTIVO": 25000,
     "STOCK": 2,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2423,
@@ -15080,7 +15107,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 28200,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2237,
@@ -16268,7 +16295,7 @@
     "CATEGORIA": "Art. Para mate/café/te",
     "PRECIO EFECTIVO": 29000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2104,
@@ -16781,7 +16808,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 24000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2046,
@@ -19279,9 +19306,9 @@
   {
     "CODIGO": 1765,
     "DESCRIPCION": "Tender Vertical de 3 pisos ",
-    "PRECIO TARJETA": 32200,
+    "PRECIO TARJETA": 37000,
     "CATEGORIA": "Varios",
-    "PRECIO EFECTIVO": 27400,
+    "PRECIO EFECTIVO": 31500,
     "STOCK": 0,
     "ESTADO": "OK"
   },
@@ -19723,7 +19750,7 @@
     "PRECIO TARJETA": 45880,
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 39000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -22486,7 +22513,7 @@
     "PRECIO TARJETA": 13000,
     "CATEGORIA": "Art. para Comercios",
     "PRECIO EFECTIVO": 11100,
-    "STOCK": 4,
+    "STOCK": 6,
     "ESTADO": "OK"
   },
   {
@@ -27347,7 +27374,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 6700,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 705,
@@ -27715,7 +27742,7 @@
     "PRECIO TARJETA": 20690,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 17600,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -29876,7 +29903,7 @@
     "CATEGORIA": "Cables varios",
     "PRECIO EFECTIVO": 2500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 419,
@@ -31153,7 +31180,7 @@
     "PRECIO TARJETA": 13410,
     "CATEGORIA": "Auriculares Vincha Inalambricos",
     "PRECIO EFECTIVO": 11400,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
