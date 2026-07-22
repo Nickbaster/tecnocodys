@@ -30,17 +30,37 @@ header {
     margin-bottom: 5px;
 }
 
-header p{
-    margin: 5px 0 15px 0;
+header p.subtitulo {
+    margin: 5px 0 10px 0;
     color: #94a3b8;
     font-size: 15px;
+}
+
+/* SECCIÓN DE SUCURSALES Y UBICACIONES */
+.sucursales-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 10px 0 15px 0;
+}
+
+.sucursal-item {
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    margin: 0;
 }
 
 .buscador-contenedor {
     position: relative;
     width: 90%;
     max-width: 700px;
-    margin: 20px auto 0 auto;
+    margin: 15px auto 0 auto;
     display: flex;
     align-items: center;
 }
@@ -535,7 +555,11 @@ header p{
     .flecha-btn { display: none; }
     .categorias { padding: 10px 15px !important; }
 
-    /* Ajuste del carrito circular para celulares metido adentro del@media */
+    .sucursales-contenedor {
+        flex-direction: column;
+        gap: 6px;
+    }
+
     .carrito-barra {
         top: 15px;
         right: 15px;
@@ -558,8 +582,12 @@ header p{
     <div class="logo-contenedor">
         <img src="logo.jpg" alt="Tecnocodys" style="max-width: 280px; height: auto; border-radius: 4px;">
     </div>
-    <p style="margin-bottom: 2px;">Catálogo de tecnología</p>
-    <p style="margin: 0 0 15px 0; color: #38bdf8; font-size: 13px; font-weight: bold;">📍 Gil 87, casi Mansilla • Santa Rosa, LP</p>
+    <p class="subtitulo">Catálogo de tecnología</p>
+    
+    <div class="sucursales-contenedor">
+        <p class="sucursal-item">📍 Casa Central: Gil 87, casi Mansilla • Santa Rosa, LP</p>
+        <p class="sucursal-item">📍 Sucursal: Av. San Martín 702, esq. Urquiza</p>
+    </div>
     
     <div class="buscador-contenedor">
         <input type="text" id="buscar" placeholder="🔍 Buscar productos...">
@@ -755,7 +783,7 @@ function filtrarProductos() {
     } else if (ordenActivo === "az") {
         productosFiltrados.sort((a, b) => String(a.DESCRIPCION).localeCompare(String(b.DESCRIPCION)));
     } else if (ordenActivo === "za") {
-        productosFiltrados.sort((a, b) => String(b.DESCRIPCION).localeCompare(String(b.DESCRIPCION)));
+        productosFiltrados.sort((a, b) => String(b.DESCRIPCION).localeCompare(String(a.DESCRIPCION)));
     }
 
     document.getElementById("productos").innerHTML = "";
@@ -944,7 +972,6 @@ function verCarrito(){
 }
 
 function cerrarCarrito(){
-    document.getElementById("none").style.display = "none"; // Evita errores de ID ausentes
     document.getElementById("modalCarrito").style.display = "none";
 }
 
