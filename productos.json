@@ -1,5 +1,59 @@
 [
   {
+    "CODIGO": 3962,
+    "DESCRIPCION": "Cable de red de 3 metros UTP CAT5",
+    "PRECIO TARJETA": 3600,
+    "CATEGORIA": "Conectividad",
+    "PRECIO EFECTIVO": 3100,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3961,
+    "DESCRIPCION": "Cable para Starlink 12v/24v 3m",
+    "PRECIO TARJETA": 44700,
+    "CATEGORIA": "Cables varios",
+    "PRECIO EFECTIVO": 38000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3960,
+    "DESCRIPCION": "Pava bigstar corte hervidora cromada",
+    "PRECIO TARJETA": 24120,
+    "CATEGORIA": "Hogar",
+    "PRECIO EFECTIVO": 20500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3959,
+    "DESCRIPCION": "Pilas recargables NM-AA270 x2 unidades",
+    "PRECIO TARJETA": 11250,
+    "CATEGORIA": "Pilas y baterias",
+    "PRECIO EFECTIVO": 9600,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3958,
+    "DESCRIPCION": "Cargador 2.6 micro USB IB-2607",
+    "PRECIO TARJETA": 5880,
+    "CATEGORIA": "Cargadores Micro USB",
+    "PRECIO EFECTIVO": 5000,
+    "STOCK": 5,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 3957,
+    "DESCRIPCION": "Cable de carga micro USB K-01",
+    "PRECIO TARJETA": 4120,
+    "CATEGORIA": "Cargadores Micro USB",
+    "PRECIO EFECTIVO": 3500,
+    "STOCK": 4,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 3956,
     "DESCRIPCION": "Canilla Negra Pared Monocomando Canilla Flexible Lluvia cocina",
     "PRECIO TARJETA": 57650,
@@ -429,7 +483,7 @@
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 18000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3907,
@@ -753,7 +807,7 @@
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 10900,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3871,
@@ -1005,7 +1059,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 24400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3843,
@@ -1158,7 +1212,7 @@
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 12500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3826,
@@ -2596,7 +2650,7 @@
     "PRECIO TARJETA": 13000,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 11100,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -2615,7 +2669,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 5000,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3663,
@@ -3124,7 +3178,7 @@
   {
     "CODIGO": 3606,
     "DESCRIPCION": "Tira de neon blanco calido 5 metros con control",
-    "PRECIO TARJETA": 23090,
+    "PRECIO TARJETA": 23060,
     "CATEGORIA": "Iluminacion/Electricidad",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 1,
@@ -3866,7 +3920,7 @@
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 15500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3523,
@@ -3889,11 +3943,11 @@
   {
     "CODIGO": 3521,
     "DESCRIPCION": "PIZARRA MAGICA MULTICOLOR DE 16 PULGADAS",
-    "PRECIO TARJETA": 12470,
+    "PRECIO TARJETA": 12230,
     "CATEGORIA": "REGALOS",
-    "PRECIO EFECTIVO": 10600,
+    "PRECIO EFECTIVO": 10400,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3520,
@@ -4550,7 +4604,7 @@
     "CATEGORIA": "Climatizacion",
     "PRECIO EFECTIVO": 25900,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3447,
@@ -4564,11 +4618,11 @@
   {
     "CODIGO": 3446,
     "DESCRIPCION": "Bola media Esfera colores ritmica",
-    "PRECIO TARJETA": 16220,
+    "PRECIO TARJETA": 15880,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 13800,
+    "PRECIO EFECTIVO": 13500,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3445,
@@ -6224,7 +6278,7 @@
     "CATEGORIA": "Auriculares Vincha",
     "PRECIO EFECTIVO": 22100,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3261,
@@ -6250,7 +6304,7 @@
     "PRECIO TARJETA": 10260,
     "CATEGORIA": "Fuentes",
     "PRECIO EFECTIVO": 8700,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -6719,7 +6773,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8600,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3205,
@@ -7663,7 +7717,7 @@
     "PRECIO TARJETA": 19760,
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 16800,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -10864,11 +10918,11 @@
   {
     "CODIGO": 2737,
     "DESCRIPCION": "BOLA MEDIA ESFERA BLUETOOTH/MP3-USB MG803 HT-6400",
-    "PRECIO TARJETA": 34690,
+    "PRECIO TARJETA": 21760,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 29500,
+    "PRECIO EFECTIVO": 18500,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2736,
@@ -12010,7 +12064,7 @@
     "PRECIO TARJETA": 4120,
     "CATEGORIA": "Cable/Tipo C",
     "PRECIO EFECTIVO": 3500,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -12610,11 +12664,11 @@
   {
     "CODIGO": 2541,
     "DESCRIPCION": "PIZARRA MAGICA DE NIÑOS 12\" WTM-5 ",
-    "PRECIO TARJETA": 11340,
+    "PRECIO TARJETA": 10820,
     "CATEGORIA": "Hogar",
-    "PRECIO EFECTIVO": 9600,
+    "PRECIO EFECTIVO": 9200,
     "STOCK": 2,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2540,
@@ -13730,7 +13784,7 @@
     "CATEGORIA": "Camaras, Webcam, Seguridad",
     "PRECIO EFECTIVO": 37000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2416,
@@ -13820,7 +13874,7 @@
     "CATEGORIA": "Climatizacion",
     "PRECIO EFECTIVO": 25900,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2406,
@@ -14248,11 +14302,11 @@
   {
     "CODIGO": 2359,
     "DESCRIPCION": "PIZARRA DIGITAL 8.5 PLG LCD",
-    "PRECIO TARJETA": 7420,
+    "PRECIO TARJETA": 7290,
     "CATEGORIA": "Jueguetes niños",
-    "PRECIO EFECTIVO": 6300,
+    "PRECIO EFECTIVO": 6200,
     "STOCK": 3,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2358,
@@ -17861,7 +17915,7 @@
     "CATEGORIA": "Climatizacion",
     "PRECIO EFECTIVO": 46600,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1953,
@@ -18481,7 +18535,7 @@
     "PRECIO TARJETA": 16430,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 14000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -22568,7 +22622,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 49500,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1413,
@@ -22657,7 +22711,7 @@
     "PRECIO TARJETA": 19760,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 16800,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -22946,7 +23000,7 @@
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 18400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1370,
@@ -27598,7 +27652,7 @@
     "PRECIO TARJETA": 7900,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 6700,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -28129,7 +28183,7 @@
     "PRECIO TARJETA": 4140,
     "CATEGORIA": "Cables con RCA",
     "PRECIO EFECTIVO": 3500,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -29272,7 +29326,7 @@
     "PRECIO TARJETA": 6030,
     "CATEGORIA": "Cables de audio y video",
     "PRECIO EFECTIVO": 5100,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -29399,7 +29453,7 @@
     "CATEGORIA": "Cables con RCA",
     "PRECIO EFECTIVO": 2600,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 501,
@@ -30649,7 +30703,7 @@
     "PRECIO TARJETA": 21180,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 18000,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -30988,11 +31042,11 @@
   {
     "CODIGO": 284,
     "DESCRIPCION": "Teclado noga NKB-78011",
-    "PRECIO TARJETA": 17690,
+    "PRECIO TARJETA": 13500,
     "CATEGORIA": "Teclados",
-    "PRECIO EFECTIVO": 15000,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 11500,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 283,
@@ -31378,7 +31432,7 @@
     "PRECIO TARJETA": 5400,
     "CATEGORIA": "Cargador Universal celular",
     "PRECIO EFECTIVO": 4600,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -31405,7 +31459,7 @@
     "PRECIO TARJETA": 13410,
     "CATEGORIA": "Auriculares Vincha Inalambricos",
     "PRECIO EFECTIVO": 11400,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -31468,7 +31522,7 @@
     "PRECIO TARJETA": 5040,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 4300,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -32269,7 +32323,7 @@
     "PRECIO TARJETA": 3590,
     "CATEGORIA": "Cables/Micro USB",
     "PRECIO EFECTIVO": 3100,
-    "STOCK": 7,
+    "STOCK": 9,
     "ESTADO": "Bajar Precio"
   },
   {
