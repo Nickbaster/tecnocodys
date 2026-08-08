@@ -1,5 +1,14 @@
 [
   {
+    "CODIGO": 4000,
+    "DESCRIPCION": "Nebulizador Mesh Portátil Jls-w302 Inalámbrico Silencioso",
+    "PRECIO TARJETA": 22350,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 19000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 3999,
     "DESCRIPCION": "Microfono inalambrico corbatero F9-TC Legatus",
     "PRECIO TARJETA": 32940,
@@ -13933,11 +13942,11 @@
   {
     "CODIGO": 2436,
     "DESCRIPCION": "Balanza comercial Mang 40 Kg",
-    "PRECIO TARJETA": 91650,
+    "PRECIO TARJETA": 89410,
     "CATEGORIA": "Art. para Comercios",
-    "PRECIO EFECTIVO": 77900,
+    "PRECIO EFECTIVO": 76000,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2435,
@@ -28341,7 +28350,7 @@
   },
   {
     "CODIGO": 665,
-    "DESCRIPCION": "Tira led 5050 de 5 metros RGB",
+    "DESCRIPCION": "Tira led 5050 de 5 metros RGB (21 colores- Tiene Blanco)",
     "PRECIO TARJETA": 20690,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 17600,
@@ -30762,7 +30771,7 @@
   },
   {
     "CODIGO": 352,
-    "DESCRIPCION": "Kit tira led chica multicolor Largo 5 metros 2835 - control remoto 3528",
+    "DESCRIPCION": "Kit tira led chica multicolor Largo 5 metros 2835 - 3 colores (rojo-azul-verde)",
     "PRECIO TARJETA": 14320,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 12200,
