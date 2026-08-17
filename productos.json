@@ -1,7 +1,16 @@
 [
   {
+    "CODIGO": 4011,
+    "DESCRIPCION": "Auto con control remoto CX-1203A",
+    "PRECIO TARJETA": 25300,
+    "CATEGORIA": "Jueguetes niños",
+    "PRECIO EFECTIVO": 21500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4010,
-    "DESCRIPCION": "Grasa Disipadora Termica Chemitec Jeringa 5cc",
+    "DESCRIPCION": "Grasa Pasta Disipadora Termica Chemitec Jeringa 5cc",
     "PRECIO TARJETA": 10000,
     "CATEGORIA": "Informatica/Tablet",
     "PRECIO EFECTIVO": 8500,
@@ -14,7 +23,7 @@
     "PRECIO TARJETA": 5120,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 4400,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -230,7 +239,7 @@
     "PRECIO TARJETA": 40000,
     "CATEGORIA": "Camaras, Webcam, Seguridad",
     "PRECIO EFECTIVO": 34000,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -716,7 +725,7 @@
     "PRECIO TARJETA": 27060,
     "CATEGORIA": "Pilas y baterias",
     "PRECIO EFECTIVO": 23000,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -1217,11 +1226,11 @@
   {
     "CODIGO": 3873,
     "DESCRIPCION": "Auricular Gamer Netmak NM-N18",
-    "PRECIO TARJETA": 25220,
+    "PRECIO TARJETA": 32660,
     "CATEGORIA": "Auriculares Gamer",
-    "PRECIO EFECTIVO": 21400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 27800,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3872,
@@ -1285,15 +1294,6 @@
     "PRECIO EFECTIVO": 31500,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
-  },
-  {
-    "CODIGO": 3865,
-    "DESCRIPCION": "Transmisor FM Bluetooth NM-CAR38",
-    "PRECIO TARJETA": 14120,
-    "CATEGORIA": "Conectividad",
-    "PRECIO EFECTIVO": 12000,
-    "STOCK": 0,
-    "ESTADO": "OK"
   },
   {
     "CODIGO": 3864,
@@ -1400,7 +1400,7 @@
     "PRECIO TARJETA": 10350,
     "CATEGORIA": "Para Cocina",
     "PRECIO EFECTIVO": 8800,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -1424,10 +1424,10 @@
   {
     "CODIGO": 3850,
     "DESCRIPCION": "PLANCHA DE PELO S-1134 Nano Titanium 250 grados",
-    "PRECIO TARJETA": 23290,
+    "PRECIO TARJETA": 23400,
     "CATEGORIA": "Belleza y cuidado personal",
-    "PRECIO EFECTIVO": 19800,
-    "STOCK": 0,
+    "PRECIO EFECTIVO": 19900,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -1649,11 +1649,11 @@
   {
     "CODIGO": 3825,
     "DESCRIPCION": "Transmisor FM bluetooth USB + Tipo c NM-CAR38",
-    "PRECIO TARJETA": 13600,
+    "PRECIO TARJETA": 13000,
     "CATEGORIA": "Conectividad",
-    "PRECIO EFECTIVO": 11600,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 11100,
+    "STOCK": 4,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3824,
@@ -2767,7 +2767,7 @@
     "PRECIO TARJETA": 41670,
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 35400,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -3262,7 +3262,7 @@
     "PRECIO TARJETA": 23090,
     "CATEGORIA": "Iluminacion/Electricidad",
     "PRECIO EFECTIVO": 19600,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -3559,8 +3559,8 @@
     "PRECIO TARJETA": 23090,
     "CATEGORIA": "Iluminacion/Electricidad",
     "PRECIO EFECTIVO": 19600,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3610,
@@ -3793,7 +3793,7 @@
     "PRECIO TARJETA": 35880,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 30500,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -6283,11 +6283,11 @@
   {
     "CODIGO": 3308,
     "DESCRIPCION": "Combo teclado y mouse gamer Vortex ",
-    "PRECIO TARJETA": 25470,
+    "PRECIO TARJETA": 25000,
     "CATEGORIA": "Combos",
-    "PRECIO EFECTIVO": 21600,
+    "PRECIO EFECTIVO": 21300,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3307,
@@ -7141,7 +7141,7 @@
     "PRECIO TARJETA": 4940,
     "CATEGORIA": "Auriculares comunes",
     "PRECIO EFECTIVO": 4200,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -8005,7 +8005,7 @@
     "PRECIO TARJETA": 26200,
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 22300,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -10162,10 +10162,10 @@
   {
     "CODIGO": 2871,
     "DESCRIPCION": "PAVA DE 2L CORTE MATE CTM-OSR9145 ORYX",
-    "PRECIO TARJETA": 28240,
+    "PRECIO TARJETA": 32910,
     "CATEGORIA": "Hogar",
-    "PRECIO EFECTIVO": 24000,
-    "STOCK": 0,
+    "PRECIO EFECTIVO": 28000,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -10642,7 +10642,7 @@
     "PRECIO TARJETA": 19160,
     "CATEGORIA": "Controles/Joystick/Consolas",
     "PRECIO EFECTIVO": 16300,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -12925,10 +12925,10 @@
   {
     "CODIGO": 2558,
     "DESCRIPCION": "Puntero Laser Recargable 303",
-    "PRECIO TARJETA": 19850,
+    "PRECIO TARJETA": 19400,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 16900,
-    "STOCK": 0,
+    "PRECIO EFECTIVO": 16500,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -12961,9 +12961,9 @@
   {
     "CODIGO": 2554,
     "DESCRIPCION": "VINCHA BT BUEN SONIDO (SOLO NEGRO ) P9V",
-    "PRECIO TARJETA": 24130,
+    "PRECIO TARJETA": 23800,
     "CATEGORIA": "Auriculares Vincha Inalambricos",
-    "PRECIO EFECTIVO": 20500,
+    "PRECIO EFECTIVO": 20200,
     "STOCK": 3,
     "ESTADO": "OK"
   },
@@ -14635,11 +14635,11 @@
   {
     "CODIGO": 2368,
     "DESCRIPCION": "PENDRIVE KINGSTON 64GB ",
-    "PRECIO TARJETA": 22470,
+    "PRECIO TARJETA": 24000,
     "CATEGORIA": "Almacenamiento",
-    "PRECIO EFECTIVO": 19100,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 20400,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2367,
@@ -17419,8 +17419,8 @@
     "PRECIO TARJETA": 12290,
     "CATEGORIA": "Cables de red",
     "PRECIO EFECTIVO": 10400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 2,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2055,
@@ -19288,11 +19288,11 @@
   {
     "CODIGO": 1844,
     "DESCRIPCION": "PARLANTE PC 2.0 NOGA 6W NG-512P",
-    "PRECIO TARJETA": 22300,
+    "PRECIO TARJETA": 20000,
     "CATEGORIA": "Parlantes",
-    "PRECIO EFECTIVO": 19000,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 17000,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1843,
@@ -19405,9 +19405,9 @@
   {
     "CODIGO": 1831,
     "DESCRIPCION": "Cartel Luminoso \"ABIERTO\" 48 x 25 cm ",
-    "PRECIO TARJETA": 26820,
+    "PRECIO TARJETA": 26500,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 22800,
+    "PRECIO EFECTIVO": 22500,
     "STOCK": 2,
     "ESTADO": "OK"
   },
@@ -21253,7 +21253,7 @@
     "PRECIO TARJETA": 10270,
     "CATEGORIA": "REGALOS",
     "PRECIO EFECTIVO": 8700,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -21424,7 +21424,7 @@
     "PRECIO TARJETA": 10590,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 9000,
-    "STOCK": 7,
+    "STOCK": 6,
     "ESTADO": "OK"
   },
   {
@@ -23269,7 +23269,7 @@
     "PRECIO TARJETA": 23800,
     "CATEGORIA": "Controles/Joystick/Consolas",
     "PRECIO EFECTIVO": 20200,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -24403,7 +24403,7 @@
     "PRECIO TARJETA": 9430,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8000,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -24826,7 +24826,7 @@
     "PRECIO TARJETA": 16530,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 14100,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -25240,7 +25240,7 @@
     "PRECIO TARJETA": 16470,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 14000,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -27661,8 +27661,8 @@
     "PRECIO TARJETA": 66470,
     "CATEGORIA": "Categorias",
     "PRECIO EFECTIVO": 56500,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 751,
@@ -28300,7 +28300,7 @@
     "PRECIO TARJETA": 25880,
     "CATEGORIA": "Cables de audio y video",
     "PRECIO EFECTIVO": 22000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -28588,8 +28588,8 @@
     "PRECIO TARJETA": 5200,
     "CATEGORIA": "Cables de red",
     "PRECIO EFECTIVO": 4400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 4,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 647,
@@ -29740,7 +29740,7 @@
     "PRECIO TARJETA": 6030,
     "CATEGORIA": "Cables de audio y video",
     "PRECIO EFECTIVO": 5100,
-    "STOCK": 5,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -29863,10 +29863,10 @@
   {
     "CODIGO": 502,
     "DESCRIPCION": "Cable Auxiliar a 2 RCA",
-    "PRECIO TARJETA": 3090,
+    "PRECIO TARJETA": 2900,
     "CATEGORIA": "Cables con RCA",
-    "PRECIO EFECTIVO": 2600,
-    "STOCK": 3,
+    "PRECIO EFECTIVO": 2500,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -30820,7 +30820,7 @@
     "PRECIO TARJETA": 3130,
     "CATEGORIA": "Materiales Electricos",
     "PRECIO EFECTIVO": 2700,
-    "STOCK": 3,
+    "STOCK": 5,
     "ESTADO": "OK"
   },
   {
@@ -31150,10 +31150,10 @@
   {
     "CODIGO": 319,
     "DESCRIPCION": "Tripode para camara Flexible celular",
-    "PRECIO TARJETA": 3555.596304,
+    "PRECIO TARJETA": 3800,
     "CATEGORIA": "Accesorios para celular",
-    "PRECIO EFECTIVO": 3000,
-    "STOCK": 7,
+    "PRECIO EFECTIVO": 3200,
+    "STOCK": 6,
     "ESTADO": "OK"
   },
   {
@@ -31873,7 +31873,7 @@
     "PRECIO TARJETA": 13410,
     "CATEGORIA": "Auriculares Vincha Inalambricos",
     "PRECIO EFECTIVO": 11400,
-    "STOCK": 6,
+    "STOCK": 5,
     "ESTADO": "OK"
   },
   {
@@ -32080,7 +32080,7 @@
     "PRECIO TARJETA": 3630,
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 3100,
-    "STOCK": 0,
+    "STOCK": 3,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -32206,7 +32206,7 @@
     "PRECIO TARJETA": 12660,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 10800,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -32599,10 +32599,10 @@
   {
     "CODIGO": 61,
     "DESCRIPCION": "Laser multipunto YX-09",
-    "PRECIO TARJETA": 29410,
+    "PRECIO TARJETA": 29000,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 25000,
-    "STOCK": 0,
+    "PRECIO EFECTIVO": 24700,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
