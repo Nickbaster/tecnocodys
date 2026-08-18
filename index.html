@@ -1,12 +1,3 @@
-ChatGPT Plus
-Sí. Te paso el código completo, manteniendo tu diseño y funcionamiento actual, pero agregando el modo especial:
-
-Normalmente muestra solo productos con stock.
-Si escribís exactamente STOCK0 en el buscador, muestra también los productos sin stock.
-Mientras está activo, podés seguir buscando por código o descripción.
-Al borrar STOCK0, vuelve automáticamente al modo normal.
-También agregué un aviso visual 🔓 Modo stock 0 activo para que sepas que está habilitado.
-El código STOCK0 lo podés cambiar fácilmente por cualquier clave que quieras.
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,18 +5,24 @@ El código STOCK0 lo podés cambiar fácilmente por cualquier clave que quieras.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Catálogo Tecnocodys</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
+
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif; 
-    background: #f8fafc; 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f8fafc;
     margin: 0;
     color: #0f172a;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: white;
     text-align: center;
     padding: 20px 20px;
@@ -44,6 +41,10 @@ header p.subtitulo {
     color: #94a3b8;
     font-size: 15px;
 }
+
+/* =========================
+   SUCURSALES
+========================= */
 
 .sucursales-contenedor {
     display: flex;
@@ -64,6 +65,10 @@ header p.subtitulo {
     margin: 0;
 }
 
+/* =========================
+   BUSCADOR
+========================= */
+
 .buscador-contenedor {
     position: relative;
     width: 90%;
@@ -75,7 +80,7 @@ header p.subtitulo {
 
 #buscar {
     width: 100%;
-    padding: 15px 50px 15px 20px; 
+    padding: 15px 50px 15px 20px;
     font-size: 18px;
     border: none;
     border-radius: 30px;
@@ -101,23 +106,27 @@ header p.subtitulo {
     color: #ef4444;
 }
 
-/* AVISO MODO STOCK 0 */
+/* AVISO STOCK0 */
+
 #avisoStock0 {
     display: none;
     width: 90%;
     max-width: 700px;
-    margin: 8px auto 0 auto;
-    padding: 8px 15px;
-    box-sizing: border-box;
+    margin: 5px auto 0 auto;
     background: #fef3c7;
     color: #92400e;
     border: 1px solid #f59e0b;
+    padding: 7px 10px;
     border-radius: 10px;
+    box-sizing: border-box;
     font-size: 12px;
     font-weight: bold;
 }
 
-/* CATEGORÍAS */
+/* =========================
+   CATEGORÍAS
+========================= */
+
 .categorias-wrapper {
     margin: 15px 15px 5px 15px;
     background: white;
@@ -130,13 +139,13 @@ header p.subtitulo {
 .categorias {
     display: flex;
     gap: 8px;
-    justify-content: flex-start; 
-    padding: 10px 40px !important; 
+    justify-content: flex-start;
+    padding: 10px 40px !important;
     margin: 0;
-    overflow-x: auto; 
-    white-space: nowrap; 
+    overflow-x: auto;
+    white-space: nowrap;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .categorias::-webkit-scrollbar,
@@ -146,8 +155,8 @@ header p.subtitulo {
 
 .categorias,
 .ordenamiento {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .categoria-btn {
@@ -159,7 +168,7 @@ header p.subtitulo {
     font-size: 13px;
     font-weight: 600;
     color: #475569;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     transition: all 0.2s ease;
 }
 
@@ -175,6 +184,8 @@ header p.subtitulo {
     color: white;
     border-color: #1e293b;
 }
+
+/* FLECHAS */
 
 .flecha-btn {
     background: #0f172a;
@@ -200,10 +211,18 @@ header p.subtitulo {
     background: #334155;
 }
 
-.flecha-btn.izq { left: 8px; }
-.flecha-btn.der { right: 8px; }
+.flecha-btn.izq {
+    left: 8px;
+}
 
-/* ORDENAMIENTO */
+.flecha-btn.der {
+    right: 8px;
+}
+
+/* =========================
+   ORDENAMIENTO
+========================= */
+
 .ordenamiento {
     display: flex;
     gap: 8px;
@@ -233,6 +252,10 @@ header p.subtitulo {
     border-color: #bae6fd;
 }
 
+/* =========================
+   CONTADOR
+========================= */
+
 #contadorProductos {
     text-align: center;
     color: #64748b;
@@ -241,16 +264,19 @@ header p.subtitulo {
     font-weight: 600;
 }
 
-/* CARRITO */
+/* =========================
+   CARRITO
+========================= */
+
 .carrito-barra {
     position: fixed;
     top: 20px;
     right: 20px;
     background: white !important;
-    border: 2px solid #16a34a; 
-    width: 50px;  
-    height: 50px; 
-    border-radius: 50%; 
+    border: 2px solid #16a34a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,7 +290,7 @@ header p.subtitulo {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #ef4444; 
+    background: #ef4444;
     color: white;
     border-radius: 50%;
     padding: 2px 7px;
@@ -278,7 +304,10 @@ header p.subtitulo {
     transform: scale(1.1);
 }
 
-/* PRODUCTOS */
+/* =========================
+   PRODUCTOS
+========================= */
+
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -286,23 +315,26 @@ header p.subtitulo {
     padding: 20px;
 }
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
+
 .card {
     background: white;
-    border-radius: 16px; 
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     min-height: 470px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .card-click {
@@ -314,30 +346,56 @@ header p.subtitulo {
 
 .card img {
     width: 100%;
-    height: 220px; 
+    height: 220px;
     object-fit: cover;
 }
+
+/* =========================
+   TAG CATEGORIA
+========================= */
 
 .categoria-tag {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(15, 23, 42, 0.85); 
+    background: rgba(15, 23, 42, 0.85);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: bold;
     text-transform: uppercase;
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px);
     z-index: 2;
 }
+
+/* =========================
+   TAG SIN STOCK
+========================= */
+
+.sin-stock-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #dc2626;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   INFO
+========================= */
 
 .info {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .info h3 {
@@ -345,10 +403,10 @@ header p.subtitulo {
     font-size: 16px;
     color: #1e293b;
     display: -webkit-box;
-    -webkit-line-clamp: 2; 
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    height: 44px; 
+    height: 44px;
 }
 
 .info .codigo-texto {
@@ -358,9 +416,13 @@ header p.subtitulo {
 }
 
 .codigo-alerta {
-    color: #ef4444 !important; 
-    font-weight: bold; 
+    color: #ef4444 !important;
+    font-weight: bold;
 }
+
+/* =========================
+   PRECIOS
+========================= */
 
 .contenedor-precios {
     margin-top: 5px;
@@ -371,7 +433,7 @@ header p.subtitulo {
 }
 
 .precio-efectivo {
-    color: #16a34a; 
+    color: #16a34a;
     font-size: 22px;
     font-weight: 800;
     margin: 0;
@@ -384,7 +446,10 @@ header p.subtitulo {
     margin: 0;
 }
 
-/* BOTONES */
+/* =========================
+   BOTONES
+========================= */
+
 .botones-tarjeta {
     padding: 0 15px 15px 15px;
 }
@@ -426,7 +491,16 @@ header p.subtitulo {
     background: #1e293b;
 }
 
-/* MODALES */
+.btn-carrito:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* =========================
+   MODALES
+========================= */
+
 .modal-carrito,
 .modal-ficha {
     display: none;
@@ -466,6 +540,10 @@ header p.subtitulo {
     color: #0f172a;
 }
 
+/* =========================
+   WHATSAPP
+========================= */
+
 .btn-whatsapp-carrito,
 .btn-whatsapp-ficha {
     width: 100%;
@@ -484,7 +562,10 @@ header p.subtitulo {
     gap: 8px;
 }
 
-/* FICHA */
+/* =========================
+   FICHA
+========================= */
+
 .ficha-img {
     width: 100%;
     max-height: 300px;
@@ -542,7 +623,10 @@ header p.subtitulo {
     margin: 4px 0 0 0;
 }
 
-/* PAGINACIÓN */
+/* =========================
+   PAGINACIÓN
+========================= */
+
 .paginacion-contenedor {
     text-align: center;
     padding: 20px 20px 40px 20px;
@@ -564,7 +648,10 @@ header p.subtitulo {
     background: #1e293b;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 600px) {
 
     header {
@@ -581,7 +668,7 @@ header p.subtitulo {
         gap: 12px;
         padding: 10px;
     }
-    
+
     .card {
         min-height: 380px;
         border-radius: 12px;
@@ -596,6 +683,13 @@ header p.subtitulo {
         left: 8px;
         font-size: 9px;
         padding: 4px 8px;
+    }
+
+    .sin-stock-tag {
+        top: 8px;
+        right: 8px;
+        font-size: 8px;
+        padding: 4px 7px;
     }
 
     .info {
@@ -641,7 +735,7 @@ header p.subtitulo {
         padding: 8px;
         margin-top: 6px;
     }
-    
+
     .flecha-btn {
         display: none;
     }
@@ -670,6 +764,7 @@ header p.subtitulo {
         padding: 1px 6px;
     }
 }
+
 </style>
 </head>
 
@@ -678,12 +773,16 @@ header p.subtitulo {
 <header>
 
     <div class="logo-contenedor">
-        <img src="logo.jpg"
-             alt="Tecnocodys"
-             style="max-width: 280px; height: auto; border-radius: 4px;">
+        <img
+            src="logo.jpg"
+            alt="Tecnocodys"
+            style="max-width: 280px; height: auto; border-radius: 4px;"
+        >
     </div>
 
-    <p class="subtitulo">Catálogo de tecnología</p>
+    <p class="subtitulo">
+        Catálogo de tecnología
+    </p>
 
     <div class="sucursales-contenedor">
 
@@ -714,16 +813,19 @@ header p.subtitulo {
 
     </div>
 
-    <!-- AVISO QUE APARECE SOLO CON STOCK0 -->
     <div id="avisoStock0">
-        🔓 Modo stock 0 activo — mostrando productos sin stock
+        🔒 Modo STOCK0 activo — mostrando productos sin stock
     </div>
 
 </header>
 
+
 <div id="contadorProductos"></div>
 
-<!-- CARRITO -->
+
+<!-- =========================
+     CARRITO
+========================= -->
 
 <div
     id="carritoBarra"
@@ -739,16 +841,20 @@ header p.subtitulo {
         height="26px"
     >
 
-        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.89-2-2-2z"/>
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48-.08-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.89-2-1.99-2z"/>
 
     </svg>
 
-    <span id="cantidadCarrito">0</span>
+    <span id="cantidadCarrito">
+        0
+    </span>
 
 </div>
 
 
-<!-- CATEGORÍAS -->
+<!-- =========================
+     CATEGORÍAS
+========================= -->
 
 <div
     class="categorias-wrapper"
@@ -777,7 +883,9 @@ header p.subtitulo {
 </div>
 
 
-<!-- ORDENAMIENTO -->
+<!-- =========================
+     ORDEN
+========================= -->
 
 <div class="ordenamiento">
 
@@ -824,7 +932,9 @@ header p.subtitulo {
 </div>
 
 
-<!-- PRODUCTOS -->
+<!-- =========================
+     PRODUCTOS
+========================= -->
 
 <div
     class="productos"
@@ -832,7 +942,9 @@ header p.subtitulo {
 ></div>
 
 
-<!-- MODAL CARRITO -->
+<!-- =========================
+     MODAL CARRITO
+========================= -->
 
 <div
     id="modalCarrito"
@@ -848,7 +960,9 @@ header p.subtitulo {
             ✖
         </span>
 
-        <h2>🛒 Mi Carrito</h2>
+        <h2>
+            🛒 Mi Carrito
+        </h2>
 
         <div id="listaCarrito"></div>
 
@@ -864,7 +978,9 @@ header p.subtitulo {
 </div>
 
 
-<!-- MODAL FICHA -->
+<!-- =========================
+     MODAL FICHA
+========================= -->
 
 <div
     id="modalFicha"
@@ -887,7 +1003,9 @@ header p.subtitulo {
 </div>
 
 
-<!-- PAGINACIÓN -->
+<!-- =========================
+     PAGINACIÓN
+========================= -->
 
 <div class="paginacion-contenedor">
 
@@ -904,26 +1022,16 @@ header p.subtitulo {
 
 <script>
 
-/* =========================================================
+/* =========================
    CONFIGURACIÓN
-========================================================= */
+========================= */
 
 const numeroWhatsApp = "5492954736933";
 
-/*
-   🔐 CÓDIGO ESPECIAL
 
-   Este es el código que tenés que escribir en el buscador
-   para mostrar productos con STOCK 0.
-
-   Podés cambiarlo por el que quieras.
-*/
-const codigoMostrarSinStock = "STOCK0";
-
-
-/* =========================================================
+/* =========================
    VARIABLES
-========================================================= */
+========================= */
 
 let todosLosProductos = [];
 
@@ -936,21 +1044,29 @@ let textoBusqueda = "";
 let ordenActivo = "predeterminado";
 
 /*
-   Esta variable indica si estamos viendo
-   productos sin stock.
-*/
-let modoVerSinStock = false;
+   ESTA VARIABLE ES LA CLAVE.
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+   false = catálogo normal
+           solo productos con stock
+
+   true = modo STOCK0
+          permite mostrar productos sin stock
+*/
+let modoStock0 = false;
+
+
+let carrito =
+    JSON.parse(localStorage.getItem("carrito")) || [];
+
 
 const productosPorPagina = 24;
 
 let paginaActual = 1;
 
 
-/* =========================================================
+/* =========================
    CARRITO AL CARGAR
-========================================================= */
+========================= */
 
 window.addEventListener("load", () => {
 
@@ -960,9 +1076,9 @@ window.addEventListener("load", () => {
 });
 
 
-/* =========================================================
+/* =========================
    DESLIZAR CATEGORÍAS
-========================================================= */
+========================= */
 
 function deslizarCategorias(direccion) {
 
@@ -984,9 +1100,9 @@ function deslizarCategorias(direccion) {
 }
 
 
-/* =========================================================
+/* =========================
    CARGAR PRODUCTOS
-========================================================= */
+========================= */
 
 async function cargarProductos() {
 
@@ -1000,29 +1116,24 @@ async function cargarProductos() {
 
         todosLosProductos = productos;
 
-
         /*
-           IMPORTANTE:
-
-           Al comenzar, solamente mostramos
-           productos que tienen stock.
+           Al comenzar:
+           SOLO PRODUCTOS CON STOCK
         */
 
         productosFiltrados =
             todosLosProductos.filter(p =>
-                p.STOCK !== 0 &&
-                p.STOCK !== "0" &&
-                p.stock !== 0 &&
-                p.stock !== "0"
+                tieneStock(p)
             );
-
 
         actualizarPantalla();
 
         crearCategorias(productosFiltrados);
 
 
-        /* BUSCADOR */
+        /* =========================
+           BUSCADOR
+        ========================= */
 
         const inputBuscar =
             document.getElementById("buscar");
@@ -1031,54 +1142,124 @@ async function cargarProductos() {
             document.getElementById("limpiar-buscar");
 
 
-        inputBuscar.addEventListener("input", function() {
+        inputBuscar.addEventListener(
+            "input",
+            function() {
 
-            textoBusqueda =
-                this.value.toLowerCase();
-
-            botonLimpiar.style.display =
-                textoBusqueda !== ""
-                    ? "block"
-                    : "none";
-
-
-            paginaActual = 1;
-
-            filtrarProductos();
-
-        });
+                const texto =
+                    this.value
+                        .toLowerCase()
+                        .trim();
 
 
-        /* BOTÓN LIMPIAR */
+                /*
+                   Detectamos STOCK0
+                */
 
-        botonLimpiar.addEventListener("click", function() {
-
-            inputBuscar.value = "";
-
-            textoBusqueda = "";
-
-            botonLimpiar.style.display = "none";
-
-            paginaActual = 1;
-
-            filtrarProductos();
-
-            inputBuscar.focus();
-
-        });
+                modoStock0 =
+                    texto.includes("stock0");
 
 
-        /* CARGAR MÁS */
+                /*
+                   Sacamos STOCK0 del texto.
+
+                   Ejemplo:
+
+                   STOCK0 12345
+
+                   queda:
+
+                   12345
+                */
+
+                textoBusqueda =
+                    texto
+                        .replace(/stock0/g, "")
+                        .trim();
+
+
+                /*
+                   Mostrar / ocultar X
+                */
+
+                botonLimpiar.style.display =
+                    texto !== ""
+                        ? "block"
+                        : "none";
+
+
+                /*
+                   Mostrar aviso
+                */
+
+                const aviso =
+                    document.getElementById(
+                        "avisoStock0"
+                    );
+
+                aviso.style.display =
+                    modoStock0
+                        ? "block"
+                        : "none";
+
+
+                paginaActual = 1;
+
+
+                filtrarProductos();
+
+            }
+        );
+
+
+        /* =========================
+           LIMPIAR
+        ========================= */
+
+        botonLimpiar.addEventListener(
+            "click",
+            function() {
+
+                inputBuscar.value = "";
+
+                textoBusqueda = "";
+
+                modoStock0 = false;
+
+                botonLimpiar.style.display =
+                    "none";
+
+                document.getElementById(
+                    "avisoStock0"
+                ).style.display = "none";
+
+
+                paginaActual = 1;
+
+                filtrarProductos();
+
+                inputBuscar.focus();
+
+            }
+        );
+
+
+        /* =========================
+           CARGAR MÁS
+        ========================= */
 
         document
             .getElementById("btnCargarMas")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                paginaActual++;
+                    paginaActual++;
 
-                actualizarPantalla();
+                    actualizarPantalla();
 
-            });
+                }
+            );
 
 
     } catch (error) {
@@ -1088,26 +1269,22 @@ async function cargarProductos() {
             error
         );
 
-        document.getElementById("productos").innerHTML = `
-
+        document.getElementById(
+            "productos"
+        ).innerHTML = `
             <div style="
                 grid-column:1/-1;
                 text-align:center;
                 padding:40px;
                 color:#ef4444;
             ">
-
                 <h3>
                     ⚠️ No se pudieron cargar los productos
                 </h3>
-
                 <p>
-                    Verificá que el archivo productos.json
-                    esté correctamente ubicado.
+                    Revisá que productos.json esté disponible.
                 </p>
-
             </div>
-
         `;
 
     }
@@ -1115,11 +1292,29 @@ async function cargarProductos() {
 }
 
 
-/* =========================================================
-   ACTIVAR CATEGORÍA
-========================================================= */
+/* =========================
+   FUNCIÓN STOCK
+========================= */
 
-function activarCategoria(botonSeleccionado) {
+function tieneStock(producto) {
+
+    return !(
+        producto.STOCK === 0 ||
+        producto.STOCK === "0" ||
+        producto.stock === 0 ||
+        producto.stock === "0"
+    );
+
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+function activarCategoria(
+    botonSeleccionado
+) {
 
     document
         .querySelectorAll(".categoria-btn")
@@ -1132,10 +1327,6 @@ function activarCategoria(botonSeleccionado) {
 }
 
 
-/* =========================================================
-   CREAR CATEGORÍAS
-========================================================= */
-
 function crearCategorias(productos) {
 
     const contenedorCategorias =
@@ -1147,12 +1338,12 @@ function crearCategorias(productos) {
     const categoriesList =
         [
             ...new Set(
-                productos.map(p => p.CATEGORIA)
+                productos.map(
+                    p => p.CATEGORIA
+                )
             )
         ].sort();
 
-
-    /* TODAS */
 
     const btnTodas =
         document.createElement("button");
@@ -1177,47 +1368,51 @@ function crearCategorias(productos) {
     };
 
 
-    contenedorCategorias.appendChild(btnTodas);
+    contenedorCategorias.appendChild(
+        btnTodas
+    );
 
 
-    /* CATEGORÍAS */
+    categoriesList.forEach(
+        categoria => {
 
-    categoriesList.forEach(categoria => {
+            const boton =
+                document.createElement("button");
 
-        const boton =
-            document.createElement("button");
+            boton.className =
+                "categoria-btn";
 
-        boton.className =
-            "categoria-btn";
-
-        boton.textContent =
-            categoria;
-
-
-        boton.onclick = () => {
-
-            activarCategoria(boton);
-
-            categoriaActiva =
+            boton.textContent =
                 categoria;
 
-            paginaActual = 1;
 
-            filtrarProductos();
+            boton.onclick = () => {
 
-        };
+                activarCategoria(boton);
+
+                categoriaActiva =
+                    categoria;
+
+                paginaActual = 1;
+
+                filtrarProductos();
+
+            };
 
 
-        contenedorCategorias.appendChild(boton);
+            contenedorCategorias.appendChild(
+                boton
+            );
 
-    });
+        }
+    );
 
 }
 
 
-/* =========================================================
-   CAMBIAR ORDEN
-========================================================= */
+/* =========================
+   ORDEN
+========================= */
 
 function cambiarOrden(tipo) {
 
@@ -1268,269 +1463,291 @@ function cambiarOrden(tipo) {
 }
 
 
-/* =========================================================
+/* =========================
    FILTRAR PRODUCTOS
-========================================================= */
+========================= */
 
 function filtrarProductos() {
 
     /*
-       -------------------------------------------------------
-       DETECTAR CÓDIGO ESPECIAL
-       -------------------------------------------------------
+       ==========================================
+       MODO STOCK0
+       ==========================================
+
+       Si STOCK0 está escrito:
+
+       STOCK0
+       STOCK0 12345
+       STOCK0 samsung
+
+       se busca en TODOS los productos.
     */
 
-    const busquedaLimpia =
-        textoBusqueda.trim().toUpperCase();
-
-
-    if (
-        busquedaLimpia ===
-        codigoMostrarSinStock
-    ) {
-
-        modoVerSinStock = true;
-
-    } else {
-
-        modoVerSinStock = false;
-
-    }
-
-
-    /*
-       -------------------------------------------------------
-       MOSTRAR PRODUCTOS
-       -------------------------------------------------------
-    */
-
-    if (modoVerSinStock) {
-
-        /*
-           MODO ESPECIAL:
-           muestra absolutamente todos.
-        */
+    if (modoStock0) {
 
         productosFiltrados =
-            [...todosLosProductos];
+            todosLosProductos.filter(
+                producto => {
 
-    } else {
+                    /*
+                       Si solamente está escrito:
 
-        /*
-           MODO NORMAL:
-           solamente productos con stock.
-        */
+                       STOCK0
 
-        productosFiltrados =
-            todosLosProductos.filter(p =>
-                p.STOCK !== 0 &&
-                p.STOCK !== "0" &&
-                p.stock !== 0 &&
-                p.stock !== "0"
+                       mostramos todos.
+                    */
+
+                    if (
+                        textoBusqueda === ""
+                    ) {
+
+                        return true;
+
+                    }
+
+
+                    const codigo =
+                        String(
+                            producto.CODIGO || ""
+                        ).toLowerCase();
+
+
+                    const descripcion =
+                        String(
+                            producto.DESCRIPCION || ""
+                        ).toLowerCase();
+
+
+                    return (
+                        codigo.includes(
+                            textoBusqueda
+                        ) ||
+                        descripcion.includes(
+                            textoBusqueda
+                        )
+                    );
+
+                }
             );
 
+    } else {
+
+        /*
+           ==========================================
+           MODO NORMAL
+           ==========================================
+
+           SOLO PRODUCTOS CON STOCK
+        */
+
+        productosFiltrados =
+            todosLosProductos.filter(
+                producto =>
+                    tieneStock(producto)
+            );
+
+
+        /*
+           Aplicar búsqueda normal
+        */
+
+        if (
+            textoBusqueda !== ""
+        ) {
+
+            productosFiltrados =
+                productosFiltrados.filter(
+                    producto => {
+
+                        const codigo =
+                            String(
+                                producto.CODIGO || ""
+                            ).toLowerCase();
+
+
+                        const descripcion =
+                            String(
+                                producto.DESCRIPCION || ""
+                            ).toLowerCase();
+
+
+                        return (
+                            codigo.includes(
+                                textoBusqueda
+                            ) ||
+                            descripcion.includes(
+                                textoBusqueda
+                            )
+                        );
+
+                    }
+                );
+
+        }
+
     }
 
 
-    /*
-       -------------------------------------------------------
+    /* =========================
        CATEGORÍA
-       -------------------------------------------------------
-    */
+    ========================= */
 
-    if (categoriaActiva !== "Todas") {
+    if (
+        categoriaActiva !== "Todas"
+    ) {
 
         productosFiltrados =
             productosFiltrados.filter(
-                p =>
-                    p.CATEGORIA ===
+                producto =>
+                    producto.CATEGORIA ===
                     categoriaActiva
             );
 
     }
 
 
-    /*
-       -------------------------------------------------------
-       BÚSQUEDA
-       -------------------------------------------------------
-
-       Si escribiste STOCK0, NO buscamos esa palabra
-       dentro de los productos.
-
-       Si escribís cualquier otra cosa,
-       buscamos normalmente.
-    */
+    /* =========================
+       ORDENAMIENTO
+    ========================= */
 
     if (
-        textoBusqueda !== "" &&
-        busquedaLimpia !== codigoMostrarSinStock
+        ordenActivo === "baratos"
     ) {
 
-        productosFiltrados =
-            productosFiltrados.filter(p =>
-
-                String(p.CODIGO)
-                    .toLowerCase()
-                    .includes(textoBusqueda)
-
-                ||
-
-                String(p.DESCRIPCION)
-                    .toLowerCase()
-                    .includes(textoBusqueda)
-
-            );
-
-    }
-
-
-    /*
-       -------------------------------------------------------
-       ORDENAMIENTO
-       -------------------------------------------------------
-    */
-
-    if (ordenActivo === "baratos") {
-
-        productosFiltrados.sort((a, b) =>
-
-            Number(
-                a["PRECIO EFECTIVO"] ||
-                a.PRECIO_EFECTIVO ||
-                0
-            )
-
-            -
-
-            Number(
-                b["PRECIO EFECTIVO"] ||
-                b.PRECIO_EFECTIVO ||
-                0
-            )
-
-        );
-
-    }
-
-
-    else if (ordenActivo === "caros") {
-
-        productosFiltrados.sort((a, b) =>
-
-            Number(
-                b["PRECIO EFECTIVO"] ||
-                b.PRECIO_EFECTIVO ||
-                0
-            )
-
-            -
-
-            Number(
-                a["PRECIO EFECTIVO"] ||
-                a.PRECIO_EFECTIVO ||
-                0
-            )
-
-        );
-
-    }
-
-
-    else if (ordenActivo === "az") {
-
-        productosFiltrados.sort((a, b) =>
-
-            String(a.DESCRIPCION)
-                .localeCompare(
-                    String(b.DESCRIPCION)
+        productosFiltrados.sort(
+            (a, b) =>
+                Number(
+                    a["PRECIO EFECTIVO"] ||
+                    a.PRECIO_EFECTIVO ||
+                    0
+                ) -
+                Number(
+                    b["PRECIO EFECTIVO"] ||
+                    b.PRECIO_EFECTIVO ||
+                    0
                 )
-
         );
 
     }
 
 
-    else if (ordenActivo === "za") {
+    else if (
+        ordenActivo === "caros"
+    ) {
 
-        productosFiltrados.sort((a, b) =>
-
-            String(b.DESCRIPCION)
-                .localeCompare(
-                    String(a.DESCRIPCION)
+        productosFiltrados.sort(
+            (a, b) =>
+                Number(
+                    b["PRECIO EFECTIVO"] ||
+                    b.PRECIO_EFECTIVO ||
+                    0
+                ) -
+                Number(
+                    a["PRECIO EFECTIVO"] ||
+                    a.PRECIO_EFECTIVO ||
+                    0
                 )
-
         );
 
     }
 
 
-    /*
-       -------------------------------------------------------
-       ACTUALIZAR AVISO
-       -------------------------------------------------------
-    */
+    else if (
+        ordenActivo === "az"
+    ) {
 
-    const aviso =
-        document.getElementById("avisoStock0");
-
-
-    if (modoVerSinStock) {
-
-        aviso.style.display =
-            "block";
-
-    } else {
-
-        aviso.style.display =
-            "none";
+        productosFiltrados.sort(
+            (a, b) =>
+                String(
+                    a.DESCRIPCION || ""
+                ).localeCompare(
+                    String(
+                        b.DESCRIPCION || ""
+                    )
+                )
+        );
 
     }
 
 
-    /*
-       -------------------------------------------------------
-       ACTUALIZAR PANTALLA
-       -------------------------------------------------------
-    */
+    else if (
+        ordenActivo === "za"
+    ) {
 
-    document.getElementById("productos").innerHTML = "";
+        productosFiltrados.sort(
+            (a, b) =>
+                String(
+                    b.DESCRIPCION || ""
+                ).localeCompare(
+                    String(
+                        a.DESCRIPCION || ""
+                    )
+                )
+        );
+
+    }
+
+
+    document.getElementById(
+        "productos"
+    ).innerHTML = "";
+
 
     actualizarPantalla();
 
 }
 
 
-/* =========================================================
+/* =========================
    ACTUALIZAR PANTALLA
-========================================================= */
+========================= */
 
 function actualizarPantalla() {
 
     const contenedor =
-        document.getElementById("productos");
+        document.getElementById(
+            "productos"
+        );
 
     const btnCargarMas =
-        document.getElementById("btnCargarMas");
+        document.getElementById(
+            "btnCargarMas"
+        );
 
 
-    document.getElementById("contadorProductos").innerHTML =
+    /* =========================
+       CONTADOR
+    ========================= */
 
-        modoVerSinStock
-
-            ? `🔓 ${productosFiltrados.length} productos encontrados — incluyendo sin stock`
-
-            : `${productosFiltrados.length} productos encontrados`;
+    let textoContador =
+        `${productosFiltrados.length} productos encontrados`;
 
 
-    /*
-       SI NO HAY PRODUCTOS
-    */
+    if (modoStock0) {
 
-    if (productosFiltrados.length === 0) {
+        textoContador +=
+            " — incluyendo sin stock";
+
+    }
+
+
+    document.getElementById(
+        "contadorProductos"
+    ).innerHTML =
+        modoStock0
+            ? `🔒 ${textoContador}`
+            : textoContador;
+
+
+    /* =========================
+       SIN RESULTADOS
+    ========================= */
+
+    if (
+        productosFiltrados.length === 0
+    ) {
 
         contenedor.innerHTML = `
-
             <div style="
                 grid-column:1/-1;
                 text-align:center;
@@ -1554,8 +1771,8 @@ function actualizarPantalla() {
                 </p>
 
             </div>
-
         `;
+
 
         btnCargarMas.style.display =
             "none";
@@ -1565,13 +1782,14 @@ function actualizarPantalla() {
     }
 
 
-    /*
+    /* =========================
        PAGINACIÓN
-    */
+    ========================= */
 
     const fin =
         paginaActual *
         productosPorPagina;
+
 
     const inicio =
         fin -
@@ -1585,226 +1803,216 @@ function actualizarPantalla() {
         );
 
 
-    /*
-       CREAR TARJETAS
-    */
+    /* =========================
+       CREAR CARDS
+    ========================= */
 
-    tandaActual.forEach(producto => {
-
-
-        /*
-           IMPORTANTE:
-
-           Acá solamente descartamos
-           productos sin stock cuando
-           NO estamos en modo STOCK0.
-        */
-
-        if (
-            !modoVerSinStock &&
-            (
-                producto.STOCK === 0 ||
-                producto.STOCK === "0" ||
-                producto.stock === 0 ||
-                producto.stock === "0"
-            )
-        ) {
-
-            return;
-
-        }
+    tandaActual.forEach(
+        producto => {
 
 
-        /* PRECIO TARJETA */
-
-        const precioTarjetaRaw =
-            producto.PRECIO ||
-            producto["PRECIO TARJ"] ||
-            producto.PRECIO_TAG ||
-            producto["PRECIO TARJETA"] ||
-            producto.PRECIO_TARJETA;
+            const productoSinStock =
+                !tieneStock(producto);
 
 
-        const precioTarjetaFormateado =
-            precioTarjetaRaw
+            /* =========================
+               PRECIOS
+            ========================= */
 
-                ? `$ ${Number(
-                    precioTarjetaRaw
-                ).toLocaleString(
-                    "es-AR",
-                    {
-                        minimumFractionDigits: 0
-                    }
-                )}`
-
-                : "Consulte";
+            const precioTarjetaRaw =
+                producto.PRECIO ||
+                producto["PRECIO TARJ"] ||
+                producto.PRECIO_TAG ||
+                producto["PRECIO TARJETA"] ||
+                producto.PRECIO_TARJETA;
 
 
-        /* PRECIO EFECTIVO */
-
-        const precioEfectivoRaw =
-            producto["PRECIO EFECTIVO"] ||
-            producto.PRECIO_EFECTIVO;
-
-
-        const precioEfectivoFormateado =
-            precioEfectivoRaw
-
-                ? `$ ${Number(
-                    precioEfectivoRaw
-                ).toLocaleString(
-                    "es-AR",
-                    {
-                        minimumFractionDigits: 0
-                    }
-                )}`
-
-                : "Consulte";
+            const precioTarjetaFormateado =
+                precioTarjetaRaw
+                    ? `$ ${Number(
+                        precioTarjetaRaw
+                    ).toLocaleString(
+                        "es-AR",
+                        {
+                            minimumFractionDigits: 0
+                        }
+                    )}`
+                    : "Consulte";
 
 
-        /*
-           ESTADO DEL PRODUCTO
-
-           Si estamos en modo STOCK0 y el producto
-           no tiene stock, mostramos una etiqueta.
-        */
-
-        const tieneStock =
-            !(
-                producto.STOCK === 0 ||
-                producto.STOCK === "0" ||
-                producto.stock === 0 ||
-                producto.stock === "0"
-            );
+            const precioEfectivoRaw =
+                producto["PRECIO EFECTIVO"] ||
+                producto.PRECIO_EFECTIVO;
 
 
-        const etiquetaStock =
-            modoVerSinStock && !tieneStock
-
-                ? `
-                    <div style="
-                        position:absolute;
-                        top:50px;
-                        left:12px;
-                        background:#ef4444;
-                        color:white;
-                        padding:5px 10px;
-                        border-radius:20px;
-                        font-size:10px;
-                        font-weight:bold;
-                        z-index:3;
-                    ">
-                        SIN STOCK
-                    </div>
-                  `
-
-                : "";
+            const precioEfectivoFormateado =
+                precioEfectivoRaw
+                    ? `$ ${Number(
+                        precioEfectivoRaw
+                    ).toLocaleString(
+                        "es-AR",
+                        {
+                            minimumFractionDigits: 0
+                        }
+                    )}`
+                    : "Consulte";
 
 
-        contenedor.innerHTML += `
+            /* =========================
+               ESTADO PRECIO
+            ========================= */
 
-<div class="card">
-
-    <div
-        class="card-click"
-        onclick="abrirFicha('${producto.CODIGO}')"
-    >
-
-        <div class="categoria-tag">
-            ${producto.CATEGORIA}
-        </div>
-
-        ${etiquetaStock}
-
-        <img
-            src="fotos/${producto.CODIGO}.jpg"
-            alt="${producto.DESCRIPCION}"
-            onerror="
-                this.onerror=null;
-                this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';
-            "
-        >
-
-        <div class="info">
-
-            <h3>
-                ${producto.DESCRIPCION}
-            </h3>
-
-            <p class="codigo-texto ${
+            const precioAlerta =
                 (
-                    producto.ESTADO === "Bajar Precio" ||
-                    producto.Estado === "Bajar Precio" ||
-                    producto.estado === "Bajar Precio"
+                    producto.ESTADO ===
+                    "Bajar Precio" ||
+
+                    producto.Estado ===
+                    "Bajar Precio" ||
+
+                    producto.estado ===
+                    "Bajar Precio"
                 )
                     ? "codigo-alerta"
-                    : ""
-            }">
-
-                Código: ${producto.CODIGO}
-
-            </p>
-
-            <div class="contenedor-precios">
-
-                <p class="precio-efectivo">
-
-                    ${precioEfectivoFormateado}
-
-                    <span style="
-                        font-size:12px;
-                        font-weight:600;
-                        color:#475569;
-                    ">
-                        Efectivo
-                    </span>
-
-                </p>
-
-                <p class="precio-tarjeta">
-
-                    Tarjeta:
-                    ${precioTarjetaFormateado}
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+                    : "";
 
 
-    <div class="botones-tarjeta">
+            /* =========================
+               BOTÓN CARRITO
+            ========================= */
 
-        <button
-            class="btn-ver-mas"
-            onclick="abrirFicha('${producto.CODIGO}')"
-        >
-            🔍 Ver Ficha
-        </button>
+            const botonCarrito =
+                productoSinStock
 
-        <button
-            class="btn-carrito"
-            onclick="agregarAlCarrito('${producto.CODIGO}')"
-        >
-            🛒 Agregar al carrito
-        </button>
+                    ? `
+                        <button
+                            class="btn-carrito"
+                            disabled
+                        >
+                            🚫 Sin stock
+                        </button>
+                      `
 
-    </div>
+                    : `
+                        <button
+                            class="btn-carrito"
+                            onclick="agregarAlCarrito('${producto.CODIGO}')"
+                        >
+                            🛒 Agregar al carrito
+                        </button>
+                      `;
 
-</div>
 
-`;
+            /* =========================
+               TAG SIN STOCK
+            ========================= */
 
-    });
+            const tagSinStock =
+                productoSinStock
+                    ? `
+                        <div class="sin-stock-tag">
+                            SIN STOCK
+                        </div>
+                      `
+                    : "";
 
 
-    /*
-       BOTÓN CARGAR MÁS
-    */
+            contenedor.innerHTML += `
 
-    if (fin < productosFiltrados.length) {
+                <div class="card">
+
+                    <div
+                        class="card-click"
+                        onclick="abrirFicha('${producto.CODIGO}')"
+                    >
+
+                        <div class="categoria-tag">
+                            ${producto.CATEGORIA}
+                        </div>
+
+                        ${tagSinStock}
+
+                        <img
+                            src="fotos/${producto.CODIGO}.jpg"
+                            alt="${producto.DESCRIPCION}"
+
+                            onerror="
+                                this.onerror=null;
+                                this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';
+                            "
+                        >
+
+                        <div class="info">
+
+                            <h3>
+                                ${producto.DESCRIPCION}
+                            </h3>
+
+                            <p
+                                class="codigo-texto ${precioAlerta}"
+                            >
+                                Código:
+                                ${producto.CODIGO}
+                            </p>
+
+                            <div class="contenedor-precios">
+
+                                <p class="precio-efectivo">
+
+                                    ${precioEfectivoFormateado}
+
+                                    <span style="
+                                        font-size:12px;
+                                        font-weight:600;
+                                        color:#475569;
+                                    ">
+                                        Efectivo
+                                    </span>
+
+                                </p>
+
+                                <p class="precio-tarjeta">
+
+                                    Tarjeta:
+                                    ${precioTarjetaFormateado}
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="botones-tarjeta">
+
+                        <button
+                            class="btn-ver-mas"
+                            onclick="abrirFicha('${producto.CODIGO}')"
+                        >
+                            🔍 Ver Ficha
+                        </button>
+
+                        ${botonCarrito}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =========================
+       CARGAR MÁS
+    ========================= */
+
+    if (
+        fin <
+        productosFiltrados.length
+    ) {
 
         btnCargarMas.style.display =
             "inline-block";
@@ -1819,9 +2027,9 @@ function actualizarPantalla() {
 }
 
 
-/* =========================================================
+/* =========================
    ABRIR FICHA
-========================================================= */
+========================= */
 
 function abrirFicha(codigo) {
 
@@ -1843,6 +2051,14 @@ function abrirFicha(codigo) {
         );
 
 
+    const productoSinStock =
+        !tieneStock(producto);
+
+
+    /* =========================
+       PRECIOS
+    ========================= */
+
     const precioTarjetaRaw =
         producto.PRECIO ||
         producto["PRECIO TARJ"] ||
@@ -1853,7 +2069,6 @@ function abrirFicha(codigo) {
 
     const precioTarjetaFormateado =
         precioTarjetaRaw
-
             ? `$ ${Number(
                 precioTarjetaRaw
             ).toLocaleString(
@@ -1862,7 +2077,6 @@ function abrirFicha(codigo) {
                     minimumFractionDigits: 0
                 }
             )}`
-
             : "Consulte";
 
 
@@ -1873,7 +2087,6 @@ function abrirFicha(codigo) {
 
     const precioEfectivoFormateado =
         precioEfectivoRaw
-
             ? `$ ${Number(
                 precioEfectivoRaw
             ).toLocaleString(
@@ -1882,7 +2095,6 @@ function abrirFicha(codigo) {
                     minimumFractionDigits: 0
                 }
             )}`
-
             : "Consulte";
 
 
@@ -1892,21 +2104,45 @@ function abrirFicha(codigo) {
         );
 
 
+    const avisoSinStock =
+        productoSinStock
+            ? `
+                <div style="
+                    background:#fee2e2;
+                    color:#b91c1c;
+                    border:1px solid #fecaca;
+                    padding:10px;
+                    border-radius:10px;
+                    text-align:center;
+                    font-weight:bold;
+                    margin:10px 0;
+                ">
+                    🚫 PRODUCTO SIN STOCK
+                </div>
+              `
+            : "";
+
+
     contenedorFicha.innerHTML = `
 
         <img
             class="ficha-img"
+
             src="fotos/${producto.CODIGO}.jpg"
+
             alt="${producto.DESCRIPCION}"
+
             onerror="
                 this.onerror=null;
                 this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';
             "
+
             style="
                 margin-top:10px;
                 margin-bottom:5px;
             "
         >
+
 
         <div>
 
@@ -1945,8 +2181,10 @@ function abrirFicha(codigo) {
                 </strong>
 
                 ${producto.CODIGO}
-
             </p>
+
+
+            ${avisoSinStock}
 
 
             <div
@@ -1987,8 +2225,7 @@ function abrirFicha(codigo) {
                     "
                 >
 
-                    💳
-                    Tarjeta:
+                    💳 Tarjeta:
                     ${precioTarjetaFormateado}
 
                 </p>
@@ -1998,16 +2235,17 @@ function abrirFicha(codigo) {
 
             <a
                 class="btn-whatsapp-ficha"
+
                 href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}"
+
                 target="_blank"
+
                 style="
                     margin-top:10px;
                     padding:12px;
                 "
             >
-
                 📲 Consultar por WhatsApp
-
             </a>
 
         </div>
@@ -2022,9 +2260,9 @@ function abrirFicha(codigo) {
 }
 
 
-/* =========================================================
+/* =========================
    CERRAR FICHA
-========================================================= */
+========================= */
 
 function cerrarFicha() {
 
@@ -2035,9 +2273,9 @@ function cerrarFicha() {
 }
 
 
-/* =========================================================
+/* =========================
    AGREGAR AL CARRITO
-========================================================= */
+========================= */
 
 function agregarAlCarrito(codigo) {
 
@@ -2051,6 +2289,22 @@ function agregarAlCarrito(codigo) {
 
     if (!producto)
         return;
+
+
+    /*
+       SEGURIDAD EXTRA:
+       No permitir agregar sin stock.
+    */
+
+    if (!tieneStock(producto)) {
+
+        alert(
+            "Este producto no tiene stock disponible."
+        );
+
+        return;
+
+    }
 
 
     carrito.push(producto);
@@ -2070,13 +2324,16 @@ function agregarAlCarrito(codigo) {
 }
 
 
-/* =========================================================
-   ELIMINAR DEL CARRITO
-========================================================= */
+/* =========================
+   ELIMINAR CARRITO
+========================= */
 
 function eliminarDelCarrito(indice) {
 
-    carrito.splice(indice, 1);
+    carrito.splice(
+        indice,
+        1
+    );
 
 
     localStorage.setItem(
@@ -2096,13 +2353,15 @@ function eliminarDelCarrito(indice) {
 }
 
 
-/* =========================================================
+/* =========================
    VER CARRITO
-========================================================= */
+========================= */
 
 function verCarrito() {
 
-    if (carrito.length === 0) {
+    if (
+        carrito.length === 0
+    ) {
 
         alert(
             "El carrito está vacío"
@@ -2134,10 +2393,11 @@ function verCarrito() {
     carrito.forEach(
         (producto, indice) => {
 
-
             const precioEf =
                 Number(
-                    producto["PRECIO EFECTIVO"] ||
+                    producto[
+                        "PRECIO EFECTIVO"
+                    ] ||
                     producto.PRECIO_EFECTIVO ||
                     0
                 );
@@ -2177,6 +2437,7 @@ function verCarrito() {
 
                     <button
                         onclick="eliminarDelCarrito(${indice})"
+
                         style="
                             border:none;
                             background:#ef4444;
@@ -2208,22 +2469,23 @@ function verCarrito() {
         ">
 
             Total Efectivo:
-            $ ${total.toLocaleString("es-AR")}
+
+            $
+            ${total.toLocaleString("es-AR")}
 
         </h3>
 
     `;
 
 
-    modal.style.display =
-        "flex";
+    modal.style.display = "flex";
 
 }
 
 
-/* =========================================================
+/* =========================
    CERRAR CARRITO
-========================================================= */
+========================= */
 
 function cerrarCarrito() {
 
@@ -2234,9 +2496,9 @@ function cerrarCarrito() {
 }
 
 
-/* =========================================================
-   WHATSAPP DEL CARRITO
-========================================================= */
+/* =========================
+   WHATSAPP CARRITO
+========================= */
 
 function enviarCarritoWhatsapp() {
 
@@ -2250,10 +2512,11 @@ function enviarCarritoWhatsapp() {
     carrito.forEach(
         (producto, indice) => {
 
-
             const precioEf =
                 Number(
-                    producto["PRECIO EFECTIVO"] ||
+                    producto[
+                        "PRECIO EFECTIVO"
+                    ] ||
                     producto.PRECIO_EFECTIVO ||
                     0
                 );
@@ -2263,14 +2526,7 @@ function enviarCarritoWhatsapp() {
 
 
             mensaje +=
-
-                `${indice + 1}. ` +
-
-                `${producto.DESCRIPCION} ` +
-
-                `(${producto.CODIGO}) ` +
-
-                `- $ ${precioEf.toLocaleString("es-AR")} (Ef)\n`;
+                `${indice + 1}. ${producto.DESCRIPCION} (${producto.CODIGO}) - $ ${precioEf.toLocaleString("es-AR")} (Ef)\n`;
 
         }
     );
@@ -2285,59 +2541,57 @@ function enviarCarritoWhatsapp() {
 
 
     window.open(
-
         `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`,
-
         "_blank"
-
     );
 
 }
 
 
-/* =========================================================
-   CERRAR MODALES AL HACER CLICK AFUERA
-========================================================= */
+/* =========================
+   CERRAR MODALES
+========================= */
 
-window.onclick = function(event) {
+window.onclick =
+    function(event) {
 
-    const modalFicha =
-        document.getElementById(
-            "modalFicha"
-        );
-
-
-    const modalCarrito =
-        document.getElementById(
-            "modalCarrito"
-        );
+        const modalFicha =
+            document.getElementById(
+                "modalFicha"
+            );
 
 
-    if (
-        event.target ==
-        modalFicha
-    ) {
-
-        cerrarFicha();
-
-    }
+        const modalCarrito =
+            document.getElementById(
+                "modalCarrito"
+            );
 
 
-    if (
-        event.target ==
-        modalCarrito
-    ) {
+        if (
+            event.target ==
+            modalFicha
+        ) {
 
-        cerrarCarrito();
+            cerrarFicha();
 
-    }
-
-};
+        }
 
 
-/* =========================================================
+        if (
+            event.target ==
+            modalCarrito
+        ) {
+
+            cerrarCarrito();
+
+        }
+
+    };
+
+
+/* =========================
    INICIAR
-========================================================= */
+========================= */
 
 cargarProductos();
 
