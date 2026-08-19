@@ -104,7 +104,7 @@
     "PRECIO TARJETA": 4120,
     "CATEGORIA": "Cables varios",
     "PRECIO EFECTIVO": 3500,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -147,7 +147,7 @@
     "CODIGO": 3997,
     "DESCRIPCION": "Tira led fuego artificial RGB Audioritmica",
     "PRECIO TARJETA": 25000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 21300,
     "STOCK": 2,
     "ESTADO": "OK"
@@ -165,7 +165,7 @@
     "CODIGO": 3995,
     "DESCRIPCION": "Foco Led RGB con control 7W LT-9",
     "PRECIO TARJETA": 10000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8500,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -219,7 +219,7 @@
     "CODIGO": 3989,
     "DESCRIPCION": "Luz de emergencia mini 36 led KS-244",
     "PRECIO TARJETA": 9800,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8300,
     "STOCK": 5,
     "ESTADO": "OK"
@@ -228,7 +228,7 @@
     "CODIGO": 3988,
     "DESCRIPCION": "Velador led articulada con lupa ED-83113",
     "PRECIO TARJETA": 38800,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 33000,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -291,7 +291,7 @@
     "CODIGO": 3981,
     "DESCRIPCION": "LINTERNA MINERA LED RECARGABLE C/ SENSOR LX200 ",
     "PRECIO TARJETA": 10590,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 9000,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -336,7 +336,7 @@
     "CODIGO": 3976,
     "DESCRIPCION": "Malla Desoldante Rollo Cobre 1,5mm 1,5mts Yaxun YX-1515",
     "PRECIO TARJETA": 6470,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 5500,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -435,7 +435,7 @@
     "CODIGO": 3965,
     "DESCRIPCION": "Temporizador analogico timer Geneve",
     "PRECIO TARJETA": 16100,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 13700,
     "STOCK": 3,
     "ESTADO": "OK"
@@ -525,7 +525,7 @@
     "CODIGO": 3955,
     "DESCRIPCION": "Lampara velador de atardecer sunset",
     "PRECIO TARJETA": 12000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 10200,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -723,7 +723,7 @@
     "CODIGO": 3932,
     "DESCRIPCION": "Zapatilla prolongador Hexagonal con 2 puertos USB Bolsa",
     "PRECIO TARJETA": 14940,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 12700,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -858,7 +858,7 @@
     "CODIGO": 3916,
     "DESCRIPCION": "Barra Led Rigida con Perfil Blanco Frio 1m 72 leds 220v",
     "PRECIO TARJETA": 10590,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 9000,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -1029,7 +1029,7 @@
     "CODIGO": 3897,
     "DESCRIPCION": "Alargue zapatilla 1,5 mts 5 tomas",
     "PRECIO TARJETA": 9000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 7700,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -1146,7 +1146,7 @@
     "CODIGO": 3884,
     "DESCRIPCION": "TIRA NEON RGB CON BLUETOOTH DE 5MTS HCP069",
     "PRECIO TARJETA": 41760,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 35500,
     "STOCK": 1,
     "ESTADO": "OK"
@@ -1199,9 +1199,9 @@
   {
     "CODIGO": 3878,
     "DESCRIPCION": "Teclado y mouse inalambrico DN-H263",
-    "PRECIO TARJETA": 29100,
+    "PRECIO TARJETA": 31040,
     "CATEGORIA": "Combos",
-    "PRECIO EFECTIVO": 24700,
+    "PRECIO EFECTIVO": 26400,
     "STOCK": 1,
     "ESTADO": "OK"
   },
@@ -1407,7 +1407,7 @@
     "CODIGO": 3854,
     "DESCRIPCION": "Alargue prolongador 5 metros Macho hembra",
     "PRECIO TARJETA": 13430,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 11400,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -1776,7 +1776,7 @@
     "CODIGO": 3813,
     "DESCRIPCION": "Control tira led con controlador",
     "PRECIO TARJETA": 5100,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 4300,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -1893,7 +1893,7 @@
     "CODIGO": 3800,
     "DESCRIPCION": "Zapatilla Toma Corriente con Interruptor Sicilia 5 Tomas 3Mts",
     "PRECIO TARJETA": 10830,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 9200,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2082,7 +2082,7 @@
     "CODIGO": 3779,
     "DESCRIPCION": "Zapatilla alargue de 6 tomas 3 metros con tecla multinorma",
     "PRECIO TARJETA": 16470,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 14000,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2118,7 +2118,7 @@
     "CODIGO": 3775,
     "DESCRIPCION": "Lámpara Led Farol Mtl Recargable Por Usb Con Regulación De Luz solar camping",
     "PRECIO TARJETA": 22300,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19000,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -2189,7 +2189,7 @@
     "CODIGO": 3767,
     "DESCRIPCION": "Lampara solar colgante recargable JP8801",
     "PRECIO TARJETA": 13000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 11100,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2468,7 +2468,7 @@
     "CODIGO": 3736,
     "DESCRIPCION": "Alargue genesis 3 metros, 4 tomas",
     "PRECIO TARJETA": 11000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 9400,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2720,7 +2720,7 @@
     "CODIGO": 3708,
     "DESCRIPCION": "Astronauta con parlante Starry Nebula ADE5016 ",
     "PRECIO TARJETA": 34700,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 29500,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -2792,7 +2792,7 @@
     "CODIGO": 3699,
     "DESCRIPCION": "Cortina de luces multicolor 3x2 metros",
     "PRECIO TARJETA": 24300,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 20700,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2828,7 +2828,7 @@
     "CODIGO": 3695,
     "DESCRIPCION": "Luces de Navidad Canicas 28 luces Colores 220v",
     "PRECIO TARJETA": 6600,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 5600,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -2837,7 +2837,7 @@
     "CODIGO": 3694,
     "DESCRIPCION": "Guirnalda Kermese con 10 focos incandescentes blanco calido exterior 10m",
     "PRECIO TARJETA": 28600,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 24300,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -2846,7 +2846,7 @@
     "CODIGO": 3693,
     "DESCRIPCION": "Luz navideña de alambre USB",
     "PRECIO TARJETA": 6000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 5100,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -2855,7 +2855,7 @@
     "CODIGO": 3692,
     "DESCRIPCION": "Lampara de Escritorio Led Velador Control Por Voz SST-870",
     "PRECIO TARJETA": 18820,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 16000,
     "STOCK": 2,
     "ESTADO": "OK"
@@ -2873,7 +2873,7 @@
     "CODIGO": 3690,
     "DESCRIPCION": "Pato velador de goma",
     "PRECIO TARJETA": 23300,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19800,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -3170,7 +3170,7 @@
     "CODIGO": 3657,
     "DESCRIPCION": "APLIQUE DE PARED CON SENSOR SOLAR DIVIDIDO SMT-F120",
     "PRECIO TARJETA": 18500,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 15700,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3242,7 +3242,7 @@
     "CODIGO": 3649,
     "DESCRIPCION": "Malla desoldante rollo cobre 1.5 metros Yaxun YX-1515",
     "PRECIO TARJETA": 7000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 6000,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3278,7 +3278,7 @@
     "CODIGO": 3644,
     "DESCRIPCION": "Tira de neon azul 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 3,
     "ESTADO": "OK"
@@ -3521,7 +3521,7 @@
     "CODIGO": 3617,
     "DESCRIPCION": "Tira de led de neon RGB con control y aplicacion",
     "PRECIO TARJETA": 38000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 32300,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3575,7 +3575,7 @@
     "CODIGO": 3611,
     "DESCRIPCION": "Tira de neon Violeta 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 1,
     "ESTADO": "OK"
@@ -3584,7 +3584,7 @@
     "CODIGO": 3610,
     "DESCRIPCION": "Reflector 20W LED C/Sensor Nivhus SS02-1",
     "PRECIO TARJETA": 18000,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 15300,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3602,7 +3602,7 @@
     "CODIGO": 3608,
     "DESCRIPCION": "Tira de neon naranja 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 3,
     "ESTADO": "Bajar Precio"
@@ -3611,7 +3611,7 @@
     "CODIGO": 3607,
     "DESCRIPCION": "Tira de neon amarillo 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 3,
     "ESTADO": "OK"
@@ -3620,7 +3620,7 @@
     "CODIGO": 3606,
     "DESCRIPCION": "Tira de neon blanco calido 5 metros con control",
     "PRECIO TARJETA": 23060,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 2,
     "ESTADO": "OK"
@@ -3629,7 +3629,7 @@
     "CODIGO": 3605,
     "DESCRIPCION": "Tira de neon rojo 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 1,
     "ESTADO": "OK"
@@ -3638,7 +3638,7 @@
     "CODIGO": 3604,
     "DESCRIPCION": "Tira de neon verde 5 metros con control",
     "PRECIO TARJETA": 23090,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 3,
     "ESTADO": "Bajar Precio"
@@ -3647,7 +3647,7 @@
     "CODIGO": 3603,
     "DESCRIPCION": "Tira de neon rosa 5 metros con control",
     "PRECIO TARJETA": 23060,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 2,
     "ESTADO": "OK"
@@ -3854,7 +3854,7 @@
     "CODIGO": 3580,
     "DESCRIPCION": "Aro de Luz RGB 36Cm grande",
     "PRECIO TARJETA": 28510,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 24200,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3908,7 +3908,7 @@
     "CODIGO": 3574,
     "DESCRIPCION": "Velador capibara Ovni",
     "PRECIO TARJETA": 12690,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 10800,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -3917,7 +3917,7 @@
     "CODIGO": 3573,
     "DESCRIPCION": "Proyector astronauta Galaxia Laser ",
     "PRECIO TARJETA": 22940,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19500,
     "STOCK": 0,
     "ESTADO": "OK"
@@ -3944,7 +3944,7 @@
     "CODIGO": 3570,
     "DESCRIPCION": "Guirnalda de alambre led blanco calido",
     "PRECIO TARJETA": 3310,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 2800,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
@@ -4520,7 +4520,7 @@
     "CODIGO": 3506,
     "DESCRIPCION": "Prolongador zapatilla 4 tomas + 4 USB",
     "PRECIO TARJETA": 16230,
-    "CATEGORIA": "Iluminacion/Electricidad",
+    "CATEGORIA": "Electricidad",
     "PRECIO EFECTIVO": 13800,
     "STOCK": 1,
     "ESTADO": "Bajar Precio"
@@ -12277,9 +12277,9 @@
   {
     "CODIGO": 2634,
     "DESCRIPCION": "CARGADOR KARSEN IPHONE 3.1 AMP 2 USB CAR-3150 7240",
-    "PRECIO TARJETA": 10400,
+    "PRECIO TARJETA": 10590,
     "CATEGORIA": "Cargadores Iphone",
-    "PRECIO EFECTIVO": 8800,
+    "PRECIO EFECTIVO": 9000,
     "STOCK": 6,
     "ESTADO": "OK"
   },
