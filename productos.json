@@ -86,7 +86,7 @@
     "PRECIO TARJETA": 25100,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 21300,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -230,7 +230,7 @@
     "PRECIO TARJETA": 38800,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 33000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -383,7 +383,7 @@
     "PRECIO TARJETA": 9650,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 8200,
-    "STOCK": 4,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -1193,7 +1193,7 @@
     "PRECIO TARJETA": 32940,
     "CATEGORIA": "Combos",
     "PRECIO EFECTIVO": 28000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -1202,7 +1202,7 @@
     "PRECIO TARJETA": 31040,
     "CATEGORIA": "Combos",
     "PRECIO EFECTIVO": 26400,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -2839,7 +2839,7 @@
     "PRECIO TARJETA": 28600,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 24300,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -3451,7 +3451,7 @@
     "PRECIO TARJETA": 21753.278975999998,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 18500,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -4180,7 +4180,7 @@
     "PRECIO TARJETA": 10390,
     "CATEGORIA": "Jueguetes niños",
     "PRECIO EFECTIVO": 8800,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -5176,11 +5176,11 @@
   {
     "CODIGO": 3433,
     "DESCRIPCION": "Impresora termica",
-    "PRECIO TARJETA": 29410,
+    "PRECIO TARJETA": 28000,
     "CATEGORIA": "Hogar",
-    "PRECIO EFECTIVO": 25000,
+    "PRECIO EFECTIVO": 23800,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3432,
@@ -5549,7 +5549,7 @@
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 23000,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3391,
@@ -10526,7 +10526,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 28500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2830,
@@ -11281,7 +11281,7 @@
     "PRECIO TARJETA": 21910,
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 18600,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -13415,7 +13415,7 @@
     "CATEGORIA": "Audio car/Art auto",
     "PRECIO EFECTIVO": 46400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2505,
@@ -14869,11 +14869,11 @@
   {
     "CODIGO": 2344,
     "DESCRIPCION": "Parlante pc E-1064 Luces RGC",
-    "PRECIO TARJETA": 25360,
+    "PRECIO TARJETA": 24470,
     "CATEGORIA": "Parlantes",
-    "PRECIO EFECTIVO": 21600,
+    "PRECIO EFECTIVO": 20800,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2343,
@@ -20821,7 +20821,7 @@
     "PRECIO TARJETA": 12000,
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 10200,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -24349,7 +24349,7 @@
     "PRECIO TARJETA": 51760,
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 44000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -27022,7 +27022,7 @@
     "PRECIO TARJETA": 32940,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 28000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
