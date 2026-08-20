@@ -1,11 +1,20 @@
 [
   {
+    "CODIGO": 4014,
+    "DESCRIPCION": "Espejo led recargable con son base de pie y mesa YX2122",
+    "PRECIO TARJETA": 15180,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 12900,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4013,
     "DESCRIPCION": "Mouse inalambrico GT Office Click MIG-124N",
     "PRECIO TARJETA": 10590,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 9000,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -383,7 +392,7 @@
     "PRECIO TARJETA": 9650,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 8200,
-    "STOCK": 3,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -392,7 +401,7 @@
     "PRECIO TARJETA": 10590,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 9000,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -482,7 +491,7 @@
     "PRECIO TARJETA": 24120,
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 20500,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -500,7 +509,7 @@
     "PRECIO TARJETA": 5880,
     "CATEGORIA": "Cargadores Micro USB",
     "PRECIO EFECTIVO": 5000,
-    "STOCK": 4,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -509,7 +518,7 @@
     "PRECIO TARJETA": 4120,
     "CATEGORIA": "Cargadores Micro USB",
     "PRECIO EFECTIVO": 3500,
-    "STOCK": 5,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -536,7 +545,7 @@
     "PRECIO TARJETA": 2350,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 2000,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -1391,7 +1400,7 @@
     "PRECIO TARJETA": 8240,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 7000,
-    "STOCK": 6,
+    "STOCK": 5,
     "ESTADO": "OK"
   },
   {
@@ -2857,7 +2866,7 @@
     "PRECIO TARJETA": 18820,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 16000,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -4180,8 +4189,8 @@
     "PRECIO TARJETA": 10390,
     "CATEGORIA": "Jueguetes niños",
     "PRECIO EFECTIVO": 8800,
-    "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 0,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3543,
@@ -4360,7 +4369,7 @@
     "PRECIO TARJETA": 18240,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 15500,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -5350,7 +5359,7 @@
     "PRECIO TARJETA": 27060,
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 23000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -6358,7 +6367,7 @@
     "PRECIO TARJETA": 11530,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 9800,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -10705,8 +10714,8 @@
     "PRECIO TARJETA": 3460,
     "CATEGORIA": "Cable/Tipo C",
     "PRECIO EFECTIVO": 2900,
-    "STOCK": 6,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 5,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2810,
@@ -14215,8 +14224,8 @@
     "PRECIO TARJETA": 43530,
     "CATEGORIA": "Camaras, Webcam, Seguridad",
     "PRECIO EFECTIVO": 37000,
-    "STOCK": 2,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2416,
@@ -18202,7 +18211,7 @@
     "PRECIO TARJETA": 39970,
     "CATEGORIA": "Auriculares Vincha",
     "PRECIO EFECTIVO": 34000,
-    "STOCK": 3,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -18658,11 +18667,11 @@
   {
     "CODIGO": 1919,
     "DESCRIPCION": "Cortadora de pelo VINTAGE PROFESSIONAL patillera",
-    "PRECIO TARJETA": 19060,
+    "PRECIO TARJETA": 18240,
     "CATEGORIA": "Belleza y cuidado personal",
-    "PRECIO EFECTIVO": 16200,
+    "PRECIO EFECTIVO": 15500,
     "STOCK": 3,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1918,
@@ -19741,7 +19750,7 @@
     "PRECIO TARJETA": 23720,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 20200,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -20947,7 +20956,7 @@
     "PRECIO TARJETA": 16700,
     "CATEGORIA": "Climatizacion",
     "PRECIO EFECTIVO": 14200,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -21844,11 +21853,11 @@
   {
     "CODIGO": 1554,
     "DESCRIPCION": "Auricular Bluetooth con Oreja gato y Luz ZW-29",
-    "PRECIO TARJETA": 31940,
+    "PRECIO TARJETA": 12940,
     "CATEGORIA": "Auriculares Inalambricos",
-    "PRECIO EFECTIVO": 27100,
+    "PRECIO EFECTIVO": 11000,
     "STOCK": 5,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1553,
@@ -24412,7 +24421,7 @@
     "PRECIO TARJETA": 72890,
     "CATEGORIA": "Auriculares Gamer",
     "PRECIO EFECTIVO": 62000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -25258,7 +25267,7 @@
     "PRECIO TARJETA": 16470,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 14000,
-    "STOCK": 4,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -25573,7 +25582,7 @@
     "PRECIO TARJETA": 28530,
     "CATEGORIA": "Auriculares Gamer",
     "PRECIO EFECTIVO": 24300,
-    "STOCK": 3,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -26059,7 +26068,7 @@
     "PRECIO TARJETA": 4770,
     "CATEGORIA": "Cable/Tipo C",
     "PRECIO EFECTIVO": 4100,
-    "STOCK": 3,
+    "STOCK": 5,
     "ESTADO": "OK"
   },
   {
@@ -27022,7 +27031,7 @@
     "PRECIO TARJETA": 32940,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 28000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -30532,7 +30541,7 @@
     "PRECIO TARJETA": 660,
     "CATEGORIA": "Pilas y baterias",
     "PRECIO EFECTIVO": 600,
-    "STOCK": 49,
+    "STOCK": 46,
     "ESTADO": "OK"
   },
   {
@@ -30874,7 +30883,7 @@
     "PRECIO TARJETA": 14320,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 12200,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -31477,7 +31486,7 @@
     "PRECIO TARJETA": 13500,
     "CATEGORIA": "Teclados",
     "PRECIO EFECTIVO": 11500,
-    "STOCK": 3,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -32224,7 +32233,7 @@
     "PRECIO TARJETA": 12660,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 10800,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
