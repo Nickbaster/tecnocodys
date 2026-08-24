@@ -1,5 +1,68 @@
 [
   {
+    "CODIGO": 4024,
+    "DESCRIPCION": "HUB USB a 3 puertos Usb 2.0 + 1 Usb 3.0",
+    "PRECIO TARJETA": 9000,
+    "CATEGORIA": "Conectividad",
+    "PRECIO EFECTIVO": 7700,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4023,
+    "DESCRIPCION": "Parlante Barra Bluetooth KTS-1968",
+    "PRECIO TARJETA": 36500,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 31000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4022,
+    "DESCRIPCION": "Reloj Smartwatch 3 mallas ME05 ULTRA3 INFINITE DISPLAY 2.01",
+    "PRECIO TARJETA": 28240,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 24000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4021,
+    "DESCRIPCION": "Soporte fijo de 32 a 70 pulgadas VESA 40x40 Modelo GJ-B64",
+    "PRECIO TARJETA": 26200,
+    "CATEGORIA": "Soportes TV-Smart-Consolas",
+    "PRECIO EFECTIVO": 22300,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4020,
+    "DESCRIPCION": "Soporte de Tv fijo de 26 a 63 pulgadas VESA 40x40 Modelo TV-50",
+    "PRECIO TARJETA": 19060,
+    "CATEGORIA": "Soportes TV-Smart-Consolas",
+    "PRECIO EFECTIVO": 16200,
+    "STOCK": 3,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4019,
+    "DESCRIPCION": "Auriculares Samsung color negro",
+    "PRECIO TARJETA": 5770,
+    "CATEGORIA": "Auriculares comunes",
+    "PRECIO EFECTIVO": 4900,
+    "STOCK": 4,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4018,
+    "DESCRIPCION": "Hub USB a USB 3.0x1  USB 2.0x3",
+    "PRECIO TARJETA": 8000,
+    "CATEGORIA": "Conectividad",
+    "PRECIO EFECTIVO": 6800,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4017,
     "DESCRIPCION": "Mochita rigida pinguinito niños",
     "PRECIO TARJETA": 17650,
@@ -419,7 +482,7 @@
     "PRECIO TARJETA": 9650,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 8200,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -987,7 +1050,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 26400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3905,
@@ -1581,7 +1644,7 @@
     "CATEGORIA": "Informatica/Tablet",
     "PRECIO EFECTIVO": 21200,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3838,
@@ -2425,7 +2488,7 @@
     "PRECIO TARJETA": 8900,
     "CATEGORIA": "Herramientas",
     "PRECIO EFECTIVO": 7600,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -2444,7 +2507,7 @@
     "CATEGORIA": "Cable/Ligthning",
     "PRECIO EFECTIVO": 9800,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3742,
@@ -2462,7 +2525,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 27000,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3740,
@@ -2899,10 +2962,10 @@
   {
     "CODIGO": 3691,
     "DESCRIPCION": "Camara de exterior Wifi 360° 1080p Full HD 2 Antenas TIME",
-    "PRECIO TARJETA": 55880,
+    "PRECIO TARJETA": 61180,
     "CATEGORIA": "Camaras, Webcam, Seguridad",
-    "PRECIO EFECTIVO": 47500,
-    "STOCK": 1,
+    "PRECIO EFECTIVO": 52000,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -3460,7 +3523,7 @@
     "PRECIO TARJETA": 42350,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 36000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -4883,7 +4946,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 4300,
     "STOCK": 4,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3469,
@@ -5864,7 +5927,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 47000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3360,
@@ -6674,7 +6737,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 18500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3270,
@@ -7447,7 +7510,7 @@
     "PRECIO TARJETA": 14890,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 12700,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -8803,11 +8866,11 @@
   {
     "CODIGO": 3030,
     "DESCRIPCION": "CABLE AUXILIAR BOLSITA COLORES 1M TMCB6417",
-    "PRECIO TARJETA": 1570,
+    "PRECIO TARJETA": 2350,
     "CATEGORIA": "Cables varios",
-    "PRECIO EFECTIVO": 1300,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 2000,
+    "STOCK": 4,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3029,
@@ -9985,7 +10048,7 @@
     "PRECIO TARJETA": 17060,
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 14500,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -11246,7 +11309,7 @@
     "CATEGORIA": "Adhesivos y cintas",
     "PRECIO EFECTIVO": 1000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2753,
@@ -11380,7 +11443,7 @@
     "PRECIO TARJETA": 7650,
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 6500,
-    "STOCK": 6,
+    "STOCK": 5,
     "ESTADO": "OK"
   },
   {
@@ -12367,10 +12430,10 @@
   {
     "CODIGO": 2628,
     "DESCRIPCION": "Auricular Inalambrico M28 Negro",
-    "PRECIO TARJETA": 24120,
+    "PRECIO TARJETA": 21180,
     "CATEGORIA": "Auriculares Inalambricos",
-    "PRECIO EFECTIVO": 20500,
-    "STOCK": 0,
+    "PRECIO EFECTIVO": 18000,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -14197,7 +14260,7 @@
     "PRECIO TARJETA": 1240,
     "CATEGORIA": "Varios",
     "PRECIO EFECTIVO": 1100,
-    "STOCK": 3,
+    "STOCK": 6,
     "ESTADO": "OK"
   },
   {
@@ -14755,8 +14818,8 @@
     "PRECIO TARJETA": 35110,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 29800,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2360,
@@ -15853,7 +15916,7 @@
     "PRECIO TARJETA": 33830,
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 28800,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -15934,7 +15997,7 @@
     "PRECIO TARJETA": 2050,
     "CATEGORIA": "Cables varios",
     "PRECIO EFECTIVO": 1700,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -16957,11 +17020,11 @@
   {
     "CODIGO": 2114,
     "DESCRIPCION": "Cargador Karsen CI-2001 10W",
-    "PRECIO TARJETA": 18830,
+    "PRECIO TARJETA": 18240,
     "CATEGORIA": "Cargadores Micro USB",
-    "PRECIO EFECTIVO": 16000,
+    "PRECIO EFECTIVO": 15500,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2113,
@@ -20930,7 +20993,7 @@
     "CATEGORIA": "Multimedia/Microfonos",
     "PRECIO EFECTIVO": 8400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1665,
@@ -22324,7 +22387,7 @@
     "PRECIO TARJETA": 17500,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 14900,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -23260,7 +23323,7 @@
     "PRECIO TARJETA": 13000,
     "CATEGORIA": "Art. para Comercios",
     "PRECIO EFECTIVO": 11100,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -24205,7 +24268,7 @@
     "PRECIO TARJETA": 12500,
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 10600,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -24304,7 +24367,7 @@
     "PRECIO TARJETA": 17200,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 14600,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -25339,7 +25402,7 @@
     "PRECIO TARJETA": 3900,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 3300,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -28814,7 +28877,7 @@
     "CATEGORIA": "Auriculares Gamer",
     "PRECIO EFECTIVO": 19500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 627,
@@ -29029,8 +29092,8 @@
     "PRECIO TARJETA": 15180,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 12900,
-    "STOCK": 0,
-    "ESTADO": "OK"
+    "STOCK": 1,
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 603,
@@ -29173,7 +29236,7 @@
     "PRECIO TARJETA": 22940,
     "CATEGORIA": "Cargador Universal celular",
     "PRECIO EFECTIVO": 19500,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -29812,7 +29875,7 @@
     "PRECIO TARJETA": 3686,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 3100,
-    "STOCK": 2,
+    "STOCK": 4,
     "ESTADO": "OK"
   },
   {
@@ -30910,7 +30973,7 @@
     "PRECIO TARJETA": 14320,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 12200,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -31315,7 +31378,7 @@
     "PRECIO TARJETA": 20590,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 17500,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -31927,7 +31990,7 @@
     "PRECIO TARJETA": 13410,
     "CATEGORIA": "Auriculares Vincha Inalambricos",
     "PRECIO EFECTIVO": 11400,
-    "STOCK": 3,
+    "STOCK": 6,
     "ESTADO": "OK"
   },
   {
@@ -32054,7 +32117,7 @@
     "CATEGORIA": "Controles/Joystick/Consolas",
     "PRECIO EFECTIVO": 19200,
     "STOCK": 2,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 221,
