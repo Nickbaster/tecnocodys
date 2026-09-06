@@ -560,6 +560,8 @@ header p.subtitulo {
     justify-content: center;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 /* =========================
@@ -1034,33 +1036,14 @@ const numeroWhatsApp = "5492954736933";
 ========================= */
 
 let todosLosProductos = [];
-
 let productosFiltrados = [];
-
 let categoriaActiva = "Todas";
-
 let textoBusqueda = "";
-
 let ordenActivo = "predeterminado";
-
-/*
-   ESTA VARIABLE ES LA CLAVE.
-
-   false = catálogo normal
-           solo productos con stock
-
-   true = modo STOCK0
-          permite mostrar productos sin stock
-*/
 let modoStock0 = false;
 
-
-let carrito =
-    JSON.parse(localStorage.getItem("carrito")) || [];
-
-
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const productosPorPagina = 24;
-
 let paginaActual = 1;
 
 
@@ -1069,10 +1052,7 @@ let paginaActual = 1;
 ========================= */
 
 window.addEventListener("load", () => {
-
-    document.getElementById("cantidadCarrito").textContent =
-        carrito.length;
-
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
 });
 
 
@@ -1081,22 +1061,13 @@ window.addEventListener("load", () => {
 ========================= */
 
 function deslizarCategorias(direccion) {
-
-    const contenedor =
-        document.getElementById("categorias");
-
+    const contenedor = document.getElementById("categorias");
     const distancia = 200;
-
     if (direccion === "izquierda") {
-
         contenedor.scrollLeft -= distancia;
-
     } else {
-
         contenedor.scrollLeft += distancia;
-
     }
-
 }
 
 
@@ -1107,188 +1078,77 @@ function deslizarCategorias(direccion) {
 async function cargarProductos() {
 
     try {
-
-        const respuesta =
-            await fetch("productos.json");
-
-        const productos =
-            await respuesta.json();
+        const respuesta = await fetch("productos.json");
+        const productos = await respuesta.json();
 
         todosLosProductos = productos;
 
-        /*
-           Al comenzar:
-           SOLO PRODUCTOS CON STOCK
-        */
-
-        productosFiltrados =
-            todosLosProductos.filter(p =>
-                tieneStock(p)
-            );
-
-        actualizarPantalla();
-
-        crearCategorias(productosFiltrados);
-
+        crearCategorias(todosLosProductos);
+        filtrarProductos();
 
         /* =========================
            BUSCADOR
         ========================= */
 
-        const inputBuscar =
-            document.getElementById("buscar");
+        const inputBuscar = document.getElementById("buscar");
+        const botonLimpiar = document.getElementById("limpiar-buscar");
 
-        const botonLimpiar =
-            document.getElementById("limpiar-buscar");
+        inputBuscar.addEventListener("input", function() {
 
+            const texto = this.value.toLowerCase().trim();
 
-        inputBuscar.addEventListener(
-            "input",
-            function() {
+            modoStock0 = texto.includes("stock0");
+            textoBusqueda = texto.replace(/stock0/g, "").trim();
 
-                const texto =
-                    this.value
-                        .toLowerCase()
-                        .trim();
+            botonLimpiar.style.display = texto !== "" ? "block" : "none";
 
+            const aviso = document.getElementById("avisoStock0");
+            aviso.style.display = modoStock0 ? "block" : "none";
 
-                /*
-                   Detectamos STOCK0
-                */
-
-                modoStock0 =
-                    texto.includes("stock0");
-
-
-                /*
-                   Sacamos STOCK0 del texto.
-
-                   Ejemplo:
-
-                   STOCK0 12345
-
-                   queda:
-
-                   12345
-                */
-
-                textoBusqueda =
-                    texto
-                        .replace(/stock0/g, "")
-                        .trim();
-
-
-                /*
-                   Mostrar / ocultar X
-                */
-
-                botonLimpiar.style.display =
-                    texto !== ""
-                        ? "block"
-                        : "none";
-
-
-                /*
-                   Mostrar aviso
-                */
-
-                const aviso =
-                    document.getElementById(
-                        "avisoStock0"
-                    );
-
-                aviso.style.display =
-                    modoStock0
-                        ? "block"
-                        : "none";
-
-
-                paginaActual = 1;
-
-
-                filtrarProductos();
-
-            }
-        );
+            paginaActual = 1;
+            filtrarProductos();
+        });
 
 
         /* =========================
            LIMPIAR
         ========================= */
 
-        botonLimpiar.addEventListener(
-            "click",
-            function() {
+        botonLimpiar.addEventListener("click", function() {
 
-                inputBuscar.value = "";
+            inputBuscar.value = "";
+            textoBusqueda = "";
+            modoStock0 = false;
 
-                textoBusqueda = "";
+            botonLimpiar.style.display = "none";
+            document.getElementById("avisoStock0").style.display = "none";
 
-                modoStock0 = false;
-
-                botonLimpiar.style.display =
-                    "none";
-
-                document.getElementById(
-                    "avisoStock0"
-                ).style.display = "none";
-
-
-                paginaActual = 1;
-
-                filtrarProductos();
-
-                inputBuscar.focus();
-
-            }
-        );
+            paginaActual = 1;
+            filtrarProductos();
+            inputBuscar.focus();
+        });
 
 
         /* =========================
            CARGAR MÁS
         ========================= */
 
-        document
-            .getElementById("btnCargarMas")
-            .addEventListener(
-                "click",
-                function() {
-
-                    paginaActual++;
-
-                    actualizarPantalla();
-
-                }
-            );
-
+        document.getElementById("btnCargarMas").addEventListener("click", function() {
+            paginaActual++;
+            renderizarPagina();
+        });
 
     } catch (error) {
 
-        console.error(
-            "Error cargando productos:",
-            error
-        );
+        console.error("Error cargando productos:", error);
 
-        document.getElementById(
-            "productos"
-        ).innerHTML = `
-            <div style="
-                grid-column:1/-1;
-                text-align:center;
-                padding:40px;
-                color:#ef4444;
-            ">
-                <h3>
-                    ⚠️ No se pudieron cargar los productos
-                </h3>
-                <p>
-                    Revisá que productos.json esté disponible.
-                </p>
+        document.getElementById("productos").innerHTML = `
+            <div style="grid-column:1/-1; text-align:center; padding:40px; color:#ef4444;">
+                <h3>⚠️ No se pudieron cargar los productos</h3>
+                <p>Revisá que productos.json esté disponible.</p>
             </div>
         `;
-
     }
-
 }
 
 
@@ -1297,14 +1157,15 @@ async function cargarProductos() {
 ========================= */
 
 function tieneStock(producto) {
-
+    if (!producto) return false;
+    const stockVal = producto.STOCK !== undefined ? producto.STOCK : producto.stock;
     return !(
-        producto.STOCK === 0 ||
-        producto.STOCK === "0" ||
-        producto.stock === 0 ||
-        producto.stock === "0"
+        stockVal === 0 ||
+        stockVal === "0" ||
+        stockVal === false ||
+        stockVal === null ||
+        stockVal === undefined
     );
-
 }
 
 
@@ -1312,101 +1173,49 @@ function tieneStock(producto) {
    CATEGORÍAS
 ========================= */
 
-function activarCategoria(
-    botonSeleccionado
-) {
-
-    document
-        .querySelectorAll(".categoria-btn")
-        .forEach(btn =>
-            btn.classList.remove("activa")
-        );
-
+function activarCategoria(botonSeleccionado) {
+    document.querySelectorAll(".categoria-btn").forEach(btn => btn.classList.remove("activa"));
     botonSeleccionado.classList.add("activa");
-
 }
 
 
 function crearCategorias(productos) {
 
-    const contenedorCategorias =
-        document.getElementById("categorias");
-
+    const contenedorCategorias = document.getElementById("categorias");
     contenedorCategorias.innerHTML = "";
 
+    const categoriesList = [...new Set(
+        productos.map(p => p.CATEGORIA).filter(c => c)
+    )].sort();
 
-    const categoriesList =
-        [
-            ...new Set(
-                productos.map(
-                    p => p.CATEGORIA
-                )
-            )
-        ].sort();
-
-
-    const btnTodas =
-        document.createElement("button");
-
-    btnTodas.className =
-        "categoria-btn activa";
-
-    btnTodas.textContent =
-        "Todas";
-
+    const btnTodas = document.createElement("button");
+    btnTodas.className = "categoria-btn activa";
+    btnTodas.textContent = "Todas";
 
     btnTodas.onclick = () => {
-
         activarCategoria(btnTodas);
-
         categoriaActiva = "Todas";
-
         paginaActual = 1;
-
         filtrarProductos();
-
     };
 
+    contenedorCategorias.appendChild(btnTodas);
 
-    contenedorCategorias.appendChild(
-        btnTodas
-    );
+    categoriesList.forEach(categoria => {
 
+        const boton = document.createElement("button");
+        boton.className = "categoria-btn";
+        boton.textContent = categoria;
 
-    categoriesList.forEach(
-        categoria => {
+        boton.onclick = () => {
+            activarCategoria(boton);
+            categoriaActiva = categoria;
+            paginaActual = 1;
+            filtrarProductos();
+        };
 
-            const boton =
-                document.createElement("button");
-
-            boton.className =
-                "categoria-btn";
-
-            boton.textContent =
-                categoria;
-
-
-            boton.onclick = () => {
-
-                activarCategoria(boton);
-
-                categoriaActiva =
-                    categoria;
-
-                paginaActual = 1;
-
-                filtrarProductos();
-
-            };
-
-
-            contenedorCategorias.appendChild(
-                boton
-            );
-
-        }
-    );
-
+        contenedorCategorias.appendChild(boton);
+    });
 }
 
 
@@ -1418,48 +1227,16 @@ function cambiarOrden(tipo) {
 
     ordenActivo = tipo;
 
+    document.querySelectorAll(".orden-btn").forEach(btn => btn.classList.remove("activo"));
 
-    document
-        .querySelectorAll(".orden-btn")
-        .forEach(btn =>
-            btn.classList.remove("activo")
-        );
-
-
-    if (tipo === "predeterminado")
-        document
-            .getElementById("btn-predeterminado")
-            .classList.add("activo");
-
-
-    if (tipo === "baratos")
-        document
-            .getElementById("btn-baratos")
-            .classList.add("activo");
-
-
-    if (tipo === "caros")
-        document
-            .getElementById("btn-caros")
-            .classList.add("activo");
-
-
-    if (tipo === "az")
-        document
-            .getElementById("btn-az")
-            .classList.add("activo");
-
-
-    if (tipo === "za")
-        document
-            .getElementById("btn-za")
-            .classList.add("activo");
-
+    if (tipo === "predeterminado") document.getElementById("btn-predeterminado").classList.add("activo");
+    if (tipo === "baratos") document.getElementById("btn-baratos").classList.add("activo");
+    if (tipo === "caros") document.getElementById("btn-caros").classList.add("activo");
+    if (tipo === "az") document.getElementById("btn-az").classList.add("activo");
+    if (tipo === "za") document.getElementById("btn-za").classList.add("activo");
 
     paginaActual = 1;
-
     filtrarProductos();
-
 }
 
 
@@ -1469,561 +1246,138 @@ function cambiarOrden(tipo) {
 
 function filtrarProductos() {
 
-    /*
-       ==========================================
-       MODO STOCK0
-       ==========================================
-
-       Si STOCK0 está escrito:
-
-       STOCK0
-       STOCK0 12345
-       STOCK0 samsung
-
-       se busca en TODOS los productos.
-    */
-
     if (modoStock0) {
-
-        productosFiltrados =
-            todosLosProductos.filter(
-                producto => {
-
-                    /*
-                       Si solamente está escrito:
-
-                       STOCK0
-
-                       mostramos todos.
-                    */
-
-                    if (
-                        textoBusqueda === ""
-                    ) {
-
-                        return true;
-
-                    }
-
-
-                    const codigo =
-                        String(
-                            producto.CODIGO || ""
-                        ).toLowerCase();
-
-
-                    const descripcion =
-                        String(
-                            producto.DESCRIPCION || ""
-                        ).toLowerCase();
-
-
-                    return (
-                        codigo.includes(
-                            textoBusqueda
-                        ) ||
-                        descripcion.includes(
-                            textoBusqueda
-                        )
-                    );
-
-                }
-            );
-
+        productosFiltrados = [...todosLosProductos];
     } else {
-
-        /*
-           ==========================================
-           MODO NORMAL
-           ==========================================
-
-           SOLO PRODUCTOS CON STOCK
-        */
-
-        productosFiltrados =
-            todosLosProductos.filter(
-                producto =>
-                    tieneStock(producto)
-            );
-
-
-        /*
-           Aplicar búsqueda normal
-        */
-
-        if (
-            textoBusqueda !== ""
-        ) {
-
-            productosFiltrados =
-                productosFiltrados.filter(
-                    producto => {
-
-                        const codigo =
-                            String(
-                                producto.CODIGO || ""
-                            ).toLowerCase();
-
-
-                        const descripcion =
-                            String(
-                                producto.DESCRIPCION || ""
-                            ).toLowerCase();
-
-
-                        return (
-                            codigo.includes(
-                                textoBusqueda
-                            ) ||
-                            descripcion.includes(
-                                textoBusqueda
-                            )
-                        );
-
-                    }
-                );
-
-        }
-
+        productosFiltrados = todosLosProductos.filter(producto => tieneStock(producto));
     }
 
-
-    /* =========================
-       CATEGORÍA
-    ========================= */
-
-    if (
-        categoriaActiva !== "Todas"
-    ) {
-
-        productosFiltrados =
-            productosFiltrados.filter(
-                producto =>
-                    producto.CATEGORIA ===
-                    categoriaActiva
-            );
-
+    if (textoBusqueda !== "") {
+        productosFiltrados = productosFiltrados.filter(producto => {
+            const codigo = String(producto.CODIGO || "").toLowerCase();
+            const descripcion = String(producto.DESCRIPCION || "").toLowerCase();
+            return codigo.includes(textoBusqueda) || descripcion.includes(textoBusqueda);
+        });
     }
 
-
-    /* =========================
-       ORDENAMIENTO
-    ========================= */
-
-    if (
-        ordenActivo === "baratos"
-    ) {
-
-        productosFiltrados.sort(
-            (a, b) =>
-                Number(
-                    a["PRECIO EFECTIVO"] ||
-                    a.PRECIO_EFECTIVO ||
-                    0
-                ) -
-                Number(
-                    b["PRECIO EFECTIVO"] ||
-                    b.PRECIO_EFECTIVO ||
-                    0
-                )
-        );
-
+    if (categoriaActiva !== "Todas") {
+        productosFiltrados = productosFiltrados.filter(producto => producto.CATEGORIA === categoriaActiva);
     }
 
-
-    else if (
-        ordenActivo === "caros"
-    ) {
-
-        productosFiltrados.sort(
-            (a, b) =>
-                Number(
-                    b["PRECIO EFECTIVO"] ||
-                    b.PRECIO_EFECTIVO ||
-                    0
-                ) -
-                Number(
-                    a["PRECIO EFECTIVO"] ||
-                    a.PRECIO_EFECTIVO ||
-                    0
-                )
-        );
-
+    if (ordenActivo === "baratos") {
+        productosFiltrados.sort((a, b) => {
+            const pA = Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO || 0);
+            const pB = Number(b["PRECIO EFECTIVO"] || b.PRECIO_EFECTIVO || 0);
+            return pA - pB;
+        });
+    } else if (ordenActivo === "caros") {
+        productosFiltrados.sort((a, b) => {
+            const pA = Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO || 0);
+            const pB = Number(b["PRECIO EFECTIVO"] || b.PRECIO_EFECTIVO || 0);
+            return pB - pA;
+        });
+    } else if (ordenActivo === "az") {
+        productosFiltrados.sort((a, b) => String(a.DESCRIPCION || "").localeCompare(String(b.DESCRIPCION || "")));
+    } else if (ordenActivo === "za") {
+        productosFiltrados.sort((a, b) => String(b.DESCRIPCION || "").localeCompare(String(a.DESCRIPCION || "")));
     }
 
-
-    else if (
-        ordenActivo === "az"
-    ) {
-
-        productosFiltrados.sort(
-            (a, b) =>
-                String(
-                    a.DESCRIPCION || ""
-                ).localeCompare(
-                    String(
-                        b.DESCRIPCION || ""
-                    )
-                )
-        );
-
-    }
-
-
-    else if (
-        ordenActivo === "za"
-    ) {
-
-        productosFiltrados.sort(
-            (a, b) =>
-                String(
-                    b.DESCRIPCION || ""
-                ).localeCompare(
-                    String(
-                        a.DESCRIPCION || ""
-                    )
-                )
-        );
-
-    }
-
-
-    document.getElementById(
-        "productos"
-    ).innerHTML = "";
-
-
-    actualizarPantalla();
-
+    paginaActual = 1;
+    document.getElementById("productos").innerHTML = "";
+    renderizarPagina();
 }
 
 
 /* =========================
-   ACTUALIZAR PANTALLA
+   RENDERIZAR PANTALLA
 ========================= */
 
-function actualizarPantalla() {
+function renderizarPagina() {
 
-    const contenedor =
-        document.getElementById(
-            "productos"
-        );
+    const contenedor = document.getElementById("productos");
+    const btnCargarMas = document.getElementById("btnCargarMas");
 
-    const btnCargarMas =
-        document.getElementById(
-            "btnCargarMas"
-        );
+    let textoContador = `${productosFiltrados.length} productos encontrados`;
+    if (modoStock0) textoContador += " — incluyendo sin stock";
 
+    document.getElementById("contadorProductos").innerHTML = modoStock0 ? `🔒 ${textoContador}` : textoContador;
 
-    /* =========================
-       CONTADOR
-    ========================= */
-
-    let textoContador =
-        `${productosFiltrados.length} productos encontrados`;
-
-
-    if (modoStock0) {
-
-        textoContador +=
-            " — incluyendo sin stock";
-
-    }
-
-
-    document.getElementById(
-        "contadorProductos"
-    ).innerHTML =
-        modoStock0
-            ? `🔒 ${textoContador}`
-            : textoContador;
-
-
-    /* =========================
-       SIN RESULTADOS
-    ========================= */
-
-    if (
-        productosFiltrados.length === 0
-    ) {
-
+    if (productosFiltrados.length === 0) {
         contenedor.innerHTML = `
-            <div style="
-                grid-column:1/-1;
-                text-align:center;
-                padding:40px 20px;
-                color:#64748b;
-            ">
-
-                <span style="font-size:48px;">
-                    🔍
-                </span>
-
-                <h3 style="
-                    margin-top:10px;
-                    color:#334155;
-                ">
-                    No se encontraron productos
-                </h3>
-
-                <p style="font-size:14px;">
-                    Intentá escribirlo de otra forma.
-                </p>
-
+            <div style="grid-column:1/-1; text-align:center; padding:40px 20px; color:#64748b;">
+                <span style="font-size:48px;">🔍</span>
+                <h3 style="margin-top:10px; color:#334155;">No se encontraron productos</h3>
+                <p style="font-size:14px;">Intentá escribirlo de otra forma.</p>
             </div>
         `;
-
-
-        btnCargarMas.style.display =
-            "none";
-
+        btnCargarMas.style.display = "none";
         return;
-
     }
 
+    const fin = paginaActual * productosPorPagina;
+    const inicio = fin - productosPorPagina;
+    const tandaActual = productosFiltrados.slice(inicio, fin);
 
-    /* =========================
-       PAGINACIÓN
-    ========================= */
+    tandaActual.forEach(producto => {
 
-    const fin =
-        paginaActual *
-        productosPorPagina;
+        const productoSinStock = !tieneStock(producto);
 
+        const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
+        const precioTarjetaFormateado = precioTarjetaRaw
+            ? `$ ${Number(precioTarjetaRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
+            : "Consulte";
 
-    const inicio =
-        fin -
-        productosPorPagina;
+        const precioEfectivoRaw = producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO;
+        const precioEfectivoFormateado = precioEfectivoRaw
+            ? `$ ${Number(precioEfectivoRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
+            : "Consulte";
 
+        const estadoNorm = String(producto.ESTADO || producto.Estado || producto.estado || "").toLowerCase();
+        const precioAlerta = estadoNorm === "bajar precio" ? "codigo-alerta" : "";
 
-    const tandaActual =
-        productosFiltrados.slice(
-            inicio,
-            fin
-        );
+        const botonCarrito = productoSinStock
+            ? `<button class="btn-carrito" disabled>🚫 Sin stock</button>`
+            : `<button class="btn-carrito" onclick="agregarAlCarrito('${producto.CODIGO}')">🛒 Agregar al carrito</button>`;
 
+        const tagSinStock = productoSinStock ? `<div class="sin-stock-tag">SIN STOCK</div>` : "";
 
-    /* =========================
-       CREAR CARDS
-    ========================= */
-
-    tandaActual.forEach(
-        producto => {
-
-
-            const productoSinStock =
-                !tieneStock(producto);
-
-
-            /* =========================
-               PRECIOS
-            ========================= */
-
-            const precioTarjetaRaw =
-                producto.PRECIO ||
-                producto["PRECIO TARJ"] ||
-                producto.PRECIO_TAG ||
-                producto["PRECIO TARJETA"] ||
-                producto.PRECIO_TARJETA;
-
-
-            const precioTarjetaFormateado =
-                precioTarjetaRaw
-                    ? `$ ${Number(
-                        precioTarjetaRaw
-                    ).toLocaleString(
-                        "es-AR",
-                        {
-                            minimumFractionDigits: 0
-                        }
-                    )}`
-                    : "Consulte";
-
-
-            const precioEfectivoRaw =
-                producto["PRECIO EFECTIVO"] ||
-                producto.PRECIO_EFECTIVO;
-
-
-            const precioEfectivoFormateado =
-                precioEfectivoRaw
-                    ? `$ ${Number(
-                        precioEfectivoRaw
-                    ).toLocaleString(
-                        "es-AR",
-                        {
-                            minimumFractionDigits: 0
-                        }
-                    )}`
-                    : "Consulte";
-
-
-            /* =========================
-               ESTADO PRECIO
-            ========================= */
-
-            const precioAlerta =
-                (
-                    producto.ESTADO ===
-                    "Bajar Precio" ||
-
-                    producto.Estado ===
-                    "Bajar Precio" ||
-
-                    producto.estado ===
-                    "Bajar Precio"
-                )
-                    ? "codigo-alerta"
-                    : "";
-
-
-            /* =========================
-               BOTÓN CARRITO
-            ========================= */
-
-            const botonCarrito =
-                productoSinStock
-
-                    ? `
-                        <button
-                            class="btn-carrito"
-                            disabled
-                        >
-                            🚫 Sin stock
-                        </button>
-                      `
-
-                    : `
-                        <button
-                            class="btn-carrito"
-                            onclick="agregarAlCarrito('${producto.CODIGO}')"
-                        >
-                            🛒 Agregar al carrito
-                        </button>
-                      `;
-
-
-            /* =========================
-               TAG SIN STOCK
-            ========================= */
-
-            const tagSinStock =
-                productoSinStock
-                    ? `
-                        <div class="sin-stock-tag">
-                            SIN STOCK
-                        </div>
-                      `
-                    : "";
-
-
-            contenedor.innerHTML += `
-
-                <div class="card">
-
-                    <div
-                        class="card-click"
-                        onclick="abrirFicha('${producto.CODIGO}')"
+        contenedor.innerHTML += `
+            <div class="card">
+                <div class="card-click" onclick="abrirFicha('${producto.CODIGO}')">
+                    <div class="categoria-tag">${producto.CATEGORIA || 'Gral'}</div>
+                    ${tagSinStock}
+                    <img
+                        src="fotos/${producto.CODIGO}.jpg"
+                        alt="${producto.DESCRIPCION}"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
                     >
-
-                        <div class="categoria-tag">
-                            ${producto.CATEGORIA}
-                        </div>
-
-                        ${tagSinStock}
-
-                        <img
-                            src="fotos/${producto.CODIGO}.jpg"
-                            alt="${producto.DESCRIPCION}"
-
-                            onerror="
-                                this.onerror=null;
-                                this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';
-                            "
-                        >
-
-                        <div class="info">
-
-                            <h3>
-                                ${producto.DESCRIPCION}
-                            </h3>
-
-                            <p
-                                class="codigo-texto ${precioAlerta}"
-                            >
-                                Código:
-                                ${producto.CODIGO}
+                    <div class="info">
+                        <h3>${producto.DESCRIPCION}</h3>
+                        <p class="codigo-texto ${precioAlerta}">Código: ${producto.CODIGO}</p>
+                        <div class="contenedor-precios">
+                            <p class="precio-efectivo">
+                                ${precioEfectivoFormateado}
+                                <span style="font-size:12px; font-weight:600; color:#475569;">Efectivo</span>
                             </p>
-
-                            <div class="contenedor-precios">
-
-                                <p class="precio-efectivo">
-
-                                    ${precioEfectivoFormateado}
-
-                                    <span style="
-                                        font-size:12px;
-                                        font-weight:600;
-                                        color:#475569;
-                                    ">
-                                        Efectivo
-                                    </span>
-
-                                </p>
-
-                                <p class="precio-tarjeta">
-
-                                    Tarjeta, CradiAPP, Go Cuotas:
-                                    ${precioTarjetaFormateado}
-
-                                </p>
-
-                            </div>
-
+                            <p class="precio-tarjeta">
+                                Tarjeta, CrediAPP, Go Cuotas: ${precioTarjetaFormateado}
+                            </p>
                         </div>
-
                     </div>
-
-                    <div class="botones-tarjeta">
-
-                        <button
-                            class="btn-ver-mas"
-                            onclick="abrirFicha('${producto.CODIGO}')"
-                        >
-                            🔍 Ver Ficha
-                        </button>
-
-                        ${botonCarrito}
-
-                    </div>
-
                 </div>
+                <div class="botones-tarjeta">
+                    <button class="btn-ver-mas" onclick="abrirFicha('${producto.CODIGO}')">🔍 Ver Ficha</button>
+                    ${botonCarrito}
+                </div>
+            </div>
+        `;
+    });
 
-            `;
-
-        }
-    );
-
-
-    /* =========================
-       CARGAR MÁS
-    ========================= */
-
-    if (
-        fin <
-        productosFiltrados.length
-    ) {
-
-        btnCargarMas.style.display =
-            "inline-block";
-
+    if (fin < productosFiltrados.length) {
+        btnCargarMas.style.display = "inline-block";
     } else {
-
-        btnCargarMas.style.display =
-            "none";
-
+        btnCargarMas.style.display = "none";
     }
-
 }
 
 
@@ -2033,230 +1387,59 @@ function actualizarPantalla() {
 
 function abrirFicha(codigo) {
 
-    const producto =
-        todosLosProductos.find(
-            p =>
-                String(p.CODIGO) ===
-                String(codigo)
-        );
+    const producto = todosLosProductos.find(p => String(p.CODIGO) === String(codigo));
+    if (!producto) return;
 
+    const contenedorFicha = document.getElementById("contenidoFicha");
+    const productoSinStock = !tieneStock(producto);
 
-    if (!producto)
-        return;
+    const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
+    const precioTarjetaFormateado = precioTarjetaRaw
+        ? `$ ${Number(precioTarjetaRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
+        : "Consulte";
 
+    const precioEfectivoRaw = producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO;
+    const precioEfectivoFormateado = precioEfectivoRaw
+        ? `$ ${Number(precioEfectivoRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
+        : "Consulte";
 
-    const contenedorFicha =
-        document.getElementById(
-            "contenidoFicha"
-        );
+    const mensajeFicha = encodeURIComponent(`Hola, consulto por ${producto.DESCRIPCION} (${producto.CODIGO})`);
 
-
-    const productoSinStock =
-        !tieneStock(producto);
-
-
-    /* =========================
-       PRECIOS
-    ========================= */
-
-    const precioTarjetaRaw =
-        producto.PRECIO ||
-        producto["PRECIO TARJ"] ||
-        producto.PRECIO_TARJ ||
-        producto["PRECIO TARJETA"] ||
-        producto.PRECIO_TARJETA;
-
-
-    const precioTarjetaFormateado =
-        precioTarjetaRaw
-            ? `$ ${Number(
-                precioTarjetaRaw
-            ).toLocaleString(
-                "es-AR",
-                {
-                    minimumFractionDigits: 0
-                }
-            )}`
-            : "Consulte";
-
-
-    const precioEfectivoRaw =
-        producto["PRECIO EFECTIVO"] ||
-        producto.PRECIO_EFECTIVO;
-
-
-    const precioEfectivoFormateado =
-        precioEfectivoRaw
-            ? `$ ${Number(
-                precioEfectivoRaw
-            ).toLocaleString(
-                "es-AR",
-                {
-                    minimumFractionDigits: 0
-                }
-            )}`
-            : "Consulte";
-
-
-    const mensajeFicha =
-        encodeURIComponent(
-            `Hola, consulto por ${producto.DESCRIPCION} (${producto.CODIGO})`
-        );
-
-
-    const avisoSinStock =
-        productoSinStock
-            ? `
-                <div style="
-                    background:#fee2e2;
-                    color:#b91c1c;
-                    border:1px solid #fecaca;
-                    padding:10px;
-                    border-radius:10px;
-                    text-align:center;
-                    font-weight:bold;
-                    margin:10px 0;
-                ">
-                    🚫 PRODUCTO SIN STOCK
-                </div>
-              `
-            : "";
-
+    const avisoSinStock = productoSinStock
+        ? `<div style="background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; padding:10px; border-radius:10px; text-align:center; font-weight:bold; margin:10px 0;">🚫 PRODUCTO SIN STOCK</div>`
+        : "";
 
     contenedorFicha.innerHTML = `
-
         <img
             class="ficha-img"
-
             src="fotos/${producto.CODIGO}.jpg"
-
             alt="${producto.DESCRIPCION}"
-
-            onerror="
-                this.onerror=null;
-                this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';
-            "
-
-            style="
-                margin-top:10px;
-                margin-bottom:5px;
-            "
+            onerror="this.onerror=null; this.src='https://placehold.co/400x300/e2e8f0/64748b?text=Sin+imagen+disponible';"
+            style="margin-top:10px; margin-bottom:5px;"
         >
-
-
         <div>
-
-            <span
-                class="ficha-categoria"
-                style="
-                    margin-top:5px;
-                    margin-bottom:5px;
-                "
-            >
-                ${producto.CATEGORIA}
-            </span>
-
-
-            <h2
-                class="ficha-descripcion"
-                style="
-                    margin:5px 0;
-                    font-size:18px;
-                    line-height:1.3;
-                "
-            >
-                ${producto.DESCRIPCION}
-            </h2>
-
-
-            <p
-                class="ficha-codigo"
-                style="
-                    margin:0 0 5px 0;
-                    font-size:13px;
-                "
-            >
-                <strong>
-                    Código del producto:
-                </strong>
-
-                ${producto.CODIGO}
+            <span class="ficha-categoria" style="margin-top:5px; margin-bottom:5px;">${producto.CATEGORIA || 'Gral'}</span>
+            <h2 class="ficha-descripcion" style="margin:5px 0; font-size:18px; line-height:1.3;">${producto.DESCRIPCION}</h2>
+            <p class="ficha-codigo" style="margin:0 0 5px 0; font-size:13px;">
+                <strong>Código del producto:</strong> ${producto.CODIGO}
             </p>
-
-
             ${avisoSinStock}
-
-
-            <div
-                class="ficha-precios-box"
-                style="
-                    margin:5px 0;
-                    padding:10px;
-                "
-            >
-
-                <p
-                    class="ficha-precio-ef"
-                    style="
-                        margin:0;
-                        font-size:24px;
-                    "
-                >
-
-                    💵
-                    ${precioEfectivoFormateado}
-
-                    <span style="
-                        font-size:13px;
-                        color:#475569;
-                        font-weight:600;
-                    ">
-                        en Efectivo / Transferencia
-                    </span>
-
+            <div class="ficha-precios-box" style="margin:5px 0; padding:10px;">
+                <p class="ficha-precio-ef" style="margin:0; font-size:24px;">
+                    💵 ${precioEfectivoFormateado}
+                    <span style="font-size:13px; color:#475569; font-weight:600;">en Efectivo / Transferencia</span>
                 </p>
-
-
-                <p
-                    class="ficha-precio-tarj"
-                    style="
-                        margin:2px 0 0 0;
-                        font-size:15px;
-                    "
-                >
-
-                    💳 Tarjeta, CrediAPP, Go Cuotas:
-                    ${precioTarjetaFormateado}
-
+                <p class="ficha-precio-tarj" style="margin:2px 0 0 0; font-size:15px;">
+                    💳 Tarjeta, CrediAPP, Go Cuotas: ${precioTarjetaFormateado}
                 </p>
-
             </div>
-
-
-            <a
-                class="btn-whatsapp-ficha"
-
-                href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}"
-
-                target="_blank"
-
-                style="
-                    margin-top:10px;
-                    padding:12px;
-                "
-            >
+            <a class="btn-whatsapp-ficha" href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}" target="_blank" style="margin-top:10px; padding:12px;">
                 📲 Consultar por WhatsApp
             </a>
-
         </div>
-
     `;
 
-
-    document.getElementById(
-        "modalFicha"
-    ).style.display = "flex";
-
+    document.getElementById("modalFicha").style.display = "flex";
 }
 
 
@@ -2265,11 +1448,7 @@ function abrirFicha(codigo) {
 ========================= */
 
 function cerrarFicha() {
-
-    document.getElementById(
-        "modalFicha"
-    ).style.display = "none";
-
+    document.getElementById("modalFicha").style.display = "none";
 }
 
 
@@ -2279,48 +1458,17 @@ function cerrarFicha() {
 
 function agregarAlCarrito(codigo) {
 
-    const producto =
-        todosLosProductos.find(
-            p =>
-                String(p.CODIGO) ===
-                String(codigo)
-        );
-
-
-    if (!producto)
-        return;
-
-
-    /*
-       SEGURIDAD EXTRA:
-       No permitir agregar sin stock.
-    */
+    const producto = todosLosProductos.find(p => String(p.CODIGO) === String(codigo));
+    if (!producto) return;
 
     if (!tieneStock(producto)) {
-
-        alert(
-            "Este producto no tiene stock disponible."
-        );
-
+        alert("Este producto no tiene stock disponible.");
         return;
-
     }
 
-
     carrito.push(producto);
-
-
-    localStorage.setItem(
-        "carrito",
-        JSON.stringify(carrito)
-    );
-
-
-    document.getElementById(
-        "cantidadCarrito"
-    ).textContent =
-        carrito.length;
-
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
 }
 
 
@@ -2329,27 +1477,15 @@ function agregarAlCarrito(codigo) {
 ========================= */
 
 function eliminarDelCarrito(indice) {
+    carrito.splice(indice, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    document.getElementById("cantidadCarrito").textContent = carrito.length;
 
-    carrito.splice(
-        indice,
-        1
-    );
-
-
-    localStorage.setItem(
-        "carrito",
-        JSON.stringify(carrito)
-    );
-
-
-    document.getElementById(
-        "cantidadCarrito"
-    ).textContent =
-        carrito.length;
-
-
-    verCarrito();
-
+    if (carrito.length === 0) {
+        cerrarCarrito();
+    } else {
+        verCarrito();
+    }
 }
 
 
@@ -2359,127 +1495,55 @@ function eliminarDelCarrito(indice) {
 
 function verCarrito() {
 
-    if (
-        carrito.length === 0
-    ) {
-
-        alert(
-            "El carrito está vacío"
-        );
-
+    if (carrito.length === 0) {
+        alert("El carrito está vacío");
         return;
-
     }
 
-
-    const modal =
-        document.getElementById(
-            "modalCarrito"
-        );
-
-
-    const lista =
-        document.getElementById(
-            "listaCarrito"
-        );
-
-
+    const modal = document.getElementById("modalCarrito");
+    const lista = document.getElementById("listaCarrito");
     lista.innerHTML = "";
 
+    let totalEfectivo = 0;
+    let totalTarjeta = 0;
 
-    let total = 0;
+    carrito.forEach((producto, indice) => {
 
+        const precioEf = Number(producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO || 0);
+        const precioTarjRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA || 0;
+        const precioTarj = Number(precioTarjRaw);
 
-    carrito.forEach(
-        (producto, indice) => {
+        totalEfectivo += precioEf;
+        totalTarjeta += precioTarj;
 
-            const precioEf =
-                Number(
-                    producto[
-                        "PRECIO EFECTIVO"
-                    ] ||
-                    producto.PRECIO_EFECTIVO ||
-                    0
-                );
-
-
-            total += precioEf;
-
-
-            lista.innerHTML += `
-
-                <p style="
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    border-bottom:1px solid #eee;
-                    padding:8px 0;
-                    margin:5px 0;
-                ">
-
-                    <span>
-
-                        <strong>
-                            ${indice + 1}.
-                        </strong>
-
-                        ${producto.DESCRIPCION}
-
-                        <br>
-
-                        <small>
-                            Ef:
-                            $ ${precioEf.toLocaleString("es-AR")}
-                        </small>
-
-                    </span>
-
-
-                    <button
-                        onclick="eliminarDelCarrito(${indice})"
-
-                        style="
-                            border:none;
-                            background:#ef4444;
-                            color:white;
-                            border-radius:6px;
-                            cursor:pointer;
-                            padding:4px 8px;
-                        "
-                    >
-                        ❌
-                    </button>
-
-                </p>
-
-            `;
-
-        }
-    );
-
+        lista.innerHTML += `
+            <p style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding:8px 0; margin:5px 0;">
+                <span>
+                    <strong>${indice + 1}.</strong> ${producto.DESCRIPCION}
+                    <br>
+                    <small style="color:#16a34a; font-weight:bold;">Ef: $ ${precioEf.toLocaleString("es-AR")}</small> | 
+                    <small style="color:#64748b;">Tarj: $ ${precioTarj.toLocaleString("es-AR")}</small>
+                </span>
+                <button onclick="eliminarDelCarrito(${indice})" style="border:none; background:#ef4444; color:white; border-radius:6px; cursor:pointer; padding:4px 8px;">
+                    ❌
+                </button>
+            </p>
+        `;
+    });
 
     lista.innerHTML += `
-
-        <hr>
-
-        <h3 style="
-            text-align:right;
-            color:#16a34a;
-            margin-top:15px;
-        ">
-
-            Total Efectivo:
-
-            $
-            ${total.toLocaleString("es-AR")}
-
-        </h3>
-
+        <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0 10px 0;">
+        <div style="text-align:right;">
+            <h3 style="color:#16a34a; margin:4px 0; font-size:16px;">
+                Total Efectivo: $ ${totalEfectivo.toLocaleString("es-AR")}
+            </h3>
+            <h4 style="color:#64748b; margin:4px 0; font-size:14px; font-weight:600;">
+                Total Tarjeta / Cuotas: $ ${totalTarjeta.toLocaleString("es-AR")}
+            </h4>
+        </div>
     `;
 
-
     modal.style.display = "flex";
-
 }
 
 
@@ -2488,11 +1552,7 @@ function verCarrito() {
 ========================= */
 
 function cerrarCarrito() {
-
-    document.getElementById(
-        "modalCarrito"
-    ).style.display = "none";
-
+    document.getElementById("modalCarrito").style.display = "none";
 }
 
 
@@ -2502,91 +1562,42 @@ function cerrarCarrito() {
 
 function enviarCarritoWhatsapp() {
 
-    let mensaje =
-        "Hola, quiero consultar por los siguientes productos:\n\n";
+    if (carrito.length === 0) return;
 
+    let mensaje = "Hola, quiero consultar por los siguientes productos:\n\n";
+    let totalEfectivo = 0;
+    let totalTarjeta = 0;
 
-    let total = 0;
+    carrito.forEach((producto, indice) => {
+        const precioEf = Number(producto["PRECIO EFECTIVO"] || producto.PRECIO_EFECTIVO || 0);
+        const precioTarjRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA || 0;
+        const precioTarj = Number(precioTarjRaw);
 
+        totalEfectivo += precioEf;
+        totalTarjeta += precioTarj;
 
-    carrito.forEach(
-        (producto, indice) => {
+        mensaje += `${indice + 1}. ${producto.DESCRIPCION} (${producto.CODIGO})\n   └ Ef: $ ${precioEf.toLocaleString("es-AR")} | Tarj: $ ${precioTarj.toLocaleString("es-AR")}\n`;
+    });
 
-            const precioEf =
-                Number(
-                    producto[
-                        "PRECIO EFECTIVO"
-                    ] ||
-                    producto.PRECIO_EFECTIVO ||
-                    0
-                );
+    mensaje += `\nTotal productos: ${carrito.length}`;
+    mensaje += `\n💵 Total en efectivo: $ ${totalEfectivo.toLocaleString("es-AR")}`;
+    mensaje += `\n💳 Total en tarjeta/cuotas: $ ${totalTarjeta.toLocaleString("es-AR")}`;
 
-
-            total += precioEf;
-
-
-            mensaje +=
-                `${indice + 1}. ${producto.DESCRIPCION} (${producto.CODIGO}) - $ ${precioEf.toLocaleString("es-AR")} (Ef)\n`;
-
-        }
-    );
-
-
-    mensaje +=
-        `\nTotal productos: ${carrito.length}`;
-
-
-    mensaje +=
-        `\n💰 Total estimado en efectivo: $ ${total.toLocaleString("es-AR")}`;
-
-
-    window.open(
-        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`,
-        "_blank"
-    );
-
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, "_blank");
 }
 
 
 /* =========================
-   CERRAR MODALES
+   CERRAR MODALES AL HACER CLICK AFUERA
 ========================= */
 
-window.onclick =
-    function(event) {
+window.onclick = function(event) {
+    const modalFicha = document.getElementById("modalFicha");
+    const modalCarrito = document.getElementById("modalCarrito");
 
-        const modalFicha =
-            document.getElementById(
-                "modalFicha"
-            );
-
-
-        const modalCarrito =
-            document.getElementById(
-                "modalCarrito"
-            );
-
-
-        if (
-            event.target ==
-            modalFicha
-        ) {
-
-            cerrarFicha();
-
-        }
-
-
-        if (
-            event.target ==
-            modalCarrito
-        ) {
-
-            cerrarCarrito();
-
-        }
-
-    };
+    if (event.target === modalFicha) cerrarFicha();
+    if (event.target === modalCarrito) cerrarCarrito();
+};
 
 
 /* =========================
@@ -2594,6 +1605,7 @@ window.onclick =
 ========================= */
 
 cargarProductos();
+
 
 </script>
 
