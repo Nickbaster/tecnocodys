@@ -1,5 +1,158 @@
 [
   {
+    "CODIGO": 4102,
+    "DESCRIPCION": "Galletitas Oreo Chocolate 118 Grs",
+    "PRECIO TARJETA": 3176,
+    "CATEGORIA": "Accesorios para celular",
+    "PRECIO EFECTIVO": 2700,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4101,
+    "DESCRIPCION": "Alfajor Guaymallen Triple Leche 70 Grs",
+    "PRECIO TARJETA": 1176,
+    "CATEGORIA": "Accesorios para celular",
+    "PRECIO EFECTIVO": 1000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4100,
+    "DESCRIPCION": "MOUSE GAMER USB RGB NM-GM53",
+    "PRECIO TARJETA": 14470,
+    "CATEGORIA": "Mouse/Pads",
+    "PRECIO EFECTIVO": 12300,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4099,
+    "DESCRIPCION": "CARTEL LED PROGRAMABLE RGB 1M LA2501",
+    "PRECIO TARJETA": 123530,
+    "CATEGORIA": "Iluminacion",
+    "PRECIO EFECTIVO": 105000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4098,
+    "DESCRIPCION": "Reloj Smartwatch i7 PRO MAX EXXTRATECH CORREA SILICO",
+    "PRECIO TARJETA": 28240,
+    "CATEGORIA": "REGALOS",
+    "PRECIO EFECTIVO": 24000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4097,
+    "DESCRIPCION": "Auriculares JBL Tune 770 NC",
+    "PRECIO TARJETA": 29100,
+    "CATEGORIA": "Auriculares Inalambricos",
+    "PRECIO EFECTIVO": 24700,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4096,
+    "DESCRIPCION": "Cabina Led Secador de Uñas 240w 60Led / Uv Sun F15",
+    "PRECIO TARJETA": 43530,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 37000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4095,
+    "DESCRIPCION": "BATIDORA DE MANO AITECH 7 VELOCIDADES",
+    "PRECIO TARJETA": 34540,
+    "CATEGORIA": "Hogar",
+    "PRECIO EFECTIVO": 29400,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4093,
+    "DESCRIPCION": "MOUSE OPTICO AITECH AI-27",
+    "PRECIO TARJETA": 6470,
+    "CATEGORIA": "Mouse/Pads",
+    "PRECIO EFECTIVO": 5500,
+    "STOCK": 3,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4092,
+    "DESCRIPCION": "CANILLA CUADRADA BAÃ‘O (SOLO FRIO)",
+    "PRECIO TARJETA": 22000,
+    "CATEGORIA": "Griferia",
+    "PRECIO EFECTIVO": 18700,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4091,
+    "DESCRIPCION": "SOPORTE HOLDER PARA AUTO 360 HD-7 HD-71099 ",
+    "PRECIO TARJETA": 11180,
+    "CATEGORIA": "Soportes TV-Smart-Consolas",
+    "PRECIO EFECTIVO": 9500,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4090,
+    "DESCRIPCION": "Turron Misky Mani 25 Grs",
+    "PRECIO TARJETA": 588.2,
+    "CATEGORIA": "Golosinas",
+    "PRECIO EFECTIVO": 500,
+    "STOCK": 0,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4089,
+    "DESCRIPCION": "Galletitas Traviata Kesitas Crackers 96 Grs",
+    "PRECIO TARJETA": 1760,
+    "CATEGORIA": "Galletitas",
+    "PRECIO EFECTIVO": 1500,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4088,
+    "DESCRIPCION": "Galletitas Marucas 110 Grs",
+    "PRECIO TARJETA": 1760,
+    "CATEGORIA": "Galletitas",
+    "PRECIO EFECTIVO": 1500,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4087,
+    "DESCRIPCION": "Bizcochitos Azucarados 9 de Oro 210 Grs",
+    "PRECIO TARJETA": 2000,
+    "CATEGORIA": "REGALOS",
+    "PRECIO EFECTIVO": 1700,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4086,
+    "DESCRIPCION": "Reloj Smartwatch ULTRA 3, 7 mallas",
+    "PRECIO TARJETA": 35290,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 30000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4085,
+    "DESCRIPCION": "Stereo Fijo con Pantalla Android Multimedia 9\" 1gb 16gb BT Gps Mp5 Usb FM QM-9001A",
+    "PRECIO TARJETA": 198820,
+    "CATEGORIA": "Audio car/Art auto",
+    "PRECIO EFECTIVO": 169000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4084,
     "DESCRIPCION": "Mouse Gamer USB RGB NM-M670",
     "PRECIO TARJETA": 12000,
@@ -23,7 +176,7 @@
     "PRECIO TARJETA": 21180,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 18000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -131,7 +284,7 @@
     "PRECIO TARJETA": 14000,
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 11900,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -146,9 +299,9 @@
   {
     "CODIGO": 4068,
     "DESCRIPCION": "Estaño para Soldar 60% Eximetal 1,2mm x 1,5m x 1u",
-    "PRECIO TARJETA": 5000,
+    "PRECIO TARJETA": 4470,
     "CATEGORIA": "Informatica/Tablet",
-    "PRECIO EFECTIVO": 4300,
+    "PRECIO EFECTIVO": 3800,
     "STOCK": 1,
     "ESTADO": "OK"
   },
@@ -420,7 +573,7 @@
     "CATEGORIA": "Multimedia/Microfonos",
     "PRECIO EFECTIVO": 48500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4037,
@@ -429,7 +582,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 65000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4036,
@@ -438,7 +591,7 @@
     "CATEGORIA": "Jueguetes niños",
     "PRECIO EFECTIVO": 15300,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4035,
@@ -483,7 +636,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 27000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4030,
@@ -492,7 +645,7 @@
     "CATEGORIA": "Informatica/Tablet",
     "PRECIO EFECTIVO": 7800,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4029,
@@ -537,7 +690,7 @@
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 6000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4024,
@@ -546,7 +699,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 7700,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4023,
@@ -564,7 +717,7 @@
     "CATEGORIA": "Relojes",
     "PRECIO EFECTIVO": 24000,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4021,
@@ -654,7 +807,7 @@
     "CATEGORIA": "Jueguetes niños",
     "PRECIO EFECTIVO": 21500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4010,
@@ -798,7 +951,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3994,
@@ -888,7 +1041,7 @@
     "CATEGORIA": "Camaras, Webcam, Seguridad",
     "PRECIO EFECTIVO": 34000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3984,
@@ -995,7 +1148,7 @@
     "PRECIO TARJETA": 31770,
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 27000,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -1122,7 +1275,7 @@
     "CATEGORIA": "Pilas y baterias",
     "PRECIO EFECTIVO": 9600,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3958,
@@ -1284,7 +1437,7 @@
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 39000,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3940,
@@ -1617,7 +1770,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 8600,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3901,
@@ -1842,7 +1995,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 2400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3876,
@@ -2021,7 +2174,7 @@
     "PRECIO TARJETA": 8240,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 7000,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -2175,7 +2328,7 @@
     "CATEGORIA": "Informatica/Tablet",
     "PRECIO EFECTIVO": 21200,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3838,
@@ -2301,7 +2454,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 11100,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3824,
@@ -2795,7 +2948,7 @@
     "PRECIO TARJETA": 24120,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 20500,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -3705,7 +3858,7 @@
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 13600,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3667,
@@ -4263,7 +4416,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 19600,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3604,
@@ -4686,7 +4839,7 @@
     "CATEGORIA": "Art. para Comercios",
     "PRECIO EFECTIVO": 9800,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3557,
@@ -5019,7 +5172,7 @@
     "CATEGORIA": "REGALOS",
     "PRECIO EFECTIVO": 11400,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3520,
@@ -5136,7 +5289,7 @@
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 19000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3507,
@@ -5186,9 +5339,9 @@
   {
     "CODIGO": 3502,
     "DESCRIPCION": "Parlante 3 pulgadas Bluetooth GTS-2265",
-    "PRECIO TARJETA": 17640,
+    "PRECIO TARJETA": 20000,
     "CATEGORIA": "Parlantes",
-    "PRECIO EFECTIVO": 15000,
+    "PRECIO EFECTIVO": 17000,
     "STOCK": 1,
     "ESTADO": "OK"
   },
@@ -5289,7 +5442,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 24300,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3490,
@@ -5315,7 +5468,7 @@
     "PRECIO TARJETA": 85760,
     "CATEGORIA": "Audio car/Art auto",
     "PRECIO EFECTIVO": 72900,
-    "STOCK": 2,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -5838,7 +5991,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 10500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3429,
@@ -6234,7 +6387,7 @@
     "CATEGORIA": "Cargadores Iphone",
     "PRECIO EFECTIVO": 27500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3385,
@@ -6927,7 +7080,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 10800,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3308,
@@ -7674,7 +7827,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 18300,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3224,
@@ -7845,7 +7998,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8600,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3205,
@@ -8043,7 +8196,7 @@
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 12700,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3183,
@@ -8465,7 +8618,7 @@
     "PRECIO TARJETA": 15660,
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 13300,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -8484,7 +8637,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 4100,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3134,
@@ -8573,15 +8726,6 @@
     "PRECIO TARJETA": 34360,
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 29200,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
-  },
-  {
-    "CODIGO": 3124,
-    "DESCRIPCION": "Memoria micro SD 32GB HIKSEMI C10",
-    "PRECIO TARJETA": 18000,
-    "CATEGORIA": "Almacenamiento",
-    "PRECIO EFECTIVO": 15300,
     "STOCK": 0,
     "ESTADO": "Bajar Precio"
   },
@@ -9204,7 +9348,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 4900,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3052,
@@ -9707,7 +9851,7 @@
     "PRECIO TARJETA": 14940,
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 12700,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -9807,7 +9951,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 9500,
     "STOCK": 4,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2984,
@@ -11751,7 +11895,7 @@
     "CATEGORIA": "Jueguetes niños",
     "PRECIO EFECTIVO": 8300,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2763,
@@ -11796,7 +11940,7 @@
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 12000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2758,
@@ -11975,7 +12119,7 @@
     "PRECIO TARJETA": 7650,
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 6500,
-    "STOCK": 3,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -12605,7 +12749,7 @@
     "PRECIO TARJETA": 10620,
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 9000,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -12650,7 +12794,7 @@
     "PRECIO TARJETA": 6210,
     "CATEGORIA": "Cables varios",
     "PRECIO EFECTIVO": 5300,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -14820,7 +14964,7 @@
     "CATEGORIA": "Soportes Celulares",
     "PRECIO EFECTIVO": 10900,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2418,
@@ -15342,7 +15486,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 29800,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2360,
@@ -15765,7 +15909,7 @@
     "CATEGORIA": "Almacenamiento",
     "PRECIO EFECTIVO": 25000,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2312,
@@ -16085,11 +16229,11 @@
   {
     "CODIGO": 2277,
     "DESCRIPCION": "Termo botella termica tapa rosa de 500 ml Cola Bottle ",
-    "PRECIO TARJETA": 12589.824,
+    "PRECIO TARJETA": 15200,
     "CATEGORIA": "Hogar",
-    "PRECIO EFECTIVO": 10700,
+    "PRECIO EFECTIVO": 12900,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2276,
@@ -16440,7 +16584,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 28800,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2237,
@@ -17984,11 +18128,11 @@
   {
     "CODIGO": 2065,
     "DESCRIPCION": "Carte luminoso Kiosco",
-    "PRECIO TARJETA": 25390,
+    "PRECIO TARJETA": 24120,
     "CATEGORIA": "Art. para Comercios",
-    "PRECIO EFECTIVO": 21600,
+    "PRECIO EFECTIVO": 20500,
     "STOCK": 2,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2064,
@@ -18717,7 +18861,7 @@
     "CATEGORIA": "Para Cocina",
     "PRECIO EFECTIVO": 5800,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1981,
@@ -19319,7 +19463,7 @@
     "PRECIO TARJETA": 41650,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 35400,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -20049,7 +20193,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 22500,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1830,
@@ -20220,7 +20364,7 @@
     "CATEGORIA": "Para Cocina",
     "PRECIO EFECTIVO": 28900,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1811,
@@ -20228,7 +20372,7 @@
     "PRECIO TARJETA": 4470,
     "CATEGORIA": "Para Cocina",
     "PRECIO EFECTIVO": 3800,
-    "STOCK": 3,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -20670,7 +20814,7 @@
     "CATEGORIA": "Herramientas Manuales",
     "PRECIO EFECTIVO": 14900,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1761,
@@ -21282,7 +21426,7 @@
     "CATEGORIA": "Cables de red",
     "PRECIO EFECTIVO": 13500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1691,
@@ -21443,7 +21587,7 @@
     "PRECIO TARJETA": 12000,
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 10200,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "OK"
   },
   {
@@ -24458,7 +24602,7 @@
     "PRECIO TARJETA": 12700,
     "CATEGORIA": "Multimedia/Microfonos",
     "PRECIO EFECTIVO": 10800,
-    "STOCK": 2,
+    "STOCK": 3,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -26727,7 +26871,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 16800,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1064,
@@ -28302,7 +28446,7 @@
     "CATEGORIA": "Categorias",
     "PRECIO EFECTIVO": 56500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 751,
@@ -29390,7 +29534,7 @@
     "PRECIO TARJETA": 14750,
     "CATEGORIA": "Herramientas Electricas",
     "PRECIO EFECTIVO": 12500,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -29571,7 +29715,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 7900,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 608,
@@ -29615,7 +29759,7 @@
     "PRECIO TARJETA": 15180,
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 12900,
-    "STOCK": 0,
+    "STOCK": 1,
     "ESTADO": "Bajar Precio"
   },
   {
@@ -30066,7 +30210,7 @@
     "CATEGORIA": "Auriculares Gamer",
     "PRECIO EFECTIVO": 23500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 552,
@@ -30642,7 +30786,7 @@
     "CATEGORIA": "Cables varios",
     "PRECIO EFECTIVO": 3400,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 486,
@@ -31280,7 +31424,7 @@
     "PRECIO TARJETA": 7060,
     "CATEGORIA": "Multimedia/Microfonos",
     "PRECIO EFECTIVO": 6000,
-    "STOCK": 0,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -31974,7 +32118,7 @@
     "CATEGORIA": "Cables de audio y video",
     "PRECIO EFECTIVO": 7100,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 297,
@@ -32442,7 +32586,7 @@
     "CATEGORIA": "Cables de audio y video",
     "PRECIO EFECTIVO": 3300,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 245,
@@ -32684,7 +32828,7 @@
     "PRECIO TARJETA": 24000,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 20400,
-    "STOCK": 1,
+    "STOCK": 0,
     "ESTADO": "OK"
   },
   {
@@ -32721,7 +32865,7 @@
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 3100,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 211,
@@ -33378,7 +33522,7 @@
     "CATEGORIA": "Cables/Micro USB",
     "PRECIO EFECTIVO": 3100,
     "STOCK": 11,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 45,
