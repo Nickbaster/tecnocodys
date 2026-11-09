@@ -1,5 +1,158 @@
 [
   {
+    "CODIGO": 4185,
+    "DESCRIPCION": "PARLANTE AITECH 8\" ONIX BLUETOOTH LUZ LED",
+    "PRECIO TARJETA": 48820,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 41500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4184,
+    "DESCRIPCION": "Reloj EXXTRATECH smartwatch Watch 8 ULTRA",
+    "PRECIO TARJETA": 28235,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 24000,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4183,
+    "DESCRIPCION": "Reloj ULTRA 3 de 7 mallas",
+    "PRECIO TARJETA": 31120,
+    "CATEGORIA": "Relojes",
+    "PRECIO EFECTIVO": 26500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4182,
+    "DESCRIPCION": "Secador de pelo ELE1",
+    "PRECIO TARJETA": 25880,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 22000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4181,
+    "DESCRIPCION": "Camara Exterior KSM CAM 08",
+    "PRECIO TARJETA": 61180,
+    "CATEGORIA": "Camaras, Webcam, Seguridad",
+    "PRECIO EFECTIVO": 52000,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4180,
+    "DESCRIPCION": "Combo Teclado y Mouse retroiluminado CBG-025N",
+    "PRECIO TARJETA": 22940,
+    "CATEGORIA": "Combos",
+    "PRECIO EFECTIVO": 19500,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4179,
+    "DESCRIPCION": "Parlante de 3 pulgadas MS-1662BT",
+    "PRECIO TARJETA": 13500,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 11500,
+    "STOCK": 3,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4178,
+    "DESCRIPCION": "Maquina De Cortar Pelo Patillera Oryx Color Gris Cp 1034",
+    "PRECIO TARJETA": 27160,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 23100,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4177,
+    "DESCRIPCION": "Auriculares JBL XY208",
+    "PRECIO TARJETA": 20760,
+    "CATEGORIA": "Auriculares Vincha",
+    "PRECIO EFECTIVO": 17600,
+    "STOCK": 4,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4176,
+    "DESCRIPCION": "Parlante Portable 2 x 3 pulgadas GTS-1772",
+    "PRECIO TARJETA": 29100,
+    "CATEGORIA": "Parlantes",
+    "PRECIO EFECTIVO": 24700,
+    "STOCK": 2,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4175,
+    "DESCRIPCION": "Sprite 500 ml",
+    "PRECIO TARJETA": 2588,
+    "CATEGORIA": "Bebidas gaseosas",
+    "PRECIO EFECTIVO": 2200,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4174,
+    "DESCRIPCION": "SOPORTE MAGNETICO PARA CELULAR - ZJ-Q43",
+    "PRECIO TARJETA": 9410,
+    "CATEGORIA": "Soportes Celulares",
+    "PRECIO EFECTIVO": 8000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4173,
+    "DESCRIPCION": "Cable Usb-c 240w Carga Rápida Con Soporte Plegable 1.5mt",
+    "PRECIO TARJETA": 9410,
+    "CATEGORIA": "Cable/Tipo C",
+    "PRECIO EFECTIVO": 8000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4172,
+    "DESCRIPCION": "JUGO EN POLVO NARANJA MANGO ARCOR 15 GRS",
+    "PRECIO TARJETA": 588,
+    "CATEGORIA": "Yerbas",
+    "PRECIO EFECTIVO": 500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4171,
+    "DESCRIPCION": "JUGO EN POLVO GALACTICO TANG SOBRE",
+    "PRECIO TARJETA": 705,
+    "CATEGORIA": "Yerbas",
+    "PRECIO EFECTIVO": 600,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4170,
+    "DESCRIPCION": "JUGO EN POLVO MISION EXTRAT TANG SOBRE",
+    "PRECIO TARJETA": 705,
+    "CATEGORIA": "Yerbas",
+    "PRECIO EFECTIVO": 600,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4169,
+    "DESCRIPCION": "JUGO EN POLVO LIMONADA ARCOR X 15 GRS",
+    "PRECIO TARJETA": 588,
+    "CATEGORIA": "Yerbas",
+    "PRECIO EFECTIVO": 500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4168,
     "DESCRIPCION": "CHICLE MENTA FUERTE BELDENT X 10 GRS",
     "PRECIO TARJETA": 1294,
@@ -86,7 +239,7 @@
     "PRECIO TARJETA": 20000,
     "CATEGORIA": "Cargadores Tipo C",
     "PRECIO EFECTIVO": 17000,
-    "STOCK": 1,
+    "STOCK": 3,
     "ESTADO": "OK"
   },
   {
@@ -644,7 +797,7 @@
     "PRECIO TARJETA": 29100,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 24700,
-    "STOCK": 1,
+    "STOCK": 2,
     "ESTADO": "OK"
   },
   {
@@ -753,7 +906,7 @@
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 10200,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4083,
@@ -924,7 +1077,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 13300,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4064,
@@ -951,7 +1104,7 @@
     "CATEGORIA": "Auriculares Gamer",
     "PRECIO EFECTIVO": 23100,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4061,
@@ -1778,8 +1931,8 @@
     "PRECIO TARJETA": 4120,
     "CATEGORIA": "Auriculares comunes",
     "PRECIO EFECTIVO": 3500,
-    "STOCK": 5,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 8,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3968,
@@ -2021,8 +2174,8 @@
     "PRECIO TARJETA": 20000,
     "CATEGORIA": "Auriculares Inalambricos",
     "PRECIO EFECTIVO": 17000,
-    "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 3,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3941,
@@ -2549,11 +2702,11 @@
   {
     "CODIGO": 3881,
     "DESCRIPCION": "AFEITADORA 3 EN 1 Daling DL-9238",
-    "PRECIO TARJETA": 25220,
+    "PRECIO TARJETA": 25950,
     "CATEGORIA": "Belleza y cuidado personal",
-    "PRECIO EFECTIVO": 21400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 22100,
+    "STOCK": 2,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3880,
@@ -2729,11 +2882,11 @@
   {
     "CODIGO": 3860,
     "DESCRIPCION": "LUZ DE EMERGENCIA 7006M LAMBOTECH USB RECARGABLE 60LED",
-    "PRECIO TARJETA": 23000,
+    "PRECIO TARJETA": 22500,
     "CATEGORIA": "Iluminacion",
-    "PRECIO EFECTIVO": 19600,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 19100,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3859,
@@ -4344,7 +4497,7 @@
     "CATEGORIA": "Camaras, Webcam, Seguridad",
     "PRECIO EFECTIVO": 40800,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3679,
@@ -4488,7 +4641,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 5000,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3663,
@@ -6225,7 +6378,7 @@
     "CATEGORIA": "RODADOS",
     "PRECIO EFECTIVO": 4300,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3469,
@@ -8718,7 +8871,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 7600,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3191,
@@ -11210,8 +11363,8 @@
     "PRECIO TARJETA": 3900,
     "CATEGORIA": "Auriculares comunes",
     "PRECIO EFECTIVO": 3300,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 3,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2909,
@@ -11319,7 +11472,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 14500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2897,
@@ -15968,11 +16121,11 @@
   {
     "CODIGO": 2373,
     "DESCRIPCION": "PARLANTE BT 3PLG CON LUZ GTS-1557 GTS-1558",
-    "PRECIO TARJETA": 22850,
+    "PRECIO TARJETA": 25000,
     "CATEGORIA": "Parlantes",
-    "PRECIO EFECTIVO": 19400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 21300,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 2372,
@@ -18798,7 +18951,7 @@
     "CATEGORIA": "Cables de red",
     "PRECIO EFECTIVO": 10400,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2055,
@@ -19788,7 +19941,7 @@
     "CATEGORIA": "Carpa/casita/castillo/corral",
     "PRECIO EFECTIVO": 27000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1944,
@@ -20040,7 +20193,7 @@
     "CATEGORIA": "Cable/Tipo C",
     "PRECIO EFECTIVO": 3900,
     "STOCK": 10,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1916,
@@ -21516,7 +21669,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 6500,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1749,
@@ -22583,11 +22736,11 @@
   {
     "CODIGO": 1626,
     "DESCRIPCION": "Botella deportiva alta Sport Bottle 500ml",
-    "PRECIO TARJETA": 20750,
+    "PRECIO TARJETA": 20400,
     "CATEGORIA": "Belleza y cuidado personal",
-    "PRECIO EFECTIVO": 17600,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "PRECIO EFECTIVO": 17300,
+    "STOCK": 1,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1625,
@@ -25458,7 +25611,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 7600,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1294,
@@ -25782,7 +25935,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 8000,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1258,
@@ -26628,7 +26781,7 @@
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 10400,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 1163,
@@ -29445,7 +29598,7 @@
     "CATEGORIA": "Conectividad",
     "PRECIO EFECTIVO": 6700,
     "STOCK": 4,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 705,
@@ -31227,7 +31380,7 @@
     "CATEGORIA": "Controles/Joystick/Consolas",
     "PRECIO EFECTIVO": 44500,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 503,
@@ -32199,7 +32352,7 @@
     "CATEGORIA": "Materiales Electricos",
     "PRECIO EFECTIVO": 2700,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 355,
@@ -32298,7 +32451,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 2000,
     "STOCK": 65,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 344,
@@ -33297,7 +33450,7 @@
     "CATEGORIA": "Controles/Joystick/Consolas",
     "PRECIO EFECTIVO": 0,
     "STOCK": 953,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 231,
@@ -33422,8 +33575,8 @@
     "PRECIO TARJETA": 24000,
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 20400,
-    "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "STOCK": 2,
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 216,
@@ -33540,7 +33693,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 4000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 201,
