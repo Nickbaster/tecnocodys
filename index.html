@@ -43,6 +43,41 @@ header p.subtitulo {
 }
 
 /* =========================
+   SELECTOR DE SECCIÓN (TECNOLOGÍA / KIOSCO)
+========================= */
+
+.secciones-negocio {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.seccion-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #94a3b8;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seccion-btn.activa {
+    background: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+.seccion-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* =========================
    SUCURSALES
 ========================= */
 
@@ -782,7 +817,17 @@ header p.subtitulo {
         >
     </div>
 
-    <p class="subtitulo">
+    <!-- SEUDO-BOTONES PARA SEPARAR TECNOLOGÍA Y KIOSCO -->
+    <div class="secciones-negocio">
+        <button id="btnSeccionTecno" class="seccion-btn activa" onclick="cambiarSeccion('tecnologia')">
+            📱 Tecnología
+        </button>
+        <button id="btnSeccionKiosco" class="seccion-btn" onclick="cambiarSeccion('kiosco')">
+            🍫 Kiosco
+        </button>
+    </div>
+
+    <p id="subtituloHeader" class="subtitulo">
         Catálogo de tecnología
     </p>
 
@@ -1030,6 +1075,13 @@ header p.subtitulo {
 
 const numeroWhatsApp = "5492954736933";
 
+/* 
+  DEFINÍ ACÁ QUÉ CATEGORÍAS PERTENECEN AL KIOSCO.
+  Todo lo que escribas acá dentro se mostrará cuando el usuario elija "Kiosco".
+  El resto irá a "Tecnología". Podés agregar o cambiar nombres según tus categorías reales.
+*/
+const categoriasKiosco = ["YERBAS", "CARAMELOS", "CHICLE", "GOLOSINAS", "SANDWICH", "BEBIDAS", "KIOSCO"];
+
 
 /* =========================
    VARIABLES
@@ -1037,6 +1089,7 @@ const numeroWhatsApp = "5492954736933";
 
 let todosLosProductos = [];
 let productosFiltrados = [];
+let seccionActiva = "tecnologia"; // "tecnologia" o "kiosco"
 let categoriaActiva = "Todas";
 let textoBusqueda = "";
 let ordenActivo = "predeterminado";
@@ -1054,6 +1107,31 @@ let paginaActual = 1;
 window.addEventListener("load", () => {
     document.getElementById("cantidadCarrito").textContent = carrito.length;
 });
+
+
+/* =========================
+   CAMBIAR SECCIÓN (TECNOLOGÍA / KIOSCO)
+========================= */
+
+function cambiarSeccion(seccion) {
+    seccionActiva = seccion;
+    categoriaActiva = "Todas"; // Resetea la categoría al cambiar de pestaña
+    paginaActual = 1;
+
+    // Actualizar botones visuales
+    if (seccion === "tecnologia") {
+        document.getElementById("btnSeccionTecno").classList.add("activa");
+        document.getElementById("btnSeccionKiosco").classList.remove("activa");
+        document.getElementById("subtituloHeader").textContent = "Catálogo de tecnología";
+    } else {
+        document.getElementById("btnSeccionKiosco").classList.add("activa");
+        document.getElementById("btnSeccionTecno").classList.remove("activa");
+        document.getElementById("subtituloHeader").textContent = "Catálogo de Kiosco y Almacén";
+    }
+
+    crearCategorias(todosLosProductos);
+    filtrarProductos();
+}
 
 
 /* =========================
@@ -1170,10 +1248,20 @@ function tieneStock(producto) {
 
 
 /* =========================
+   VALIDAR SI ES DE KIOSCO
+========================= */
+
+function esDeKiosco(producto) {
+    const cat = String(producto.CATEGORIA || "").toUpperCase();
+    return categoriasKiosco.some(kioscoCat => cat.includes(kioscoCat));
+}
+
+
+/* =========================
    CATEGORÍAS
 ========================= */
 
-function activarCategoria(botonSeleccionado) {
+function activarategoriaBtn(botonSeleccionado) {
     document.querySelectorAll(".categoria-btn").forEach(btn => btn.classList.remove("activa"));
     botonSeleccionado.classList.add("activa");
 }
@@ -1184,8 +1272,13 @@ function crearCategorias(productos) {
     const contenedorCategorias = document.getElementById("categorias");
     contenedorCategorias.innerHTML = "";
 
+    // Filtrar productos según la sección activa para mostrar solo las categorías que corresponden
+    const productosDeSeccion = productos.filter(p => {
+        return seccionActiva === "kiosco" ? esDeKiosco(p) : !esDeKiosco(p);
+    });
+
     const categoriesList = [...new Set(
-        productos.map(p => p.CATEGORIA).filter(c => c)
+        productosDeSeccion.map(p => p.CATEGORIA).filter(c => c)
     )].sort();
 
     const btnTodas = document.createElement("button");
@@ -1193,7 +1286,7 @@ function crearCategorias(productos) {
     btnTodas.textContent = "Todas";
 
     btnTodas.onclick = () => {
-        activarCategoria(btnTodas);
+        activarategoriaBtn(btnTodas);
         categoriaActiva = "Todas";
         paginaActual = 1;
         filtrarProductos();
@@ -1208,7 +1301,7 @@ function crearCategorias(productos) {
         boton.textContent = categoria;
 
         boton.onclick = () => {
-            activarCategoria(boton);
+            activarategoriaBtn(boton);
             categoriaActiva = categoria;
             paginaActual = 1;
             filtrarProductos();
@@ -1246,12 +1339,22 @@ function cambiarOrden(tipo) {
 
 function filtrarProductos() {
 
+    // 1. Filtrar por stock
     if (modoStock0) {
         productosFiltrados = [...todosLosProductos];
     } else {
         productosFiltrados = todosLosProductos.filter(producto => tieneStock(producto));
     }
 
+    // 2. Filtrar por Sección (Tecnología o Kiosco) - EXCEPTO si estás usando el buscador global con texto
+    if (textoBusqueda === "") {
+        productosFiltrados = productosFiltrados.filter(producto => {
+            const esKioscoItem = esDeKiosco(producto);
+            return seccionActiva === "kiosco" ? esKioscoItem : !esKioscoItem;
+        });
+    }
+
+    // 3. Filtrar por texto de búsqueda
     if (textoBusqueda !== "") {
         productosFiltrados = productosFiltrados.filter(producto => {
             const codigo = String(producto.CODIGO || "").toLowerCase();
@@ -1260,10 +1363,12 @@ function filtrarProductos() {
         });
     }
 
+    // 4. Filtrar por Categoría seleccionada
     if (categoriaActiva !== "Todas") {
         productosFiltrados = productosFiltrados.filter(producto => producto.CATEGORIA === categoriaActiva);
     }
 
+    // 5. Ordenamiento
     if (ordenActivo === "baratos") {
         productosFiltrados.sort((a, b) => {
             const pA = Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO || 0);
@@ -1307,7 +1412,7 @@ function renderizarPagina() {
             <div style="grid-column:1/-1; text-align:center; padding:40px 20px; color:#64748b;">
                 <span style="font-size:48px;">🔍</span>
                 <h3 style="margin-top:10px; color:#334155;">No se encontraron productos</h3>
-                <p style="font-size:14px;">Intentá escribirlo de otra forma.</p>
+                <p style="font-size:14px;">Intentá escribirlo de otra forma o cambiá de sección arriba.</p>
             </div>
         `;
         btnCargarMas.style.display = "none";
@@ -1605,7 +1710,6 @@ window.onclick = function(event) {
 ========================= */
 
 cargarProductos();
-
 
 </script>
 
