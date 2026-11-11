@@ -624,6 +624,28 @@ header p.subtitulo {
     text-transform: uppercase;
 }
 
+.ficha-seccion-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 6px;
+    text-transform: uppercase;
+}
+
+.seccion-kiosco-tag {
+    background: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.seccion-tecno-tag {
+    background: #e0f2fe;
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+}
+
 .ficha-descripcion {
     font-size: 18px;
     color: #0f172a;
@@ -817,7 +839,7 @@ header p.subtitulo {
         >
     </div>
 
-    <!-- SEUDO-BOTONES PARA SEPARAR TECNOLOGÍA Y KIOSCO -->
+    <!-- BOTONES PARA SEPARAR TECNOLOGÍA Y KIOSCO -->
     <div class="secciones-negocio">
         <button id="btnSeccionTecno" class="seccion-btn activa" onclick="cambiarSeccion('tecnologia')">
             📱 Tecnología
@@ -1075,12 +1097,7 @@ header p.subtitulo {
 
 const numeroWhatsApp = "5492954736933";
 
-/* 
-  DEFINÍ ACÁ QUÉ CATEGORÍAS PERTENECEN AL KIOSCO.
-  Todo lo que escribas acá dentro se mostrará cuando el usuario elija "Kiosco".
-  El resto irá a "Tecnología". Podés agregar o cambiar nombres según tus categorías reales.
-*/
-const categoriasKiosco = ["YERBAS", "CARAMELOS", "CHICLE", "GOLOSINAS", "SANDWICH", "BEBIDAS", "KIOSCO"];
+const categoriasKiosco = ["YERBAS", "CARAMELOS", "CHICLE", "GOLOSINAS", "SANDWICH", "BEBIDAS", "KIOSCO", "GALLETITAS"];
 
 
 /* =========================
@@ -1089,7 +1106,7 @@ const categoriasKiosco = ["YERBAS", "CARAMELOS", "CHICLE", "GOLOSINAS", "SANDWIC
 
 let todosLosProductos = [];
 let productosFiltrados = [];
-let seccionActiva = "tecnologia"; // "tecnologia" o "kiosco"
+let seccionActiva = "tecnologia";
 let categoriaActiva = "Todas";
 let textoBusqueda = "";
 let ordenActivo = "predeterminado";
@@ -1110,15 +1127,14 @@ window.addEventListener("load", () => {
 
 
 /* =========================
-   CAMBIAR SECCIÓN (TECNOLOGÍA / KIOSCO)
+   CAMBIAR SECCIÓN
 ========================= */
 
 function cambiarSeccion(seccion) {
     seccionActiva = seccion;
-    categoriaActiva = "Todas"; // Resetea la categoría al cambiar de pestaña
+    categoriaActiva = "Todas";
     paginaActual = 1;
 
-    // Actualizar botones visuales
     if (seccion === "tecnologia") {
         document.getElementById("btnSeccionTecno").classList.add("activa");
         document.getElementById("btnSeccionKiosco").classList.remove("activa");
@@ -1164,10 +1180,6 @@ async function cargarProductos() {
         crearCategorias(todosLosProductos);
         filtrarProductos();
 
-        /* =========================
-           BUSCADOR
-        ========================= */
-
         const inputBuscar = document.getElementById("buscar");
         const botonLimpiar = document.getElementById("limpiar-buscar");
 
@@ -1188,10 +1200,6 @@ async function cargarProductos() {
         });
 
 
-        /* =========================
-           LIMPIAR
-        ========================= */
-
         botonLimpiar.addEventListener("click", function() {
 
             inputBuscar.value = "";
@@ -1206,20 +1214,13 @@ async function cargarProductos() {
             inputBuscar.focus();
         });
 
-
-        /* =========================
-           CARGAR MÁS
-        ========================= */
-
         document.getElementById("btnCargarMas").addEventListener("click", function() {
             paginaActual++;
             renderizarPagina();
         });
 
     } catch (error) {
-
         console.error("Error cargando productos:", error);
-
         document.getElementById("productos").innerHTML = `
             <div style="grid-column:1/-1; text-align:center; padding:40px; color:#ef4444;">
                 <h3>⚠️ No se pudieron cargar los productos</h3>
@@ -1272,7 +1273,6 @@ function crearCategorias(productos) {
     const contenedorCategorias = document.getElementById("categorias");
     contenedorCategorias.innerHTML = "";
 
-    // Filtrar productos según la sección activa para mostrar solo las categorías que corresponden
     const productosDeSeccion = productos.filter(p => {
         return seccionActiva === "kiosco" ? esDeKiosco(p) : !esDeKiosco(p);
     });
@@ -1339,14 +1339,12 @@ function cambiarOrden(tipo) {
 
 function filtrarProductos() {
 
-    // 1. Filtrar por stock
     if (modoStock0) {
         productosFiltrados = [...todosLosProductos];
     } else {
         productosFiltrados = todosLosProductos.filter(producto => tieneStock(producto));
     }
 
-    // 2. Filtrar por Sección (Tecnología o Kiosco) - EXCEPTO si estás usando el buscador global con texto
     if (textoBusqueda === "") {
         productosFiltrados = productosFiltrados.filter(producto => {
             const esKioscoItem = esDeKiosco(producto);
@@ -1354,7 +1352,6 @@ function filtrarProductos() {
         });
     }
 
-    // 3. Filtrar por texto de búsqueda
     if (textoBusqueda !== "") {
         productosFiltrados = productosFiltrados.filter(producto => {
             const codigo = String(producto.CODIGO || "").toLowerCase();
@@ -1363,12 +1360,10 @@ function filtrarProductos() {
         });
     }
 
-    // 4. Filtrar por Categoría seleccionada
     if (categoriaActiva !== "Todas") {
         productosFiltrados = productosFiltrados.filter(producto => producto.CATEGORIA === categoriaActiva);
     }
 
-    // 5. Ordenamiento
     if (ordenActivo === "baratos") {
         productosFiltrados.sort((a, b) => {
             const pA = Number(a["PRECIO EFECTIVO"] || a.PRECIO_EFECTIVO || 0);
@@ -1498,6 +1493,12 @@ function abrirFicha(codigo) {
     const contenedorFicha = document.getElementById("contenidoFicha");
     const productoSinStock = !tieneStock(producto);
 
+    // Detectar si es Kiosco o Tecnología para mostrarlo claro en la ficha
+    const esKiosco = esDeKiosco(producto);
+    const etiquetaSeccion = esKiosco 
+        ? `<span class="ficha-seccion-tag seccion-kiosco-tag">🍫 Kiosco</span>` 
+        : `<span class="ficha-seccion-tag seccion-tecno-tag">📱 Tecnología</span>`;
+
     const precioTarjetaRaw = producto.PRECIO || producto["PRECIO TARJ"] || producto.PRECIO_TARJ || producto["PRECIO TARJETA"] || producto.PRECIO_TARJETA;
     const precioTarjetaFormateado = precioTarjetaRaw
         ? `$ ${Number(precioTarjetaRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
@@ -1523,7 +1524,10 @@ function abrirFicha(codigo) {
             style="margin-top:10px; margin-bottom:5px;"
         >
         <div>
-            <span class="ficha-categoria" style="margin-top:5px; margin-bottom:5px;">${producto.CATEGORIA || 'Gral'}</span>
+            <div style="margin-top:5px; margin-bottom:5px;">
+                <span class="ficha-categoria">${producto.CATEGORIA || 'Gral'}</span>
+                ${etiquetaSeccion}
+            </div>
             <h2 class="ficha-descripcion" style="margin:5px 0; font-size:18px; line-height:1.3;">${producto.DESCRIPCION}</h2>
             <p class="ficha-codigo" style="margin:0 0 5px 0; font-size:13px;">
                 <strong>Código del producto:</strong> ${producto.CODIGO}
