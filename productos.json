@@ -1,5 +1,122 @@
 [
   {
+    "CODIGO": 4198,
+    "DESCRIPCION": "Luz de Bici Trasera Recargable con Indicador de Giro y Control FY-1820",
+    "PRECIO TARJETA": 22350,
+    "CATEGORIA": "RODADOS",
+    "PRECIO EFECTIVO": 19000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4197,
+    "DESCRIPCION": "Budin Pozo Marmolado 170Gr",
+    "PRECIO TARJETA": 2705,
+    "CATEGORIA": "Budines y pan dulces",
+    "PRECIO EFECTIVO": 2300,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4196,
+    "DESCRIPCION": "Budin pozo con chip 160Gr",
+    "PRECIO TARJETA": 2705,
+    "CATEGORIA": "Budines y pan dulces",
+    "PRECIO EFECTIVO": 2300,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4195,
+    "DESCRIPCION": "Caramelos Billiken Frutale (110) 600Gr",
+    "PRECIO TARJETA": 117.64,
+    "CATEGORIA": "Golosinas",
+    "PRECIO EFECTIVO": 100,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4194,
+    "DESCRIPCION": "Caramelos Arcor Fresh Cristal (100u) 405Gr",
+    "PRECIO TARJETA": 176.47,
+    "CATEGORIA": "Golosinas",
+    "PRECIO EFECTIVO": 100,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4193,
+    "DESCRIPCION": "Caramelos Butte Tofee Bon o Bon (138u) 822Gr",
+    "PRECIO TARJETA": 176.47,
+    "CATEGORIA": "Golosinas",
+    "PRECIO EFECTIVO": 100,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4192,
+    "DESCRIPCION": "LUZ BIFOCAL 10 LED PREMIUM",
+    "PRECIO TARJETA": 25880,
+    "CATEGORIA": "Iluminacion",
+    "PRECIO EFECTIVO": 22000,
+    "STOCK": 0,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4191,
+    "DESCRIPCION": "Lampara Led UV Usb con Pinza 3W DH-85",
+    "PRECIO TARJETA": 15290,
+    "CATEGORIA": "Belleza y cuidado personal",
+    "PRECIO EFECTIVO": 13000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4190,
+    "DESCRIPCION": "Encendedor 4 Tomas para Auto con Doble Usb y PD D-25",
+    "PRECIO TARJETA": 16030,
+    "CATEGORIA": "Audio car/Art auto",
+    "PRECIO EFECTIVO": 13600,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4189,
+    "DESCRIPCION": "Gaseosa cola regular coca cola pet x 2.25 lt",
+    "PRECIO TARJETA": 7058,
+    "CATEGORIA": "Bebidas gaseosas",
+    "PRECIO EFECTIVO": 6000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4188,
+    "DESCRIPCION": "Alfajor chocolate blanco triple fantoche x 85 grs",
+    "PRECIO TARJETA": 1764,
+    "CATEGORIA": "Golosinas",
+    "PRECIO EFECTIVO": 1500,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4187,
+    "DESCRIPCION": "Luces de Navidad Canicas Acrilico Solar Estaca 30 Led",
+    "PRECIO TARJETA": 21180,
+    "CATEGORIA": "Iluminacion",
+    "PRECIO EFECTIVO": 18000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
+    "CODIGO": 4186,
+    "DESCRIPCION": "Perchero de Pie Recibidor Organizador YH9922",
+    "PRECIO TARJETA": 20000,
+    "CATEGORIA": "Hogar",
+    "PRECIO EFECTIVO": 17000,
+    "STOCK": 1,
+    "ESTADO": "OK"
+  },
+  {
     "CODIGO": 4185,
     "DESCRIPCION": "PARLANTE AITECH 8\" ONIX BLUETOOTH LUZ LED",
     "PRECIO TARJETA": 48820,
@@ -20,9 +137,9 @@
   {
     "CODIGO": 4183,
     "DESCRIPCION": "Reloj ULTRA 3 de 7 mallas",
-    "PRECIO TARJETA": 31120,
+    "PRECIO TARJETA": 34120,
     "CATEGORIA": "Relojes",
-    "PRECIO EFECTIVO": 26500,
+    "PRECIO EFECTIVO": 29000,
     "STOCK": 1,
     "ESTADO": "OK"
   },
@@ -480,7 +597,7 @@
     "CODIGO": 4132,
     "DESCRIPCION": "Yerba mate Bajo Polvo Mañanita 500gs",
     "PRECIO TARJETA": 3060,
-    "CATEGORIA": "Cervezas",
+    "CATEGORIA": "Yerbas",
     "PRECIO EFECTIVO": 2600,
     "STOCK": 1,
     "ESTADO": "OK"
@@ -735,7 +852,7 @@
     "CATEGORIA": "Budines y pan dulces",
     "PRECIO EFECTIVO": 2600,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4103,
@@ -744,7 +861,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 21500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4102,
@@ -753,7 +870,7 @@
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 2700,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4101,
@@ -762,7 +879,7 @@
     "CATEGORIA": "Accesorios para celular",
     "PRECIO EFECTIVO": 1000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4100,
@@ -771,7 +888,7 @@
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 12300,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4099,
@@ -780,7 +897,7 @@
     "CATEGORIA": "Iluminacion",
     "PRECIO EFECTIVO": 105000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4098,
@@ -789,7 +906,7 @@
     "CATEGORIA": "REGALOS",
     "PRECIO EFECTIVO": 24000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4097,
@@ -807,7 +924,7 @@
     "CATEGORIA": "Belleza y cuidado personal",
     "PRECIO EFECTIVO": 37000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4095,
@@ -816,7 +933,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 29400,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4093,
@@ -825,7 +942,7 @@
     "CATEGORIA": "Mouse/Pads",
     "PRECIO EFECTIVO": 5500,
     "STOCK": 3,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4092,
@@ -834,7 +951,7 @@
     "CATEGORIA": "Griferia",
     "PRECIO EFECTIVO": 18700,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4091,
@@ -843,7 +960,7 @@
     "CATEGORIA": "Soportes TV-Smart-Consolas",
     "PRECIO EFECTIVO": 9500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4090,
@@ -852,7 +969,7 @@
     "CATEGORIA": "Golosinas",
     "PRECIO EFECTIVO": 500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4089,
@@ -861,7 +978,7 @@
     "CATEGORIA": "Galletitas",
     "PRECIO EFECTIVO": 1500,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4088,
@@ -870,7 +987,7 @@
     "CATEGORIA": "Galletitas",
     "PRECIO EFECTIVO": 1500,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4087,
@@ -879,7 +996,7 @@
     "CATEGORIA": "REGALOS",
     "PRECIO EFECTIVO": 1700,
     "STOCK": 0,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4086,
@@ -888,7 +1005,7 @@
     "CATEGORIA": "Relojes",
     "PRECIO EFECTIVO": 30000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4085,
@@ -897,7 +1014,7 @@
     "CATEGORIA": "Audio car/Art auto",
     "PRECIO EFECTIVO": 169000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4084,
@@ -1050,7 +1167,7 @@
     "CATEGORIA": "Informatica/Tablet",
     "PRECIO EFECTIVO": 3800,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 4067,
@@ -1730,11 +1847,11 @@
   {
     "CODIGO": 3991,
     "DESCRIPCION": "Pistola burbujera unicornio 312",
-    "PRECIO TARJETA": 12500,
+    "PRECIO TARJETA": 11530,
     "CATEGORIA": "Jueguetes niños",
-    "PRECIO EFECTIVO": 10600,
+    "PRECIO EFECTIVO": 9800,
     "STOCK": 4,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 3990,
@@ -6090,7 +6207,7 @@
     "CATEGORIA": "Parlantes",
     "PRECIO EFECTIVO": 17000,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 3501,
@@ -16980,7 +17097,7 @@
     "CATEGORIA": "Hogar",
     "PRECIO EFECTIVO": 12900,
     "STOCK": 1,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2276,
@@ -18879,7 +18996,7 @@
     "CATEGORIA": "Art. para Comercios",
     "PRECIO EFECTIVO": 20500,
     "STOCK": 2,
-    "ESTADO": "OK"
+    "ESTADO": "Bajar Precio"
   },
   {
     "CODIGO": 2064,
@@ -22196,11 +22313,11 @@
   {
     "CODIGO": 1689,
     "DESCRIPCION": "Caño de Ducha 50 centimetros",
-    "PRECIO TARJETA": 6470,
+    "PRECIO TARJETA": 7060,
     "CATEGORIA": "Varios",
-    "PRECIO EFECTIVO": 5500,
+    "PRECIO EFECTIVO": 6000,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1688,
@@ -22331,11 +22448,11 @@
   {
     "CODIGO": 1674,
     "DESCRIPCION": "FLOR DE DUCHA CUADRADA 20CM Acero Inoxidable",
-    "PRECIO TARJETA": 12000,
+    "PRECIO TARJETA": 11530,
     "CATEGORIA": "Griferia",
-    "PRECIO EFECTIVO": 10200,
+    "PRECIO EFECTIVO": 9800,
     "STOCK": 1,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 1673,
@@ -30278,11 +30395,11 @@
   {
     "CODIGO": 629,
     "DESCRIPCION": "Tester Noganet Digital C/Buzzer DT-830D/ Generico",
-    "PRECIO TARJETA": 14750,
+    "PRECIO TARJETA": 13530,
     "CATEGORIA": "Herramientas Electricas",
-    "PRECIO EFECTIVO": 12500,
+    "PRECIO EFECTIVO": 11500,
     "STOCK": 0,
-    "ESTADO": "Bajar Precio"
+    "ESTADO": "OK"
   },
   {
     "CODIGO": 628,
