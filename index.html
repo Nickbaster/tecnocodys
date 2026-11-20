@@ -141,21 +141,30 @@ header p.subtitulo {
     color: #ef4444;
 }
 
-/* AVISO STOCK0 */
+/* AVISOS MODO OCULTO (STOCK0 / COSTO0) */
 
-#avisoStock0 {
+.aviso-modo {
     display: none;
     width: 90%;
     max-width: 700px;
-    margin: 5px auto 0 auto;
-    background: #fef3c7;
-    color: #92400e;
-    border: 1px solid #f59e0b;
+    margin: 6px auto 0 auto;
     padding: 7px 10px;
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 12px;
     font-weight: bold;
+}
+
+#avisoStock0 {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+}
+
+#avisoCosto0 {
+    background: #e0e7ff;
+    color: #1e3a8a;
+    border: 1px solid #6366f1;
 }
 
 /* =========================
@@ -456,7 +465,7 @@ header p.subtitulo {
 }
 
 /* =========================
-   PRECIOS
+   PRECIOS Y COSTO
 ========================= */
 
 .contenedor-precios {
@@ -479,6 +488,19 @@ header p.subtitulo {
     font-size: 14px;
     font-weight: 600;
     margin: 0;
+}
+
+.costo-badge {
+    margin-top: 6px;
+    display: inline-block;
+    background: #e0e7ff;
+    color: #1e3a8a;
+    border: 1px solid #c7d2fe;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    width: fit-content;
 }
 
 /* =========================
@@ -682,6 +704,15 @@ header p.subtitulo {
     margin: 4px 0 0 0;
 }
 
+.ficha-costo-box {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #cbd5e1;
+    color: #1e3a8a;
+    font-size: 15px;
+    font-weight: 800;
+}
+
 /* =========================
    PAGINACIÓN
 ========================= */
@@ -778,6 +809,11 @@ header p.subtitulo {
 
     .precio-tarjeta {
         font-size: 12px;
+    }
+
+    .costo-badge {
+        font-size: 10px;
+        padding: 3px 6px;
     }
 
     .botones-tarjeta {
@@ -882,8 +918,12 @@ header p.subtitulo {
 
     </div>
 
-    <div id="avisoStock0">
+    <div id="avisoStock0" class="aviso-modo">
         🔒 Modo STOCK0 activo — mostrando productos sin stock
+    </div>
+
+    <div id="avisoCosto0" class="aviso-modo">
+        💼 Modo COSTO0 activo — mostrando precio de costo
     </div>
 
 </header>
@@ -1111,6 +1151,7 @@ let categoriaActiva = "Todas";
 let textoBusqueda = "";
 let ordenActivo = "predeterminado";
 let modoStock0 = false;
+let modoCosto0 = false;
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const productosPorPagina = 24;
@@ -1166,6 +1207,27 @@ function deslizarCategorias(direccion) {
 
 
 /* =========================
+   FORMATEAR COSTO
+========================= */
+
+function obtenerCostoFormateado(producto) {
+    if (!producto) return "Sin dato";
+    const costoRaw = producto.COSTO !== undefined ? producto.COSTO : producto.costo;
+
+    if (costoRaw === undefined || costoRaw === null || String(costoRaw).trim() === "") {
+        return "Sin dato";
+    }
+
+    const numero = Number(costoRaw);
+    if (!Number.isNaN(numero)) {
+        return `$ ${numero.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+    }
+
+    return String(costoRaw);
+}
+
+
+/* =========================
    CARGAR PRODUCTOS
 ========================= */
 
@@ -1188,12 +1250,17 @@ async function cargarProductos() {
             const texto = this.value.toLowerCase().trim();
 
             modoStock0 = texto.includes("stock0");
-            textoBusqueda = texto.replace(/stock0/g, "").trim();
+            modoCosto0 = texto.includes("costo0");
+
+            textoBusqueda = texto
+                .replace(/stock0/g, "")
+                .replace(/costo0/g, "")
+                .trim();
 
             botonLimpiar.style.display = texto !== "" ? "block" : "none";
 
-            const aviso = document.getElementById("avisoStock0");
-            aviso.style.display = modoStock0 ? "block" : "none";
+            document.getElementById("avisoStock0").style.display = modoStock0 ? "block" : "none";
+            document.getElementById("avisoCosto0").style.display = modoCosto0 ? "block" : "none";
 
             paginaActual = 1;
             filtrarProductos();
@@ -1205,9 +1272,11 @@ async function cargarProductos() {
             inputBuscar.value = "";
             textoBusqueda = "";
             modoStock0 = false;
+            modoCosto0 = false;
 
             botonLimpiar.style.display = "none";
             document.getElementById("avisoStock0").style.display = "none";
+            document.getElementById("avisoCosto0").style.display = "none";
 
             paginaActual = 1;
             filtrarProductos();
@@ -1398,9 +1467,13 @@ function renderizarPagina() {
     const btnCargarMas = document.getElementById("btnCargarMas");
 
     let textoContador = `${productosFiltrados.length} productos encontrados`;
-    if (modoStock0) textoContador += " — incluyendo sin stock";
+    const modosActivos = [];
+    if (modoStock0) modosActivos.push("incluyendo sin stock");
+    if (modoCosto0) modosActivos.push("con costo visible");
+    if (modosActivos.length > 0) textoContador += ` — ${modosActivos.join(" / ")}`;
 
-    document.getElementById("contadorProductos").innerHTML = modoStock0 ? `🔒 ${textoContador}` : textoContador;
+    const tieneCandado = modoStock0 || modoCosto0;
+    document.getElementById("contadorProductos").innerHTML = tieneCandado ? `🔒 ${textoContador}` : textoContador;
 
     if (productosFiltrados.length === 0) {
         contenedor.innerHTML = `
@@ -1432,6 +1505,10 @@ function renderizarPagina() {
             ? `$ ${Number(precioEfectivoRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
             : "Consulte";
 
+        const costoHtml = modoCosto0
+            ? `<div class="costo-badge">💼 Costo: ${obtenerCostoFormateado(producto)}</div>`
+            : "";
+
         const estadoNorm = String(producto.ESTADO || producto.Estado || producto.estado || "").toLowerCase();
         const precioAlerta = estadoNorm === "bajar precio" ? "codigo-alerta" : "";
 
@@ -1462,6 +1539,7 @@ function renderizarPagina() {
                             <p class="precio-tarjeta">
                                 Tarjeta, CrediAPP, Go Cuotas: ${precioTarjetaFormateado}
                             </p>
+                            ${costoHtml}
                         </div>
                     </div>
                 </div>
@@ -1493,7 +1571,6 @@ function abrirFicha(codigo) {
     const contenedorFicha = document.getElementById("contenidoFicha");
     const productoSinStock = !tieneStock(producto);
 
-    // Detectar si es Kiosco o Tecnología para mostrarlo claro en la ficha
     const esKiosco = esDeKiosco(producto);
     const etiquetaSeccion = esKiosco 
         ? `<span class="ficha-seccion-tag seccion-kiosco-tag">🍫 Kiosco</span>` 
@@ -1508,6 +1585,10 @@ function abrirFicha(codigo) {
     const precioEfectivoFormateado = precioEfectivoRaw
         ? `$ ${Number(precioEfectivoRaw).toLocaleString("es-AR", { minimumFractionDigits: 0 })}`
         : "Consulte";
+
+    const costoFichaHtml = modoCosto0
+        ? `<div class="ficha-costo-box">💼 Costo del producto: ${obtenerCostoFormateado(producto)}</div>`
+        : "";
 
     const mensajeFicha = encodeURIComponent(`Hola, consulto por ${producto.DESCRIPCION} (${producto.CODIGO})`);
 
@@ -1541,6 +1622,7 @@ function abrirFicha(codigo) {
                 <p class="ficha-precio-tarj" style="margin:2px 0 0 0; font-size:15px;">
                     💳 Tarjeta, CrediAPP, Go Cuotas: ${precioTarjetaFormateado}
                 </p>
+                ${costoFichaHtml}
             </div>
             <a class="btn-whatsapp-ficha" href="https://wa.me/${numeroWhatsApp}?text=${mensajeFicha}" target="_blank" style="margin-top:10px; padding:12px;">
                 📲 Consultar por WhatsApp
